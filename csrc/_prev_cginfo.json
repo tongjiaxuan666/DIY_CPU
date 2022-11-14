@@ -1,0 +1,127 @@
+{
+    "MlibObjs": {},
+    "PrevCompiledModules": {
+        "openmips_min_sopc_tb": {
+            "gvrSa_d": {
+                "archive": "archive.4/_21626_archive_1.a",
+                "bytes": 41484,
+                "mod": "openmips_min_sopc_tb",
+                "out": "gvrSa_d.o",
+                "mode": 4,
+                "checksum": 0
+            }
+        },
+        "...MASTER...": {
+            "amcQw_d": {
+                "bytes": 7403,
+                "mod": "...MASTER...",
+                "mode": 4,
+                "checksum": 0,
+                "out": "objs/amcQw_d.o"
+            }
+        },
+        "std": {
+            "reYIK_d": {
+                "archive": "archive.4/_prev_archive_1.a",
+                "bytes": 33397,
+                "mod": "std",
+                "mode": 4,
+                "checksum": 0,
+                "out": "reYIK_d.o"
+            }
+        }
+    },
+    "stat": {
+        "ru_self_cgstart": {
+            "ru_nvcsw": 5,
+            "ru_utime_sec": 0.081342999999999999,
+            "ru_stime_sec": 0.059936999999999997,
+            "ru_maxrss_kb": 86104,
+            "ru_minflt": 5305,
+            "ru_nivcsw": 279,
+            "ru_majflt": 0
+        },
+        "ru_childs_cgstart": {
+            "ru_nvcsw": 0,
+            "ru_utime_sec": 0.0,
+            "ru_stime_sec": 0.0,
+            "ru_maxrss_kb": 0,
+            "ru_minflt": 0,
+            "ru_nivcsw": 0,
+            "ru_majflt": 0
+        },
+        "ru_childs_end": {
+            "ru_nvcsw": 1,
+            "ru_utime_sec": 0.0024940000000000001,
+            "ru_stime_sec": 0.0,
+            "ru_maxrss_kb": 17804,
+            "ru_minflt": 203,
+            "ru_nivcsw": 2,
+            "ru_majflt": 0
+        },
+        "mop/quad": 2.0053727333781062,
+        "nMops": 2986,
+        "nQuads": 1489,
+        "ru_self_end": {
+            "ru_nvcsw": 6,
+            "ru_utime_sec": 0.11835,
+            "ru_stime_sec": 0.069376999999999994,
+            "ru_maxrss_kb": 93060,
+            "ru_minflt": 7092,
+            "ru_nivcsw": 377,
+            "ru_majflt": 0
+        },
+        "totalObjSize": 141337,
+        "mopSpeed": 80687.437511822092,
+        "outputSizePerQuad": 94.0,
+        "quadSpeed": 40235.631096819525,
+        "CodeGen(%)": 31.269117025771017,
+        "Frontend(%)": 68.730882974228976
+    },
+    "NameTable": {
+        "...MASTER...": [
+            "SIM",
+            "amcQw",
+            "module"
+        ],
+        "std": [
+            "std",
+            "reYIK",
+            "module"
+        ],
+        "openmips_min_sopc_tb": [
+            "openmips_min_sopc_tb",
+            "gvrSa",
+            "module"
+        ]
+    },
+    "SIMBData": {
+        "out": "amcQwB.o",
+        "bytes": 101186
+    },
+    "CurCompileModules": [
+        "...MASTER...",
+        "std",
+        "openmips_min_sopc_tb",
+        "openmips_min_sopc_tb"
+    ],
+    "CompileStrategy": "fullobj",
+    "Misc": {
+        "archive_dir": "archive.4",
+        "csrc_abs": "/home/zzy/DIY_CPU/csrc",
+        "cwd": "/home/zzy/DIY_CPU",
+        "csrc": "csrc",
+        "daidir": "simv.daidir",
+        "daidir_abs": "/home/zzy/DIY_CPU/simv.daidir",
+        "default_output_dir": "csrc"
+    },
+    "CurCompileUdps": {},
+    "LVLData": [
+        "SIM"
+    ],
+    "PEModules": [],
+    "CompileProcesses": [
+        "cgproc.21626.json"
+    ],
+    "CompileStatus": "Successful"
+}

@@ -1,0 +1,135 @@
+0 
+37
++cli+1
++itf+/home/zzy/synopsys/vcs_2016.06/linux64/lib/vcsdp.tab
++memcbk
++v2k
++vcsd
++vpi
+-Mamsrun=
+-Masflags=
+-Mcc=gcc-4.8
+-Mcfl= -pipe -fPIC -O -I/home/zzy/synopsys/vcs_2016.06/include
+-Mcplusplus=g++-4.8
+-Mcrt0=
+-Mcrtn=
+-Mcsrc=
+-Mexternalobj=
+-Mldflags= -Wl,--no-as-needed -rdynamic -rdynamic
+-Mobjects= /home/zzy/synopsys/vcs_2016.06/linux64/lib/libvirsim.so /home/zzy/synopsys/vcs_2016.06/linux64/lib/liberrorinf.so /home/zzy/synopsys/vcs_2016.06/linux64/lib/libsnpsmalloc.so /home/zzy/synopsys/verdi_2016.06-1/share/PLI/VCS/LINUX64/pli.a
+-Mout=simv
+-Msaverestoreobj=/home/zzy/synopsys/vcs_2016.06/linux64/lib/vcs_save_restore_new.o
+-Msyslibs=-ldl -lm
+-Mvcsaceobjs=
+-Mxcflags= -pipe -fPIC -I/home/zzy/synopsys/vcs_2016.06/include
+-P
+-Xcbug=0x1
+-Xpiyushb1=0x80
+-Xvcs_run_simv=1
+-debug=1
+-f filelist.f
+-full64
+-gen_obj
+-l
+-nc
+-picarchive
+-sverilog
+/home/zzy/synopsys/vcs_2016.06/linux64/bin/vcs1
+/home/zzy/synopsys/verdi_2016.06-1/share/PLI/VCS/LINUX64/novas.tab
+com.log
+69
+sysc_uni_pwd=/home/zzy/DIY_CPU
+XMODIFIERS=@im=fcitx
+XDG_VTNR=7
+XDG_SESSION_TYPE=x11
+XDG_SESSION_PATH=/org/freedesktop/DisplayManager/Session0
+XDG_SESSION_ID=c2
+XDG_SESSION_DESKTOP=ubuntu
+XDG_SEAT_PATH=/org/freedesktop/DisplayManager/Seat0
+XDG_SEAT=seat0
+XDG_RUNTIME_DIR=/run/user/1000
+XDG_MENU_PREFIX=gnome-
+XDG_GREETER_DATA_DIR=/var/lib/lightdm-data/zzy
+XDG_DATA_DIRS=/usr/share/ubuntu:/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop
+XDG_CURRENT_DESKTOP=Unity
+XDG_CONFIG_DIRS=/etc/xdg/xdg-ubuntu:/usr/share/upstart/xdg:/etc/xdg
+XAUTHORITY=/home/zzy/.Xauthority
+VTE_VERSION=4205
+VMR_MODE_FLAG=64
+VERDI_HOME=/home/zzy/synopsys/verdi_2016.06-1
+VCS_MX_HOME_INTERNAL=1
+VCS_MODE_FLAG=64
+VCS_LOG_FILE=com.log
+VCS_HOME=/home/zzy/synopsys/vcs_2016.06
+VCS_DEPTH=0
+VCS_ARG_ADDED_FOR_TMP=1
+VCS_ARCH_OVERRIDE=linux
+VCS_ARCH=linux64
+UPSTART_SESSION=unix:abstract=/com/ubuntu/upstart-session/1000/3231
+UNAME=/bin/uname
+TOOL_HOME=/home/zzy/synopsys/vcs_2016.06/linux64
+SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
+SESSION_MANAGER=local/zzy-virtual-machine:@/tmp/.ICE-unix/3521,unix/zzy-virtual-machine:/tmp/.ICE-unix/3521
+SESSIONTYPE=gnome-session
+SESSION=ubuntu
+SCRNAME=vcs
+SCRIPT_NAME=vcs
+QT_QPA_PLATFORMTHEME=appmenu-qt5
+QT_LINUX_ACCESSIBILITY_ALWAYS_ON=1
+QT_IM_MODULE=fcitx
+QT_ACCESSIBILITY=1
+QT4_IM_MODULE=fcitx
+OVA_UUM=0
+NOVAS_HOME=/home/zzy/synopsys/verdi_2016.06-1
+MFLAGS=
+MANDATORY_PATH=/usr/share/gconf/ubuntu.mandatory.path
+MAKE_TERMOUT=/dev/pts/19
+MAKE_TERMERR=/dev/pts/19
+MAKELEVEL=1
+MAKEFLAGS=
+LESSOPEN=| /usr/bin/lesspipe %s
+LESSCLOSE=/usr/bin/lesspipe %s %s
+LC_ALL=C
+JOB=dbus
+INSTANCE=
+IM_CONFIG_PHASE=1
+GTK_MODULES=gail:atk-bridge:unity-gtk-module
+GTK_IM_MODULE=fcitx
+GTK2_MODULES=overlay-scrollbar
+GPG_AGENT_INFO=/home/zzy/.gnupg/S.gpg-agent:0:1
+GNOME_KEYRING_PID=
+GNOME_KEYRING_CONTROL=
+GNOME_DESKTOP_SESSION_ID=this-is-deprecated
+GDM_LANG=zh_CN
+GDMSESSION=ubuntu
+DESKTOP_SESSION=ubuntu
+DEFAULTS_PATH=/usr/share/gconf/ubuntu.default.path
+DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-3D1T9Tr6Iq
+COMPIZ_CONFIG_PROFILE=ubuntu
+CLUTTER_IM_MODULE=xim
+0
+17
+1667565224 ./src/mem_wb.v
+1666272742 ./src/regfile.v
+1667570952 ./src/id_ex.v
+1667564141 ./src/defines.v
+1667570403 ./src/openmips.v
+1667565815 ./src/inst_rom.v
+1667568925 ./src/id.v
+1666013988 ./src/if_id.v
+1667563895 ./src/ex_mem.v
+1667564766 ./src/openmips_min_sopc.v
+1667388902 ./src/ex.v
+1667565415 ./src/openmips_min_sopc_tb.v
+1666013909 ./src/pc_reg.v
+1667563736 ./src/mem.v
+1667565204 filelist.f
+1464145466 /home/zzy/synopsys/vcs_2016.06/linux64/lib/vcsdp.tab
+1468145700 /home/zzy/synopsys/verdi_2016.06-1/share/PLI/VCS/LINUX64/novas.tab
+5
+0 
+1464147802 /home/zzy/synopsys/vcs_2016.06/linux64/lib/libvirsim.so
+1464147272 /home/zzy/synopsys/vcs_2016.06/linux64/lib/liberrorinf.so
+1464147248 /home/zzy/synopsys/vcs_2016.06/linux64/lib/libsnpsmalloc.so
+1468144468 /home/zzy/synopsys/verdi_2016.06-1/share/PLI/VCS/LINUX64/pli.a
+1667570969 simv.daidir

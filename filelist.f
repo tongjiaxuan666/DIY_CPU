@@ -1,0 +1,14 @@
+./src/mem.v
+./src/pc_reg.v
+./src/openmips_min_sopc_tb.v
+./src/ex.v
+./src/openmips_min_sopc.v
+./src/ex_mem.v
+./src/if_id.v
+./src/id.v
+./src/inst_rom.v
+./src/openmips.v
+./src/defines.v
+./src/id_ex.v
+./src/regfile.v
+./src/mem_wb.v

@@ -1,0 +1,23 @@
+*design* DebussyLib (btIdent Verdi3_L-2016.06-1)
+Command arguments:
+    +define+verilog
+    -f filelist.f
+        ./src/mem.v
+        ./src/pc_reg.v
+        ./src/openmips_min_sopc_tb.v
+        ./src/ex.v
+        ./src/openmips_min_sopc.v
+        ./src/ex_mem.v
+        ./src/if_id.v
+        ./src/id.v
+        ./src/inst_rom.v
+        ./src/openmips.v
+        ./src/defines.v
+        ./src/id_ex.v
+        ./src/regfile.v
+        ./src/mem_wb.v
+
+Highest level modules:
+openmips_min_sopc_tb
+
+Total	0 error(s),   0 warning(s)
