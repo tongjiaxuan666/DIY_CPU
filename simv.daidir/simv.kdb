@@ -1,7 +1,7 @@
 rc file Version 1.0
 
 [Design]
-COMPILE_PATH=/home/zzy/DIY_CPU
+COMPILE_PATH=/home/tjx/DIY_CPU
 SystemC=FALSE
 UUM=FALSE
 KDB=FALSE

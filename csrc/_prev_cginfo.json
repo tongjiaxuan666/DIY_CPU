@@ -3,87 +3,35 @@
     "PrevCompiledModules": {
         "openmips_min_sopc_tb": {
             "gvrSa_d": {
-                "archive": "archive.4/_21626_archive_1.a",
-                "bytes": 41484,
-                "mod": "openmips_min_sopc_tb",
+                "bytes": 40018,
                 "out": "gvrSa_d.o",
+                "mod": "openmips_min_sopc_tb",
                 "mode": 4,
-                "checksum": 0
+                "checksum": 0,
+                "archive": "archive.8/_4908_archive_1.a"
+            }
+        },
+        "std": {
+            "reYIK_d": {
+                "bytes": 33397,
+                "out": "reYIK_d.o",
+                "mod": "std",
+                "mode": 4,
+                "checksum": 0,
+                "archive": "archive.8/_prev_archive_1.a"
             }
         },
         "...MASTER...": {
             "amcQw_d": {
                 "bytes": 7403,
+                "out": "objs/amcQw_d.o",
                 "mod": "...MASTER...",
                 "mode": 4,
-                "checksum": 0,
-                "out": "objs/amcQw_d.o"
-            }
-        },
-        "std": {
-            "reYIK_d": {
-                "archive": "archive.4/_prev_archive_1.a",
-                "bytes": 33397,
-                "mod": "std",
-                "mode": 4,
-                "checksum": 0,
-                "out": "reYIK_d.o"
+                "checksum": 0
             }
         }
     },
-    "stat": {
-        "ru_self_cgstart": {
-            "ru_nvcsw": 5,
-            "ru_utime_sec": 0.081342999999999999,
-            "ru_stime_sec": 0.059936999999999997,
-            "ru_maxrss_kb": 86104,
-            "ru_minflt": 5305,
-            "ru_nivcsw": 279,
-            "ru_majflt": 0
-        },
-        "ru_childs_cgstart": {
-            "ru_nvcsw": 0,
-            "ru_utime_sec": 0.0,
-            "ru_stime_sec": 0.0,
-            "ru_maxrss_kb": 0,
-            "ru_minflt": 0,
-            "ru_nivcsw": 0,
-            "ru_majflt": 0
-        },
-        "ru_childs_end": {
-            "ru_nvcsw": 1,
-            "ru_utime_sec": 0.0024940000000000001,
-            "ru_stime_sec": 0.0,
-            "ru_maxrss_kb": 17804,
-            "ru_minflt": 203,
-            "ru_nivcsw": 2,
-            "ru_majflt": 0
-        },
-        "mop/quad": 2.0053727333781062,
-        "nMops": 2986,
-        "nQuads": 1489,
-        "ru_self_end": {
-            "ru_nvcsw": 6,
-            "ru_utime_sec": 0.11835,
-            "ru_stime_sec": 0.069376999999999994,
-            "ru_maxrss_kb": 93060,
-            "ru_minflt": 7092,
-            "ru_nivcsw": 377,
-            "ru_majflt": 0
-        },
-        "totalObjSize": 141337,
-        "mopSpeed": 80687.437511822092,
-        "outputSizePerQuad": 94.0,
-        "quadSpeed": 40235.631096819525,
-        "CodeGen(%)": 31.269117025771017,
-        "Frontend(%)": 68.730882974228976
-    },
     "NameTable": {
-        "...MASTER...": [
-            "SIM",
-            "amcQw",
-            "module"
-        ],
         "std": [
             "std",
             "reYIK",
@@ -93,11 +41,68 @@
             "openmips_min_sopc_tb",
             "gvrSa",
             "module"
+        ],
+        "...MASTER...": [
+            "SIM",
+            "amcQw",
+            "module"
         ]
+    },
+    "CompileProcesses": [
+        "cgproc.4908.json"
+    ],
+    "CompileStrategy": "fullobj",
+    "CurCompileUdps": {},
+    "stat": {
+        "ru_self_cgstart": {
+            "ru_stime_sec": 0.319249,
+            "ru_utime_sec": 0.33583400000000002,
+            "ru_nvcsw": 785,
+            "ru_maxrss_kb": 85496,
+            "ru_minflt": 5046,
+            "ru_majflt": 717,
+            "ru_nivcsw": 152
+        },
+        "ru_childs_end": {
+            "ru_stime_sec": 0.0,
+            "ru_utime_sec": 0.0025569999999999998,
+            "ru_nvcsw": 1,
+            "ru_maxrss_kb": 17728,
+            "ru_minflt": 203,
+            "ru_majflt": 0,
+            "ru_nivcsw": 2
+        },
+        "CodeGen(%)": 11.576791125925803,
+        "ru_childs_cgstart": {
+            "ru_stime_sec": 0.0,
+            "ru_utime_sec": 0.0,
+            "ru_nvcsw": 0,
+            "ru_maxrss_kb": 0,
+            "ru_minflt": 0,
+            "ru_majflt": 0,
+            "ru_nivcsw": 0
+        },
+        "nMops": 3104,
+        "nQuads": 1502,
+        "Frontend(%)": 88.423208874074206,
+        "totalObjSize": 141760,
+        "mopSpeed": 70595.19206713824,
+        "ru_self_end": {
+            "ru_stime_sec": 0.367282,
+            "ru_utime_sec": 0.379803,
+            "ru_nvcsw": 835,
+            "ru_maxrss_kb": 92520,
+            "ru_minflt": 6832,
+            "ru_majflt": 762,
+            "ru_nivcsw": 170
+        },
+        "quadSpeed": 34160.43121290001,
+        "mop/quad": 2.0665778961384822,
+        "outputSizePerQuad": 94.0
     },
     "SIMBData": {
         "out": "amcQwB.o",
-        "bytes": 101186
+        "bytes": 101202
     },
     "CurCompileModules": [
         "...MASTER...",
@@ -105,23 +110,18 @@
         "openmips_min_sopc_tb",
         "openmips_min_sopc_tb"
     ],
-    "CompileStrategy": "fullobj",
-    "Misc": {
-        "archive_dir": "archive.4",
-        "csrc_abs": "/home/zzy/DIY_CPU/csrc",
-        "cwd": "/home/zzy/DIY_CPU",
-        "csrc": "csrc",
-        "daidir": "simv.daidir",
-        "daidir_abs": "/home/zzy/DIY_CPU/simv.daidir",
-        "default_output_dir": "csrc"
-    },
-    "CurCompileUdps": {},
     "LVLData": [
         "SIM"
     ],
     "PEModules": [],
-    "CompileProcesses": [
-        "cgproc.21626.json"
-    ],
+    "Misc": {
+        "cwd": "/home/tjx/DIY_CPU",
+        "csrc": "csrc",
+        "csrc_abs": "/home/tjx/DIY_CPU/csrc",
+        "archive_dir": "archive.8",
+        "daidir": "simv.daidir",
+        "daidir_abs": "/home/tjx/DIY_CPU/simv.daidir",
+        "default_output_dir": "csrc"
+    },
     "CompileStatus": "Successful"
 }

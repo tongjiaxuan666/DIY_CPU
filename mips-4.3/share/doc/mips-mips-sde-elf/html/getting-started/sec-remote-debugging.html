@@ -1,0 +1,70 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Running Applications from GDB</title><link rel="stylesheet" href="cs.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.69.1"><link rel="start" href="index.html" title="Sourcery G++ Lite"><link rel="up" href="chap-building.html" title="Chapter 5. Using Sourcery G++ from the Command Line"><link rel="prev" href="ch05s03.html" title="Running Applications in the Simulator"><link rel="next" href="chap-cs3.html" title="Chapter 6. CS3&#8482;: The CodeSourcery Common Startup Code Sequence"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Running Applications from GDB</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch05s03.html">Prev</a> </td><th width="60%" align="center">Chapter 5. Using Sourcery G++ from the Command Line</th><td width="20%" align="right"> <a accesskey="n" href="chap-cs3.html">Next</a></td></tr></table><hr></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="sec-remote-debugging"></a>Running Applications from GDB</h2></div></div></div><p>
+    You can run GDB, the GNU Debugger, on your host system 
+    to debug programs running remotely on a target board or system.  
+    <span>
+     You can also run and debug programs using the GDB simulator.
+    </span>
+    
+  </p><p>
+   While this section explains the alternatives for using GDB to run
+   and debug application programs, explaining the use of the GDB 
+   command-line interface is beyond the scope of this document.  Please
+   refer to the GDB manual for further instructions.
+  </p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id302151"></a>Connecting to the GDB Simulator</h3></div></div></div><p>
+    GDB includes a simulator that allows you to debug MIPS ELF 
+    applications without target hardware.  To start and connect to 
+    the simulator from within GDB, use this command:
+    </p><pre class="screen">(gdb) target sim</pre><p>
+   </p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="connecting-to-gdbserver"></a>Connecting to an External GDB Server</h3></div></div></div><p>
+    From within GDB, you can connect to a running <span><strong class="command">gdbserver</strong></span>
+    or other debugging stub that uses the GDB remote protocol using:
+    </p><pre class="screen">(gdb) target remote <em class="replaceable"><code>host</code></em>:<em class="replaceable"><code>port</code></em></pre><p>
+    where <em class="replaceable"><code>host</code></em> is the host name or IP address of the
+    machine the stub is running on, and <em class="replaceable"><code>port</code></em> is the
+    port number it is listening on for TCP connections.
+   </p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="connecting-with-mdi"></a>Connecting with MDI</h3></div></div></div><p>
+      Sourcery G++ Lite for MIPS ELF supports debugging with 
+      third-party simulators and hardware debug devices that implement
+      the MDI (Microprocessor Debug Interface) API.
+    </p><p>
+      Before you can connect to a target using the MDI API, 
+      you must tell GDB which shared library or DLL to load for your 
+      simulator or device, and set up parameters to select your MDI target.  
+      This can be done either by means of environment variables or
+      GDB commands.  For example, you may want to put the GDB configuration
+      commands in your <code class="filename">.gdbinit</code> file, which
+      is loaded automatically when you start GDB.
+    </p><p>
+      This section describes the basic MDI usage; refer to the documentation 
+      for your MDI simulator or debug device for details specific to that 
+      target.
+      Note, in particular, that some MDI targets may require you to set up 
+      a configuration file and/or license in addition to the steps given here.
+    </p><p>
+      In order to tell GDB which MDI library to load, on Linux hosts you 
+      should add the directory containing the shared library files 
+      to your <code class="envar">LD_LIBRARY_PATH</code> environment variable.  
+      On Windows hosts, add the directory containing the DLLs to your
+      <code class="envar">PATH</code> environment variable.  
+      Then, either set the environment variable
+      <code class="envar">GDBMDILIB</code> to the base name of the MDI library 
+      before starting GDB, or select the library within GDB using the command:
+      </p><pre class="screen">(gdb) set mdi library <em class="replaceable"><code>name</code></em></pre><p>
+    </p><p>
+      To verify that your shared library configuration is correct,
+      you can query it from GDB for the devices it supports:
+      </p><pre class="screen">(gdb) show mdi devices</pre><p>
+    </p><p>
+      Each device is identified by a target number and device number.
+      You can select the values you want to use with the following 
+      GDB commands:
+      </p><pre class="screen">(gdb) set mdi target <em class="replaceable"><code>targetnum</code></em>
+(gdb) set mdi device <em class="replaceable"><code>devicenum</code></em></pre><p>
+      Alternatively, you can set the environment variables
+      <code class="envar">GDBMDITARGET</code> and <code class="envar">GDBMDIDEVICE</code>.
+    </p><p>
+      At this point, you can establish a connection to the selected MDI 
+      device using:
+      </p><pre class="screen">(gdb) target mdi</pre><p>
+      Then you can load and run your program on the target.
+    </p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch05s03.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="chap-building.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="chap-cs3.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Running Applications in the Simulator </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Chapter 6. CS3&#8482;: The CodeSourcery Common Startup Code Sequence</td></tr></table></div></body></html>

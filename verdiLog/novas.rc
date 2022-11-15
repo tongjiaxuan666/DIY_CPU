@@ -224,9 +224,9 @@ autoSaveSession = FALSE
 TclAutoSource = 
 cmd_enter_form = FALSE
 SyncBrowserDir = TRUE
+version = Verdi3_L-2016.06-1
 SignalCaseInSensitive = FALSE
 ShowWndCtntDuringResizing = FALSE
-version = Verdi3_L-2016.06-1
 [GlobalProp]
 ErrWindow_Font = Helvetica_M_R_12
 [Globals]
@@ -351,7 +351,7 @@ savePropDtl = TRUE
 [QtDialog]
 QwInfoMsgDlg = 506,338,750,250
 QwWarnMsgDlg = 682,415,600,250
-QwUserAskDlg = 719,567,324,130
+QwUserAskDlg = 719,623,324,130
 [Relationship]
 hideRecursiceNode = FALSE
 [Session Cache]
@@ -359,7 +359,7 @@ hideRecursiceNode = FALSE
 3 = string (session file name)
 4 = string (session file name)
 5 = string (session file name)
-1 = /home/zzy/DIY_CPU/verdiLog/novas_autosave.ses
+1 = /home/tjx/DIY_CPU/verdiLog/novas_autosave.ses
 [Simulation]
 scsPath = scsim
 scsOption = 
@@ -532,7 +532,7 @@ pdmlCommand = ID_BLACK
 pdmlMacro = ID_BLACK
 font = COURIER12
 [Text.1]
-viewport = 65 24 1855 1056 45
+viewport = 65 24 2495 1416 45
 [TextPrinter]
 Orientation = Landscape
 Indicator = FALSE
@@ -632,7 +632,7 @@ scope_to_save_with_macro
 open_file_dir
 open_rc_file_dir
 getSignalForm = 0 0 800 479 100 30 100 30
-viewPort = 0 28 1855 420 293 65
+viewPort = 0 28 2495 612 293 65
 signalSpacing = 5
 digitalSignalHeight = 15
 analogSignalHeight = 98
@@ -852,7 +852,7 @@ maskIsolation = FALSE
 maskRetention = FALSE
 maskDrivingPowerOff = FALSE
 maskToggle = FALSE
-autoBackupSignals = off 5 "\"/home/zzy/DIY_CPU/verdiLog\"" "\"novas_autosave_sig\""
+autoBackupSignals = off 5 "\"/home/tjx/DIY_CPU/verdiLog\"" "\"250\""
 signal_rc_attribute = 65535
 signal_rc_alias_attribute = 0
 ConvertAttr1 = -inc FALSE
@@ -880,7 +880,8 @@ curveWindow_Drag&Drop_Mode = TRUE
 hspiceIncOpenMode = TRUE
 pcSelectMode = TRUE
 hierarchyDelimiter = /
-RecentFile1 = "\"/home/zzy/DIY_CPU/tb.fsdb\""
+RecentFile1 = "\"/home/tjx/DIY_CPU/tb.fsdb\""
+RecentFile2 = "\"/home/zzy/DIY_CPU/tb.fsdb\""
 open_file_time_range = FALSE
 value_window_aligment = Right
 signal_window_alignment = Auto
@@ -966,7 +967,7 @@ InputPinStatus = 1
 OutputPinStatus = 2
 RevisedComponentColor = ID_BLUE5
 SpareCellColor = ID_RED5
-UserName = zzy
+UserName = tjx
 CommentFormat = Novas ECO updated by ${UserName} ${Date} ${Time}
 PrefixN = eco_n
 PrefixP = eco_p
@@ -1143,7 +1144,7 @@ AddImportArgument = FALSE
 LineBreakWithScope = TRUE
 StopAfterCompileOption = -s
 [wave.0]
-viewPort = 0 28 1855 420 293 65
+viewPort = 0 28 2495 612 293 65
 [wave.1]
 viewPort = 127 219 960 332 100 65
 [wave.2]

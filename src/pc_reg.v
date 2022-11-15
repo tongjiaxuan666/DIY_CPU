@@ -1,4 +1,4 @@
-`timescale 1ns/1ns
+`timescale 1ns/1ps
 `include "./src/defines.v"
 module pc_reg (
     input wire    clk,

@@ -1,0 +1,68 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Linker Scripts</title><link rel="stylesheet" href="cs.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.69.1"><link rel="start" href="index.html" title="Sourcery G++ Lite"><link rel="up" href="chap-cs3.html" title="Chapter 6. CS3&#8482;: The CodeSourcery Common Startup Code Sequence"><link rel="prev" href="sec-cs3-interrupts.html" title="Interrupt Vectors and Handlers"><link rel="next" href="sec-cs3-supported-boards.html" title="Supported Boards for MIPS ELF"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Linker Scripts</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="sec-cs3-interrupts.html">Prev</a> </td><th width="60%" align="center">Chapter 6. CS3&#8482;: The CodeSourcery Common Startup Code Sequence</th><td width="20%" align="right"> <a accesskey="n" href="sec-cs3-supported-boards.html">Next</a></td></tr></table><hr></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="sec-cs3-linker-scripts"></a>Linker Scripts</h2></div></div></div><p>
+      CS3 provides linker scripts for each board that is supported.
+      Each board may be used in a number of different configurations,
+      and these are reflected in the linker script name.  The linker
+      scripts are named
+      <code class="filename"><em class="replaceable"><code>board</code></em><em class="replaceable"><code>-profile</code></em><em class="replaceable"><code>-hosted</code></em>.ld</code>, 
+      where <em class="replaceable"><code>board</code></em> is the name of the
+      board, <em class="replaceable"><code>profile</code></em> describes the
+      memory arrangement used and <em class="replaceable"><code>-hosted</code></em>
+      indicates whether semihosting is provided.
+    </p><div class="caution" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Caution</h3><p>
+        If you do not explicitly specify a linker script, Sourcery G++
+        produces a link error, preventing you from creating an
+        executable program.
+      </p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id303474"></a>Program and Data Placement</h3></div></div></div><p>
+        Many boards have both RAM and ROM (flash) memory devices.  CS3
+        provides distinct linker scripts to place the application either
+        entirely in RAM, or in ROM where data is initialized during the
+        C initialization phase.
+      </p><p>
+        Some boards have very small amounts of RAM memory.  If you use
+        large library functions (such as <code class="function">printf</code> and
+        <code class="function">malloc</code>), you may overflow the available
+        memory.  You may need to use the ROM-based linker scripts for
+        such programs, so that the program itself is stored in ROM.  You
+        may be able to reduce the total amount of memory used by your
+        program by replacing portions of the Sourcery G++ runtime library
+        and/or startup code.
+      </p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sec-cs3-semihosting"></a>Semihosting</h3></div></div></div><p>
+        CS3 is designed to support boards where there may be no
+        operating system.  To allow functions like
+        <code class="function">open</code> and <code class="function">write</code> to
+        work, a <em class="firstterm">semihosting</em> feature is
+        supported, in conjunction with the debugger.
+      </p><p>
+        With semihosting enabled, these system calls are translated
+        into equivalent function calls on your host system.  You can
+        only use these function calls while connected to the debugger;
+        if you try to use them when disconnected from the debugger,
+        you will get a hardware exception.
+      </p><p>
+        A good use of semihosting is to display debugging messages.  For
+        example, this program prints a message on the standard error
+        stream on the host:
+        </p><pre class="programlisting">#include &lt;unistd.h&gt;
+
+int main () {
+  write (STDERR_FILENO, "Hello, world!\n", 14);
+  return 0;
+}</pre><p>
+      </p><p>
+        The hosted CS3 linker scripts provide the semihosting support,
+        and as such programs linked with them may only be run with the
+        debugger.  The unhosted CS3 linker scripts provide stub
+        versions of the system calls, which return an appropriate
+        error value in <code class="varname">errno</code>.  If such a stub
+        system call is required in the executable, the linker also
+        produces a warning.  Such a warning may indicate that you have
+        left debugging code active, and that your executable is larger
+        than it might need to be.
+      </p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id303565"></a>Choosing a Linker Script from the Command Line</h3></div></div></div><p>
+        From the command line, you must add <code class="option">-T
+        <em class="replaceable"><code>script</code></em></code> to your linking
+        command, where <em class="replaceable"><code>script</code></em> is the
+        appropriate linker script.  For example, if you are using a
+        Malta 24Kc board, you could link with <code class="option">-T
+        malta-24kc-ram-hosted.ld</code>.
+      </p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="sec-cs3-interrupts.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="chap-cs3.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="sec-cs3-supported-boards.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Interrupt Vectors and Handlers </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Supported Boards for MIPS ELF</td></tr></table></div></body></html>

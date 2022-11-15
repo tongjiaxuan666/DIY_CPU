@@ -1,0 +1,43 @@
+{
+    "Modules": {
+        "...MASTER...": {},
+        "std": {
+            "Compiled": "Yes",
+            "Compiled Times": 10
+        },
+        "openmips_min_sopc_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 10
+        }
+    },
+    "CompUnits": {
+        "gvrSa_d": {
+            "bytes": 40558,
+            "out": "gvrSa_d.o",
+            "mod": "openmips_min_sopc_tb",
+            "mode": 4,
+            "archive": "archive.9/_6184_archive_1.a",
+            "checksum": 0
+        }
+    },
+    "reusePaths": {
+        "amcQw_d": {
+            "icPath": "csrc"
+        },
+        "reYIK_d": {
+            "icPath": "csrc"
+        }
+    },
+    "ObjArchives": [
+        {
+            "archive": "archive.9/_6184_archive_1.a",
+            "size": 40558,
+            "objects": [
+                [
+                    "gvrSa_d.o",
+                    40558
+                ]
+            ]
+        }
+    ]
+}

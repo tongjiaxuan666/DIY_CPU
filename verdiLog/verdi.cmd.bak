@@ -1,116 +1,373 @@
+verdiWindowResize -win $_Verdi_1 "65" "24" "2495" "1416"
 debImport "-f" "filelist.f"
-debLoadSimResult /home/zzy/DIY_CPU/tb.fsdb
+debLoadSimResult /home/tjx/DIY_CPU/tb.fsdb
 wvCreateWindow
 verdiDockWidgetDisplay -dock widgetDock_WelcomePage
 verdiDockWidgetHide -dock widgetDock_WelcomePage
 srcHBSelect "openmips_min_sopc_tb.openmips_min_sopc0" -win $_nTrace1
+srcHBSelect "openmips_min_sopc_tb.openmips_min_sopc0.openmips0" -win $_nTrace1
+srcSetScope -win $_nTrace1 "openmips_min_sopc_tb.openmips_min_sopc0.openmips0" \
+           -delim "."
+srcHBSelect "openmips_min_sopc_tb.openmips_min_sopc0.inst_rom0" -win $_nTrace1
+srcHBSelect "openmips_min_sopc_tb.openmips_min_sopc0.openmips0" -win $_nTrace1
+srcHBSelect "openmips_min_sopc_tb.openmips_min_sopc0" -win $_nTrace1
 srcSetScope -win $_nTrace1 "openmips_min_sopc_tb.openmips_min_sopc0" -delim "."
-srcHBSelect "openmips_min_sopc_tb.openmips_min_sopc0.openmips0" -win $_nTrace1
-srcSetScope -win $_nTrace1 "openmips_min_sopc_tb.openmips_min_sopc0.openmips0" \
-           -delim "."
-srcSelect -signal "wb_wdata_i" -win $_nTrace1
-srcAddSelectedToWave -win $_nTrace1
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoomIn -win $_nWave2
-wvZoomIn -win $_nWave2
-wvZoomIn -win $_nWave2
-srcSelect -signal "wb_wreg_i" -win $_nTrace1
-srcAddSelectedToWave -win $_nTrace1
 srcDeselectAll -win $_nTrace1
-srcSelect -signal "wb_wdata_i" -win $_nTrace1
-srcDeselectAll -win $_nTrace1
-srcSelect -signal "wb_wd_i" -win $_nTrace1
-srcAddSelectedToWave -win $_nTrace1
-srcDeselectAll -win $_nTrace1
-srcSelect -inst "regfile1" -win $_nTrace1
-srcDeselectAll -win $_nTrace1
-srcSelect -inst "regfile1" -win $_nTrace1
-srcAction -pos 89 2 5 -win $_nTrace1 -name "regfile1" -ctrlKey off
-srcDeselectAll -win $_nTrace1
-srcSelect -signal "regs\[waddr\]" -win $_nTrace1
+srcSelect -signal "inst" -win $_nTrace1
 srcAddSelectedToWave -win $_nTrace1
 wvZoomOut -win $_nWave2
 wvZoomOut -win $_nWave2
 wvZoomOut -win $_nWave2
 wvZoomIn -win $_nWave2
 wvZoomIn -win $_nWave2
-wvSetCursor -win $_nWave2 367315.645052 -snap {("G1" 5)}
-wvSetCursor -win $_nWave2 162677.600272 -snap {("G1" 5)}
-wvSetCursor -win $_nWave2 349308.676071 -snap {("G1" 5)}
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
 srcHBSelect "openmips_min_sopc_tb.openmips_min_sopc0.openmips0" -win $_nTrace1
 srcSetScope -win $_nTrace1 "openmips_min_sopc_tb.openmips_min_sopc0.openmips0" \
            -delim "."
 srcDeselectAll -win $_nTrace1
-srcSelect -inst "ex0" -win $_nTrace1
-srcAction -pos 122 2 1 -win $_nTrace1 -name "ex0" -ctrlKey off
-srcDeselectAll -win $_nTrace1
-srcDeselectAll -win $_nTrace1
-srcSelect -signal "wreg_o" -win $_nTrace1
+srcSelect -signal "reg1_data" -win $_nTrace1
 srcAddSelectedToWave -win $_nTrace1
+wvZoomOut -win $_nWave2
+wvZoomIn -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomIn -win $_nWave2
+wvZoomIn -win $_nWave2
 srcDeselectAll -win $_nTrace1
-srcSelect -signal "wreg_i" -win $_nTrace1
+srcSelect -signal "reg2_data" -win $_nTrace1
 srcAddSelectedToWave -win $_nTrace1
+srcHBSelect "openmips_min_sopc_tb.openmips_min_sopc0.openmips0.id0" -win \
+           $_nTrace1
+srcHBSelect "openmips_min_sopc_tb.openmips_min_sopc0.openmips0.id0" -win \
+           $_nTrace1
+srcHBSelect "openmips_min_sopc_tb.openmips_min_sopc0.openmips0.id0" -win \
+           $_nTrace1
+srcSetScope -win $_nTrace1 \
+           "openmips_min_sopc_tb.openmips_min_sopc0.openmips0.id0" -delim "."
 srcHBSelect "openmips_min_sopc_tb.openmips_min_sopc0.openmips0" -win $_nTrace1
 srcHBSelect "openmips_min_sopc_tb.openmips_min_sopc0.openmips0" -win $_nTrace1
 srcSetScope -win $_nTrace1 "openmips_min_sopc_tb.openmips_min_sopc0.openmips0" \
            -delim "."
+wvSelectSignal -win $_nWave2 {( "G1" 2 )} 
+wvSelectSignal -win $_nWave2 {( "G1" 2 )} 
+wvSelectSignal -win $_nWave2 {( "G1" 2 )} 
+wvSetPosition -win $_nWave2 {("G1" 2)}
+wvExpandBus -win $_nWave2 {("G1" 2)}
+wvSetPosition -win $_nWave2 {("G1" 35)}
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvScrollDown -win $_nWave2 8
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 8
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollDown -win $_nWave2 13
+wvScrollUp -win $_nWave2 13
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvSelectSignal -win $_nWave2 {( "G1" 2 )} 
+wvSelectSignal -win $_nWave2 {( "G1" 2 )} 
+wvSetPosition -win $_nWave2 {("G1" 2)}
+wvCollapseBus -win $_nWave2 {("G1" 2)}
+wvSetPosition -win $_nWave2 {("G1" 2)}
+wvSetPosition -win $_nWave2 {("G1" 3)}
+wvSelectSignal -win $_nWave2 {( "G1" 3 )} 
+wvExpandBus -win $_nWave2 {("G1" 3)}
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvSelectSignal -win $_nWave2 {( "G1" 4 )} 
+wvScrollDown -win $_nWave2 10
+wvScrollUp -win $_nWave2 11
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvSelectSignal -win $_nWave2 {( "G1" 2 )} 
+wvSetPosition -win $_nWave2 {("G1" 2)}
+wvExpandBus -win $_nWave2 {("G1" 2)}
+wvSetPosition -win $_nWave2 {("G1" 67)}
+wvScrollUp -win $_nWave2 10
+wvSelectSignal -win $_nWave2 {( "G1" 2 )} 
+wvSelectSignal -win $_nWave2 {( "G1" 2 )} 
+wvSelectSignal -win $_nWave2 {( "G1" 2 )} 
+wvSetPosition -win $_nWave2 {("G1" 2)}
+wvCollapseBus -win $_nWave2 {("G1" 2)}
+wvSetPosition -win $_nWave2 {("G1" 2)}
+wvSetPosition -win $_nWave2 {("G1" 35)}
+wvSelectSignal -win $_nWave2 {( "G1" 3 )} 
+wvSetPosition -win $_nWave2 {("G1" 3)}
+wvCollapseBus -win $_nWave2 {("G1" 3)}
+wvSetPosition -win $_nWave2 {("G1" 3)}
+srcHBSelect "openmips_min_sopc_tb.openmips_min_sopc0.openmips0" -win $_nTrace1
+srcSetScope -win $_nTrace1 "openmips_min_sopc_tb.openmips_min_sopc0.openmips0" \
+           -delim "."
 srcDeselectAll -win $_nTrace1
+srcSelect -signal "ex_wreg_o" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "mem_wreg_o" -win $_nTrace1
+srcAction -pos 78 4 4 -win $_nTrace1 -name "mem_wreg_o" -ctrlKey off
+srcAddSelectedToWave -win $_nTrace1
+srcBackwardHistory -win $_nTrace1
+srcHBSelect "openmips_min_sopc_tb.openmips_min_sopc0.openmips0.mem0" -win \
+           $_nTrace1
+srcHBSelect "openmips_min_sopc_tb.openmips_min_sopc0.openmips0" -win $_nTrace1
 srcDeselectAll -win $_nTrace1
 srcSelect -inst "id0" -win $_nTrace1
 srcAction -pos 69 2 2 -win $_nTrace1 -name "id0" -ctrlKey off
 srcDeselectAll -win $_nTrace1
-srcSelect -signal "wreg_o" -win $_nTrace1
+srcSelect -signal "inst_i\[31:26\]" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "op" -win $_nTrace1
 srcAddSelectedToWave -win $_nTrace1
 srcDeselectAll -win $_nTrace1
 srcSelect -signal "wd_o" -win $_nTrace1
 srcAddSelectedToWave -win $_nTrace1
 srcDeselectAll -win $_nTrace1
 srcSelect -signal "wreg_o" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "reg1_addr_o" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "reg2_addr_o" -win $_nTrace1
 srcAddSelectedToWave -win $_nTrace1
 srcHBSelect "openmips_min_sopc_tb.openmips_min_sopc0.openmips0" -win $_nTrace1
 srcSetScope -win $_nTrace1 "openmips_min_sopc_tb.openmips_min_sopc0.openmips0" \
            -delim "."
+srcHBSelect "openmips_min_sopc_tb.openmips_min_sopc0.inst_rom0" -win $_nTrace1
+srcSetScope -win $_nTrace1 "openmips_min_sopc_tb.openmips_min_sopc0.inst_rom0" \
+           -delim "."
+srcHBSelect "openmips_min_sopc_tb.openmips_min_sopc0.openmips0.ex0" -win \
+           $_nTrace1
+srcSetScope -win $_nTrace1 \
+           "openmips_min_sopc_tb.openmips_min_sopc0.openmips0.ex0" -delim "."
+srcHBSelect "openmips_min_sopc_tb.openmips_min_sopc0.openmips0" -win $_nTrace1
+srcSetScope -win $_nTrace1 "openmips_min_sopc_tb.openmips_min_sopc0.openmips0" \
+           -delim "."
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "pc" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "rom_ce_o" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "rom_data_i" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "id_pc_i" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "id_inst_i" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "mem_wreg_o" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "reg1_data" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcSelect -signal "reg1_read" -win $_nTrace1
+srcSelect -win $_nTrace1 -range {85 85 2 2 19 20} -backward
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "reg2_data" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "reg1_read" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "reg2_read" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "reg1_addr" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "reg2_addr" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "id_aluop_o" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "id_alusel_o" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "id_reg1_o" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+wvSetCursor -win $_nWave2 249851.800095 -snap {("G1" 22)}
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "id_reg2_o" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "id_wd_o" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 0
 srcDeselectAll -win $_nTrace1
 srcSelect -signal "id_wreg_o" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+wvSetCursor -win $_nWave2 309313.098058 -snap {("G1" 22)}
+wvZoomIn -win $_nWave2
+wvZoomIn -win $_nWave2
+srcHBSelect "openmips_min_sopc_tb.openmips_min_sopc0" -win $_nTrace1
+srcSetScope -win $_nTrace1 "openmips_min_sopc_tb.openmips_min_sopc0" -delim "."
+srcHBSelect "openmips_min_sopc_tb" -win $_nTrace1
+srcSetScope -win $_nTrace1 "openmips_min_sopc_tb" -delim "."
+srcHBSelect "openmips_min_sopc_tb" -win $_nTrace1
+srcSetScope -win $_nTrace1 "openmips_min_sopc_tb" -delim "."
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 0
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+srcHBSelect "openmips_min_sopc_tb.openmips_min_sopc0.openmips0.id0" -win \
+           $_nTrace1
+srcSetScope -win $_nTrace1 \
+           "openmips_min_sopc_tb.openmips_min_sopc0.openmips0.id0" -delim "."
 srcDeselectAll -win $_nTrace1
-srcSelect -signal "wb_wreg_i" -win $_nTrace1
-srcDeselectAll -win $_nTrace1
-srcSelect -signal "wb_wd_i" -win $_nTrace1
-srcDeselectAll -win $_nTrace1
-srcSelect -signal "wb_wdata_i" -win $_nTrace1
-srcDeselectAll -win $_nTrace1
-srcSelect -signal "wb_wd_i" -win $_nTrace1
-srcDeselectAll -win $_nTrace1
-srcDeselectAll -win $_nTrace1
-srcSelect -inst "id_ex0" -win $_nTrace1
-srcAction -pos 103 2 1 -win $_nTrace1 -name "id_ex0" -ctrlKey off
-srcDeselectAll -win $_nTrace1
-srcSelect -signal "ex_wreg" -win $_nTrace1
+srcSelect -signal "inst_i\[15:11\]" -win $_nTrace1
 srcAddSelectedToWave -win $_nTrace1
 srcDeselectAll -win $_nTrace1
-srcSelect -signal "clk" -win $_nTrace1
-srcAddSelectedToWave -win $_nTrace1
-wvSetCursor -win $_nWave2 250866.559702 -snap {("G1" 12)}
-srcDeselectAll -win $_nTrace1
-srcDeselectAll -win $_nTrace1
-srcDeselectAll -win $_nTrace1
-srcSelect -signal "id_reg1" -win $_nTrace1
+srcSelect -signal "inst_i\[25:21\]" -win $_nTrace1
 srcAddSelectedToWave -win $_nTrace1
 srcDeselectAll -win $_nTrace1
-srcSelect -signal "id_reg2" -win $_nTrace1
+srcSelect -signal "inst_i\[20:16\]" -win $_nTrace1
 srcAddSelectedToWave -win $_nTrace1
-wvSetCursor -win $_nWave2 228729.408105 -snap {("G1" 12)}
-wvSetCursor -win $_nWave2 249444.907765 -snap {("G1" 12)}
-wvSetCursor -win $_nWave2 271175.873094 -snap {("G1" 12)}
-wvSetCursor -win $_nWave2 290875.907085 -snap {("G1" 11)}
-wvSetCursor -win $_nWave2 229947.966908 -snap {("G1" 12)}
 srcDeselectAll -win $_nTrace1
-srcSelect -signal "ex_wreg" -win $_nTrace1
-srcDeselectAll -win $_nTrace1
-srcSelect -signal "ex_reg2" -win $_nTrace1
-srcDeselectAll -win $_nTrace1
-srcSelect -signal "ex_wd" -win $_nTrace1
+srcSelect -signal "wreg_o" -win $_nTrace1
 srcAddSelectedToWave -win $_nTrace1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+srcHBSelect "openmips_min_sopc_tb" -win $_nTrace1
+srcHBSelect "openmips_min_sopc_tb" -win $_nTrace1
+srcHBSelect "openmips_min_sopc_tb" -win $_nTrace1
+srcSetScope -win $_nTrace1 "openmips_min_sopc_tb" -delim "."
+debExit

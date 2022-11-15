@@ -1,6 +1,14 @@
 `timescale 1ns/1ps
 `include "./src/defines.v"
 module id (
+    //处于执行阶段的指令运算结果
+    input wire ex_wreg_i,
+    input wire[`RegBus] ex_wdata_i,
+    input wire[`RegAddrBus] ex_wd_i,
+    //处于访存阶段指令运算结果
+    input wire mem_wreg_i,
+    input wire[`RegBus] mem_wdata_i,
+    input wire[`RegAddrBus] mem_wd_i,
     input wire     rst,
     input wire[`InstAddrBus] pc_i,
     input wire[`InstBus] inst_i,
@@ -80,9 +88,15 @@ always @(*) begin
     end //if
 end // always
 //stage two : confirm source data one
+//第五章增加了两种情况，如果Regfile模块读端口1或2读取的寄存器就是执行阶段要写的目的寄存器，那么直接把执行阶段的结果作为reg1_o的值
+//二是读取的寄存器就是访问存储器阶段要写的寄存器，那么直接将访问存储器的结果作为reg的值
 always @(*) begin
     if(rst == `RstEnable) begin
         reg1_o <= `ZeroWord;
+    end else if((reg1_read_o == 1'b1) && (ex_wreg_i == 1'b1) && (ex_wd_i == reg1_addr_o)) begin
+        reg1_o <= ex_wdata_i;
+    end else if((reg1_read_o == 1'b1) && (mem_wreg_i == 1'b1) && (mem_wd_i == reg1_addr_o)) begin
+        reg1_o <= mem_wdata_i;
     end else if(reg1_read_o == 1'b1) begin
         reg1_o <= reg1_data_i; // Regfile Readone as input
     end else if (reg1_read_o == 1'b0) begin
@@ -95,6 +109,10 @@ end
 always @(*) begin
     if(rst == `RstEnable) begin
         reg2_o <= `ZeroWord;
+    end else if((reg2_read_o == 1'b1) && (ex_wreg_i == 1'b1) && (ex_wd_i == reg2_addr_o)) begin
+        reg2_o <= ex_wdata_i;
+    end else if((reg2_read_o == 1'b1) && (mem_wreg_i == 1'b1) && (mem_wd_i == reg2_addr_o)) begin
+        reg2_o <= mem_wdata_i;
     end else if(reg2_read_o == 1'b1) begin
         reg2_o <= reg1_data_i; // Regfile Readone as input
     end else if (reg2_read_o == 1'b0) begin

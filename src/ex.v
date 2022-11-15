@@ -1,3 +1,5 @@
+`timescale 1ns/1ps
+`include "./src/defines.v"
 module ex (
     input wire rst,
     // from id to ex

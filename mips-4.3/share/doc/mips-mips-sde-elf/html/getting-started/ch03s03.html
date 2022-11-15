@@ -1,0 +1,201 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Sourcery G++ Lite Release Notes</title><link rel="stylesheet" href="cs.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.69.1"><link rel="start" href="index.html" title="Sourcery G++ Lite"><link rel="up" href="chap-release.html" title="Chapter 3. Sourcery G++ Lite for MIPS ELF"><link rel="prev" href="ch03s02.html" title="Using Flash Memory"><link rel="next" href="chap-installation.html" title="Chapter 4. Installation and Configuration"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Sourcery G++ Lite Release Notes</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch03s02.html">Prev</a> </td><th width="60%" align="center">Chapter 3. Sourcery G++ Lite for MIPS ELF</th><td width="20%" align="right"> <a accesskey="n" href="chap-installation.html">Next</a></td></tr></table><hr></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="id298832"></a>Sourcery G++ Lite Release Notes</h2></div></div></div><p>
+      This section documents Sourcery G++ Lite changes for each released revision.
+    </p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id298848"></a>Changes in Sourcery G++ Lite 4.3-81</h3></div></div></div><p><b>C++ named operators bug fix. </b>
+          A bug has been fixed that caused the compiler to crash in
+          some cases when the C++ operators <code class="code">and_eq</code>,
+          <code class="code">bitand</code>, <code class="code">bitor</code>, <code class="code">compl</code>,
+          <code class="code">not_eq</code>, <code class="code">or_eq</code> and
+          <code class="code">xor_eq</code> were used in contexts where the
+          preprocessor converts their names to strings.
+        </p><p><b>GDB <span><strong class="command">target extended-remote</strong></span> error. </b>
+	  A bug in GDB has been fixed that caused <span><strong class="command">target
+	  extended-remote</strong></span> to report <code class="literal">Remote failure
+	  reply: E01</code> if no remote program was running.
+	</p><p><b>GDB segment warning. </b>
+	  Some compilers produce binaries including uninitialized data
+	  regions, such as the stack and heap.  GDB incorrectly
+	  displayed the warning <code class="literal">Loadable segment
+	  "<em class="replaceable"><code>name</code></em>" outside of ELF
+	  segments</code> for such binaries; the warning has now
+	  been fixed.
+        </p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id298964"></a>Changes in Sourcery G++ Lite 4.3-59</h3></div></div></div><p><b>Setting breakpoints on Windows. </b>
+	  A bug in GDB on Microsoft Windows hosts has been fixed.  The bug
+	  caused setting breakpoints on a source line by using the file's
+	  full path to fail with <code class="literal">No source file named
+	  <em class="replaceable"><code>filename</code></em>.</code>
+	  
+	</p><p><b>
+         Handling of out-of-range values by <code class="function">strtof</code>
+        . </b>
+          The <code class="function">strtof</code> function now sets
+          <code class="varname">errno</code> to <code class="constant">ERANGE</code> when
+          the input is not representable as a <span class="type">float</span>, as
+          required by the ISO C standard.
+        </p><p><b>Printing casted values in GDB. </b>
+	  A GDB bug that caused incorrect output for expressions
+	  containing casts, such as in the
+	  <code class="literal">print *(Type *)ptr</code> command, has been fixed.
+	</p><p><b>Bug fix for objcopy/strip. </b>
+          An objcopy bug that corrupted COMDAT groups when creating new
+	  binaries has been fixed.  This bug also affected
+	  <span><strong class="command">strip -g</strong></span>.
+        </p><p><b>Bug fix for assembly listing. </b>
+	  A bug that caused the assembler to produce corrupted
+	  listings (via the <code class="option">-a</code> option) on Windows
+	  hosts has been fixed.
+        </p><p><b>DSP support. </b>
+	  The compiler now automatically enables support for the DSP ASE when the
+	  <code class="option">-march</code> option is used to specify a core in the 24KE, 34K,
+	  or 74K families.  It is no longer necessary to provide the
+	  <code class="option">-mdsp</code> option explicitly.
+	</p><p><b>GDB update. </b>
+	  The included version of GDB has been updated to
+	  6.8.50.20080821.  This update adds numerous bug fixes and
+	  new features, including support for decimal floating point,
+	   the new <span><strong class="command">find</strong></span> command to
+	  search memory, the new <code class="option">/m</code> (mixed
+	  source and assembly) option to the
+	  <span><strong class="command">disassemble</strong></span> command, and the new
+	  <span><strong class="command">macro define</strong></span> command to define C
+	  preprocessor macros interactively.
+        </p><p><b>PIE linking fix. </b>
+	  A bug in the GCC <code class="option">-fpie</code> and <code class="option">-fPIE</code>
+	  options has been fixed.  The bug caused linker errors referring
+	  to <code class="literal">R_MIPS_HI16</code>.
+	</p><p><b>Binutils support for DWARF Version 3. </b>
+	  The <span><strong class="command">addr2line</strong></span> command now supports
+	  binaries containing DWARF 3 debugging information.  The
+	  <span><strong class="command">ld</strong></span> command can display error messages
+	  with source locations for input files containing DWARF 3
+	  debugging information.
+	</p><p><b>GDB support for YAMON. </b>
+          GDB now supports debugging via the YAMON boot loader GDB
+          stub.  Consult YAMON documentation for details on enabling
+	  the GDB stub.
+        </p><p><b>GDB Support for MIPSsim on Windows. </b>
+	  A bug in the GDB support for MIPSsim on Microsoft Windows
+	  hosts has been fixed.  The bug caused the <code class="literal">target
+	  mdi</code> command to fail with the error <code class="literal">Cannot
+	  find MIPSsim config file template: mipssim.cfg</code>.
+	</p><p><b>CodeSourcery Common Startup Code Sequence. </b>
+          Support for CS3, CodeSourcery's unified startup scheme, has
+          been added to this release.  CS3 replaces the MIPS-provided
+          MDI startup code and linker scripts included in previous
+          releases.
+	  
+	  Refer to <a href="chap-cs3.html" title="Chapter 6. CS3&#8482;: The CodeSourcery Common Startup Code Sequence">Chapter 6, <i>CS3&#8482;: The CodeSourcery Common Startup Code Sequence</i></a> for more information
+	  about CS3, including details about the boards and linker
+	  scripts supported by this release.  Note that the Malta
+	  board configuration is usable by MIPSsim
+	  <span>
+	    and the included GDB simulator
+	  </span>
+	  as well as actual Malta hardware targets. 
+        </p><p><b>GDB display of source. </b>
+	  A bug has been fixed that prevented GDB from locating debug
+	  information in some cases.  The debugger failed to display
+	  source code for or step into the affected functions.
+	</p><p><b>FPU defaults. </b>
+ 	  The <code class="option">-ffast-math</code> option now causes subnormal
+ 	  numbers to be immediately flushed to zero.  It also sets the
+ 	  rounding mode to round-to-nearest.
+         </p><p><b>Connecting to the target using a pipe. </b>
+	  A bug in GDB's
+	  <span><strong class="command">target remote | <em class="replaceable"><code>program</code></em></strong></span>
+	  command has been fixed.  When launching the specified
+	  <em class="replaceable"><code>program</code></em> failed, the bug caused
+	  GDB to crash, hang, or give a message
+	  <code class="literal">Error: No Error</code>.
+	  
+	  
+	</p><p><b>Output files removed on error. </b>
+	  When GCC encounters an error, it now consistently removes
+	  any incomplete output files that it may have created.
+        </p><p><b>Placing bss-like regions in load regions. </b>
+          The linker no longer issues an incorrect error message when
+          a bss-like section is placed at specific load region.
+          The linker formerly incorrectly considered the section as
+          taking up space in the load region.
+        </p><p><b><code class="option">-mwarn-framesize=<em class="replaceable"><code>size</code></em></code> option. </b>
+          GCC has a new command-line option,
+          <code class="option">-mwarn-framesize=<em class="replaceable"><code>size</code></em></code>,
+          which causes warnings if any function's stack frame exceeds
+          the given <em class="replaceable"><code>size</code></em>.  This option is useful
+          when generating code for environments with limited or absent
+          stack, e.g., BIOS.
+        </p><p><b>Newlib manuals. </b>
+	  The documentation packaged with Sourcery G++ Lite now includes the
+	  Newlib C Library and Math Library manuals.
+        </p><p><b>GCC version 4.3.2. </b>
+          Sourcery G++ Lite for MIPS ELF is now based on GCC version 4.3.2.
+          For more information about changes from GCC version 4.2 that was
+          included in previous releases, see
+          <code class="uri">http://gcc.gnu.org/gcc-4.3/changes.html</code>.
+        </p><p><b>Spurious GDB error message fixed. </b>
+	  A spurious <code class="literal">Current thread went away!?</code>
+	  message is no longer generated when using GDB to debug
+	  programs running on cores that do not support hardware
+	  multi-threading. This problem was specific to the MDI
+	  target support in GDB.
+	</p><p><b>Unnecessary section removed. </b>
+          A linker bug that caused an unnecessary <code class="literal">.rel.dyn</code>
+	  section to be placed in the executable has been fixed.
+        </p><p><b>Linker bug fix for <code class="option">--gc-sections</code>. </b>
+	 A linker bug that caused certain linker-generated sections to be incorrectly
+	 omitted from the executable when the <code class="option">--gc-sections</code> option is
+	 used has been fixed.
+	</p><p><b>Errors after loading the debugged program. </b>
+          An intermittent GDB bug has been fixed.  The bug could cause
+	  a GDB internal error
+	  
+	  after the <span><strong class="command">load</strong></span> command.
+        </p><p><b>Bug fix for objdump on Windows. </b>
+          An objdump bug that caused the <code class="option">-S</code> option
+          not to work on Windows in some cases has been fixed.
+        </p><p><b>Persistent remote server connections. </b>
+	  A GDB bug has been fixed that caused the <span><strong class="command">target
+	  extended-remote</strong></span> command to fail to tell the
+	  remote server to make the connection persistent across
+	  program invocations.
+	</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id300035"></a>Changes in Sourcery G++ Lite 4.2-166</h3></div></div></div><p><b>No significant changes. </b>
+          There are no significant changes for MIPS ELF in
+          this release.
+        </p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id300058"></a>Changes in Sourcery G++ Lite 4.2-162</h3></div></div></div><p><b>No significant changes. </b>
+          There are no significant changes for MIPS ELF in
+          this release.
+        </p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id300081"></a>Changes in Sourcery G++ Lite 4.2-160</h3></div></div></div><p><b>MIPS SDE Kit. </b>
+          The SDE kit directory now includes all subdirectories.  The
+          SDE kit is in the <code class="filename">mips-sde-elf/kit</code>
+          subdirectory of your installation.
+        </p><p><b>Architecture level inference fix. </b>
+          The <code class="option">-march=4kp</code> and <code class="option">-march=4ksc</code> 
+          options now imply <code class="option">-mips32</code> and the 
+          <code class="option">-march=4ksd</code> option implies 
+          <code class="option">-mips32r2</code>. The erroneous option 
+          <code class="option">-march=4kf</code> has been removed.
+        </p><p><b>Flags fix. </b>
+          The <code class="option">-mips3d</code> and <code class="option">-mpaired-single</code> 
+          options can now be used with <code class="option">-mips32r2</code> as well as 
+          <code class="option">-mips64</code>.
+        </p><p><b>Program exit cleanup actions. </b>
+          A bug causing programs to fail to flush their buffers on exit has been
+          fixed.
+        </p><p><b>"Can't find matching LO16" linker error fixed. </b>
+	  An assembler bug that caused errors when linking files containing mixed MIPS16
+	  and non-MIPS16 code has been fixed. 
+        </p><p><b>Multilib matching fix. </b>
+          The <code class="option">-mips16e</code> option now causes the same multilibs 
+          to be used as the <code class="option">-mips16</code> option.
+        </p><p><b>Misaligned accesses to packed structures fix. </b>
+          A bug that caused GCC to generate misaligned accesses to
+          packed structures has been fixed.  
+        </p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id300260"></a>Changes in Sourcery G++ Lite 4.2-157</h3></div></div></div><p><b>MIPS SDE Examples. </b>
+          Sourcery G++ Lite now includes examples showing how to use the MIPS SDE Library.
+          You can find these examples in the <code class="filename">mips-sde-elf/examples/</code>
+          subdirectory of your installation.
+        </p><p><b><code class="literal">jalx</code> instruction. </b>
+        The assembler no longer reports an error if the <code class="literal">jalx</code>
+        instruction is used outside of MIPS16 mode.
+      </p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id300322"></a>Changes in Sourcery G++ Lite 4.2-127</h3></div></div></div><p><b>Initial release. </b>
+          This is the initial release for MIPS ELF.
+        </p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch03s02.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="chap-release.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="chap-installation.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Using Flash Memory </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Chapter 4. Installation and Configuration</td></tr></table></div></body></html>

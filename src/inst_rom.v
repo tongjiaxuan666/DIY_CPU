@@ -9,7 +9,7 @@ module inst_rom (
 reg[`InstBus] inst_mem[0:`InstMemNum - 1];
 // use file inst_rom.data to intialize the data reg
 initial begin
-    $readmemh("./src/inst_rom.data", inst_mem);
+    $readmemh("./src/TestAsm/inst_rom.data", inst_mem);
 end
 always @(*) begin
     if(ce == `ChipDisable) begin
