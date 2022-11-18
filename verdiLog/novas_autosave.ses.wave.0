@@ -2,7 +2,7 @@ Magic 271485
 Revision Verdi3_L-2016.06-1
 
 ; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
-viewPort 0 28 2239 516 293 65
+viewPort 0 28 1855 420 293 65
 
 ; File list:
 ; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
@@ -16,16 +16,16 @@ signalSpacing 5
 
 ; windowTimeUnit is used for zoom, cursor & marker
 ; waveform viewport range
-zoom 0.000000 905763.678890
-cursor 310000.000000
+zoom 203844.705085 718692.205085
+cursor 430000.000000
 marker 0.000000
 
 ; user define markers
 ; userMarker time_pos marker_name color linestyle
 ; visible top row signal index
-top 2
+top 1
 ; marker line index
-markerPos 80
+markerPos 33
 
 ; event list
 ; addEvent event_name event_expression
@@ -47,54 +47,7 @@ curSTATUS ByChange
 
 addGroup "G1"
 activeDirFile "" "/home/tjx/DIY_CPU/tb.fsdb"
-addSignal -h 15 -UNSIGNED -HEX /openmips_min_sopc_tb/openmips_min_sopc0/openmips0/id_reg1_o[31:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope id_reg2_o[31:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope reg1_data[31:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope reg2_data[31:0]
-addSignal -h 15 -holdScope clk
-addSignal -h 15 -holdScope rst
-addSignal -h 15 -UNSIGNED -HEX -holdScope pc[31:0]
-addSignal -h 15 -holdScope rom_ce_o
-addSignal -h 15 -UNSIGNED -HEX -holdScope rom_data_i[31:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope id_inst_i[31:0]
-addSignal -h 15 -holdScope ex_wreg_o
-addSignal -h 15 -UNSIGNED -HEX -holdScope ex_wdata_o[31:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope reg1_data[31:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope reg2_data[31:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope ex_wd_o[4:0]
-addSignal -h 15 -holdScope mem_wreg_o
-addSignal -h 15 -UNSIGNED -HEX -holdScope mem_wdata_o[31:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope mem_wd_o[4:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope reg1_data[31:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope reg2_data[31:0]
-addSignal -h 15 -holdScope reg1_read
-addSignal -h 15 -holdScope reg2_read
-addSignal -h 15 -UNSIGNED -HEX -holdScope reg1_addr[4:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope reg2_addr[4:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope id_aluop_o[7:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope id_alusel_o[2:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope id_reg1_o[31:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope id_reg2_o[31:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope id_wd_o[4:0]
-addSignal -h 15 -holdScope id_wreg_o
-addSignal -h 15 -UNSIGNED -HEX /openmips_min_sopc_tb/openmips_min_sopc0/openmips0/id0/inst_i[25:21]
-addSignal -h 15 -UNSIGNED -HEX -holdScope inst_i[20:16]
-addSignal -h 15 -UNSIGNED -HEX -holdScope inst_i[25:21]
-addSignal -h 15 -UNSIGNED -HEX -holdScope inst_i[31:0]
-addSignal -h 15 -UNSIGNED -HEX /openmips_min_sopc_tb/openmips_min_sopc0/openmips0/ex_wd_o[4:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope ex_wdata_o[31:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope mem_wdata_i[31:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope mem_wdata_o[31:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope wb_wdata_i[31:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope wb_wd_i[4:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope wb_wdata_i[31:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope wb_wd_i[4:0]
-addSignal -h 15 -holdScope wb_wreg_i
-addSignal -h 15 -UNSIGNED -HEX /openmips_min_sopc_tb/openmips_min_sopc0/openmips0/regfile1/rdata1[31:0]
-addSignal -h 15 -holdScope re1
-addSignal -h 15 -holdScope re1
-addSignal -h 15 -holdScope we
-addSignal -expanded -h 15 -UNSIGNED -HEX -holdScope regs[0:31]
+addSignal -expanded -h 15 -UNSIGNED -HEX /openmips_min_sopc_tb/openmips_min_sopc0/openmips0/regfile1/regs[0:31]
 addSignal -h 15 -UNSIGNED -HEX -holdScope regs[0][31:0]
 addSignal -h 15 -UNSIGNED -HEX -holdScope regs[1][31:0]
 addSignal -h 15 -UNSIGNED -HEX -holdScope regs[2][31:0]

@@ -351,7 +351,7 @@ savePropDtl = TRUE
 [QtDialog]
 QwInfoMsgDlg = 506,338,750,250
 QwWarnMsgDlg = 682,415,600,250
-QwUserAskDlg = 719,651,324,130
+QwUserAskDlg = 719,707,324,130
 [Relationship]
 hideRecursiceNode = FALSE
 [Session Cache]
@@ -532,7 +532,7 @@ pdmlCommand = ID_BLACK
 pdmlMacro = ID_BLACK
 font = COURIER12
 [Text.1]
-viewport = 65 24 2239 1223 45
+viewport = 65 24 1855 1056 45
 [TextPrinter]
 Orientation = Landscape
 Indicator = FALSE
@@ -632,7 +632,7 @@ scope_to_save_with_macro
 open_file_dir
 open_rc_file_dir
 getSignalForm = 0 0 800 479 100 30 100 30
-viewPort = 0 28 2239 516 293 65
+viewPort = 0 28 1855 420 293 65
 signalSpacing = 5
 digitalSignalHeight = 15
 analogSignalHeight = 98
@@ -1144,7 +1144,7 @@ AddImportArgument = FALSE
 LineBreakWithScope = TRUE
 StopAfterCompileOption = -s
 [wave.0]
-viewPort = 0 28 2239 516 293 65
+viewPort = 0 28 1855 420 293 65
 [wave.1]
 viewPort = 127 219 960 332 100 65
 [wave.2]

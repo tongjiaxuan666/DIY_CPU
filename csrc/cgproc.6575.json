@@ -1,0 +1,55 @@
+{
+    "Modules": {
+        "std": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        },
+        "...MASTER...": {},
+        "openmips_min_sopc_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        }
+    },
+    "CompUnits": {
+        "reYIK_d": {
+            "mode": 4,
+            "mod": "std",
+            "out": "reYIK_d.o",
+            "bytes": 33397,
+            "checksum": 0,
+            "archive": "archive.0/_6575_archive_1.a"
+        },
+        "amcQw_d": {
+            "mode": 4,
+            "mod": "...MASTER...",
+            "out": "objs/amcQw_d.o",
+            "bytes": 7403,
+            "checksum": 0
+        },
+        "gvrSa_d": {
+            "mode": 4,
+            "mod": "openmips_min_sopc_tb",
+            "out": "gvrSa_d.o",
+            "bytes": 45279,
+            "checksum": 0,
+            "archive": "archive.0/_6575_archive_1.a"
+        }
+    },
+    "ObjArchives": [
+        {
+            "archive": "archive.0/_6575_archive_1.a",
+            "size": 78676,
+            "objects": [
+                [
+                    "reYIK_d.o",
+                    33397
+                ],
+                [
+                    "gvrSa_d.o",
+                    45279
+                ]
+            ]
+        }
+    ],
+    "reusePaths": {}
+}

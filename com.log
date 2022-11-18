@@ -48,18 +48,16 @@ TimeScale is 1 ns / 1 ps
 Starting vcs inline pass...
 2 unique modules to generate
 2 modules and 0 UDP read. 
-	However, due to incremental compilation, only 1 module needs to be compiled. 
+recompiling package std
 recompiling module openmips_min_sopc_tb
-All of 1 modules done
+All of 2 modules done
 make[1]: Entering directory '/home/tjx/DIY_CPU/csrc'
 rm -f _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
-ld -shared  -o .//../simv.daidir//_csrc0.so objs/amcQw_d.o 
-rm -f _csrc0.so
 if [ -x ../simv ]; then chmod -x ../simv; fi
 g++-4.8  -o ../simv   -Wl,-rpath-link=./ -Wl,-rpath='$ORIGIN'/simv.daidir/ -Wl,-rpath=./simv.daidir/ \
 -Wl,-rpath='$ORIGIN'/simv.daidir//scsim.db.dir  -Wl,--no-as-needed -rdynamic -rdynamic \
-amcQwB.o   _6184_archive_1.so _prev_archive_1.so _csrc0.so  SIM_l.o  _csrc0.so   \
-rmapats_mop.o rmapats.o rmar.o  rmar_llvm_0_1.o rmar_llvm_0_0.o          /home/tjx/synopsys/vcs_2016.06/linux64/lib/libzerosoft_rt_stubs.so \
+amcQwB.o objs/amcQw_d.o   _6575_archive_1.so  SIM_l.o       rmapats_mop.o rmapats.o \
+rmar.o  rmar_llvm_0_1.o rmar_llvm_0_0.o          /home/tjx/synopsys/vcs_2016.06/linux64/lib/libzerosoft_rt_stubs.so \
 /home/tjx/synopsys/vcs_2016.06/linux64/lib/libvirsim.so /home/tjx/synopsys/vcs_2016.06/linux64/lib/liberrorinf.so \
 /home/tjx/synopsys/vcs_2016.06/linux64/lib/libsnpsmalloc.so /home/tjx/synopsys/verdi_2016.06-1/share/PLI/VCS/LINUX64/pli.a \
 /home/tjx/synopsys/vcs_2016.06/linux64/lib/libvcsnew.so /home/tjx/synopsys/vcs_2016.06/linux64/lib/libsimprofile.so \
@@ -76,7 +74,6 @@ Command: ./simv +v2k -nc -a com.log
 *Verdi3* : Enable Parallel Dumping.
 FSDB Dumper for VCS, Release Verdi3_L-2016.06-1, Linux x86_64/64bit, 07/10/2016
 (C) 1996 - 2016 by Synopsys, Inc.
-*Verdi3* FSDB WARNING: The FSDB file already exists. Overwriting the FSDB file may crash the programs that are using this file.
 *Verdi3* : Create FSDB file 'tb.fsdb'
 *Verdi3* : Begin traversing the scopes, layer (0).
 *Verdi3* : Enable +all dumping.
@@ -85,5 +82,5 @@ $finish called from file "./src/openmips_min_sopc_tb.v", line 16.
 $finish at simulation time             10195000
            V C S   S i m u l a t i o n   R e p o r t 
 Time: 10195000 ps
-CPU Time:      0.530 seconds;       Data structure size:   2.0Mb
-Tue Nov 15 16:19:52 2022
+CPU Time:      0.630 seconds;       Data structure size:   2.0Mb
+Fri Nov 18 11:25:14 2022

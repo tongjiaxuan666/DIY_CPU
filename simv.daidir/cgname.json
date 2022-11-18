@@ -1,4 +1,9 @@
 {
+    "...MASTER...": [
+        "SIM",
+        "amcQw",
+        "module"
+    ],
     "std": [
         "std",
         "reYIK",
@@ -7,11 +12,6 @@
     "openmips_min_sopc_tb": [
         "openmips_min_sopc_tb",
         "gvrSa",
-        "module"
-    ],
-    "...MASTER...": [
-        "SIM",
-        "amcQw",
         "module"
     ]
 }
