@@ -32,6 +32,13 @@
 `define EXE_SYNC  6'b001111
 `define EXE_PREF  6'b110011
 
+`define EXE_MOVZ  6'b001010
+`define EXE_MOVN  6'b001011
+`define EXE_MFHI  6'b010000
+`define EXE_MTHI  6'b010001
+`define EXE_MFLO  6'b010010
+`define EXE_MTLO  6'b010011
+
 `define EXE_NOP 6'b000000
 `define SSNOP 32'b00000000000000000000000001000000
 
@@ -55,11 +62,19 @@
 `define EXE_SRA_OP  8'b00000011
 `define EXE_SRAV_OP  8'b00000111
 
+`define EXE_MOVZ_OP  8'b00001010
+`define EXE_MOVN_OP  8'b00001011
+`define EXE_MFHI_OP  8'b00010000
+`define EXE_MTHI_OP  8'b00010001
+`define EXE_MFLO_OP  8'b00010010
+`define EXE_MTLO_OP  8'b00010011
+
 `define EXE_NOP_OP    8'b00000000
 
 //AluSel
 `define EXE_RES_LOGIC 3'b001
 `define EXE_RES_SHIFT 3'b010
+`define EXE_RES_MOVE 3'b011
 `define EXE_RES_NOP   3'b000
 //instruction memory about rom
 `define ZeroWord    32'h00000000

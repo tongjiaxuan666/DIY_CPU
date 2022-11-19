@@ -16,6 +16,7 @@ Command arguments:
         ./src/id_ex.v
         ./src/regfile.v
         ./src/mem_wb.v
+        ./src/hilo_reg.v
 
 Highest level modules:
 openmips_min_sopc_tb

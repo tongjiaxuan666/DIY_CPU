@@ -1,0 +1,99 @@
+{
+    "MlibObjs": {},
+    "LVLData": [
+        "SIM"
+    ],
+    "PrevCompiledModules": {},
+    "SIMBData": {
+        "out": "amcQwB.o",
+        "bytes": 101998
+    },
+    "NameTable": {
+        "...MASTER...": [
+            "SIM",
+            "amcQw",
+            "module"
+        ],
+        "std": [
+            "std",
+            "reYIK",
+            "module"
+        ],
+        "openmips_min_sopc_tb": [
+            "openmips_min_sopc_tb",
+            "gvrSa",
+            "module"
+        ]
+    },
+    "CurCompileUdps": {},
+    "CompileStrategy": "fullobj",
+    "stat": {
+        "ru_self_cgstart": {
+            "ru_utime_sec": 0.12560199999999999,
+            "ru_stime_sec": 0.05024,
+            "ru_nvcsw": 17,
+            "ru_maxrss_kb": 86612,
+            "ru_minflt": 6443,
+            "ru_majflt": 0,
+            "ru_nivcsw": 168
+        },
+        "ru_childs_end": {
+            "ru_utime_sec": 0.004646,
+            "ru_stime_sec": 0.0,
+            "ru_nvcsw": 1,
+            "ru_maxrss_kb": 18964,
+            "ru_minflt": 190,
+            "ru_majflt": 0,
+            "ru_nivcsw": 3
+        },
+        "ru_childs_cgstart": {
+            "ru_utime_sec": 0.004646,
+            "ru_stime_sec": 0.0,
+            "ru_nvcsw": 1,
+            "ru_maxrss_kb": 18964,
+            "ru_minflt": 190,
+            "ru_majflt": 0,
+            "ru_nivcsw": 3
+        },
+        "nMops": 3909,
+        "totalObjSize": 188077,
+        "CodeGen(%)": 40.283080317027135,
+        "nQuads": 1923,
+        "ru_self_end": {
+            "ru_utime_sec": 0.21032899999999999,
+            "ru_stime_sec": 0.071298,
+            "ru_nvcsw": 17,
+            "ru_maxrss_kb": 95104,
+            "ru_minflt": 8192,
+            "ru_majflt": 0,
+            "ru_nivcsw": 262
+        },
+        "mopSpeed": 46136.414602192926,
+        "quadSpeed": 22696.424988492454,
+        "mop/quad": 2.0327613104524183,
+        "outputSizePerQuad": 97.0,
+        "Frontend(%)": 59.716919682972865
+    },
+    "CurCompileModules": [
+        "...MASTER...",
+        "...MASTER...",
+        "std",
+        "std",
+        "openmips_min_sopc_tb",
+        "openmips_min_sopc_tb"
+    ],
+    "PEModules": [],
+    "CompileProcesses": [
+        "cgproc.6575.json"
+    ],
+    "Misc": {
+        "cwd": "/home/tjx/DIY_CPU",
+        "csrc": "csrc",
+        "csrc_abs": "/home/tjx/DIY_CPU/csrc",
+        "daidir": "simv.daidir",
+        "archive_dir": "archive.0",
+        "daidir_abs": "/home/tjx/DIY_CPU/simv.daidir",
+        "default_output_dir": "csrc"
+    },
+    "CompileStatus": "Successful"
+}

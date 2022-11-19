@@ -12,3 +12,4 @@
 ./src/id_ex.v
 ./src/regfile.v
 ./src/mem_wb.v
+./src/hilo_reg.v
