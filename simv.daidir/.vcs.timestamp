@@ -65,11 +65,11 @@ VCS_DEPTH=0
 VCS_ARG_ADDED_FOR_TMP=1
 VCS_ARCH_OVERRIDE=linux
 VCS_ARCH=linux64
-UPSTART_SESSION=unix:abstract=/com/ubuntu/upstart-session/1000/2423
+UPSTART_SESSION=unix:abstract=/com/ubuntu/upstart-session/1000/2382
 UNAME=/bin/uname
 TOOL_HOME=/home/tjx/synopsys/vcs_2016.06/linux64
 SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
-SESSION_MANAGER=local/tjx-virtual-machine:@/tmp/.ICE-unix/2739,unix/tjx-virtual-machine:/tmp/.ICE-unix/2739
+SESSION_MANAGER=local/tjx-virtual-machine:@/tmp/.ICE-unix/2928,unix/tjx-virtual-machine:/tmp/.ICE-unix/2928
 SESSIONTYPE=gnome-session
 SESSION=ubuntu
 SCRNAME=vcs
@@ -104,7 +104,7 @@ GDM_LANG=zh_CN
 GDMSESSION=ubuntu
 DESKTOP_SESSION=ubuntu
 DEFAULTS_PATH=/usr/share/gconf/ubuntu.default.path
-DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-VCKAdpdsVm
+DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-ASINkj2uA1
 COMPIZ_CONFIG_PROFILE=ubuntu
 CLUTTER_IM_MODULE=xim
 0
@@ -113,14 +113,14 @@ CLUTTER_IM_MODULE=xim
 1668845279 ./src/mem_wb.v
 1668413962 ./src/regfile.v
 1667570952 ./src/id_ex.v
-1668846351 ./src/defines.v
+1669018473 ./src/defines.v
 1668846375 ./src/openmips.v
 1668482465 ./src/inst_rom.v
-1668844312 ./src/id.v
+1669014628 ./src/id.v
 1668413962 ./src/if_id.v
 1668845026 ./src/ex_mem.v
 1667564766 ./src/openmips_min_sopc.v
-1668846186 ./src/ex.v
+1669018293 ./src/ex.v
 1668501563 ./src/openmips_min_sopc_tb.v
 1668413962 ./src/pc_reg.v
 1668845185 ./src/mem.v
@@ -133,4 +133,4 @@ CLUTTER_IM_MODULE=xim
 1464147272 /home/tjx/synopsys/vcs_2016.06/linux64/lib/liberrorinf.so
 1464147248 /home/tjx/synopsys/vcs_2016.06/linux64/lib/libsnpsmalloc.so
 1468144468 /home/tjx/synopsys/verdi_2016.06-1/share/PLI/VCS/LINUX64/pli.a
-1668846423 simv.daidir
+1669018494 simv.daidir

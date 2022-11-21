@@ -4,14 +4,14 @@
         "reYIK",
         "module"
     ],
-    "...MASTER...": [
-        "SIM",
-        "amcQw",
-        "module"
-    ],
     "openmips_min_sopc_tb": [
         "openmips_min_sopc_tb",
         "gvrSa",
+        "module"
+    ],
+    "...MASTER...": [
+        "SIM",
+        "amcQw",
         "module"
     ]
 }

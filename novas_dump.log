@@ -146,9 +146,9 @@ VTE_VERSION=4205
 SHELL=/bin/bash
 MAKEFLAGS=
 QT_LINUX_ACCESSIBILITY_ALWAYS_ON=1
-WINDOWID=58720266
+WINDOWID=54525962
 VCS_LOG_FILE=com.log
-UPSTART_SESSION=unix:abstract=/com/ubuntu/upstart-session/1000/2423
+UPSTART_SESSION=unix:abstract=/com/ubuntu/upstart-session/1000/2382
 GNOME_KEYRING_CONTROL=
 GTK_MODULES=gail:atk-bridge:unity-gtk-module
 LC_ALL=C
@@ -164,7 +164,7 @@ VCS_MX_HOME_INTERNAL=1
 SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
 MAKELEVEL=1
 DEFAULTS_PATH=/usr/share/gconf/ubuntu.default.path
-SESSION_MANAGER=local/tjx-virtual-machine:@/tmp/.ICE-unix/2739,unix/tjx-virtual-machine:/tmp/.ICE-unix/2739
+SESSION_MANAGER=local/tjx-virtual-machine:@/tmp/.ICE-unix/2928,unix/tjx-virtual-machine:/tmp/.ICE-unix/2928
 OVA_UUM=0
 MFLAGS=
 VCS_MODE_FLAG=64
@@ -190,7 +190,7 @@ VMR_MODE_FLAG=64
 LM_LICENSE_FILE=27000@tjx-virtual-machine
 GDMSESSION=ubuntu
 VCS_ARG_ADDED_FOR_TMP=1
-SNPS_VCS_TMPDIR=/tmp/vcs_20221119082619_27991
+SNPS_VCS_TMPDIR=/tmp/vcs_20221121081442_6517
 GTK2_MODULES=overlay-scrollbar
 SESSIONTYPE=gnome-session
 SHLVL=2
@@ -203,7 +203,7 @@ LOGNAME=tjx
 XDG_SESSION_DESKTOP=ubuntu
 MAKE_TERMERR=/dev/pts/2
 QT4_IM_MODULE=fcitx
-DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-VCKAdpdsVm
+DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-ASINkj2uA1
 XDG_DATA_DIRS=/usr/share/ubuntu:/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop
 LESSOPEN=| /usr/bin/lesspipe %s
 sysc_uni_pwd=/home/tjx/DIY_CPU
@@ -227,9 +227,9 @@ argv[2]=-nc
 argv[3]=-a
 argv[4]=com.log
 228 profile - 100
-          CPU/Mem usage: 3.350 sys,  0.370 user,  218.37M sys,  0.00M vm
+          CPU/Mem usage: 0.980 sys,  0.370 user,  218.40M sys,  0.00M vm
 229 VC callback profile - scalar:0 vector:0
-230 Sat Nov 19 16:26:50 2022
+230 Mon Nov 21 16:14:53 2022
 231 pliAppInit
 232 *Verdi3* : FSDB_GATE is set.
 233 *Verdi3* : FSDB_RTL is set.
@@ -249,33 +249,33 @@ argv[4]=com.log
 247 *Verdi3* : Enable +all dumping.
 248 *Verdi3* : End of traversing.
 249 fsdbDumpvars traverse var: profile - 
-          CPU/Mem usage: 8.790 sys,  0.560 user,  319.03M sys,  0.00M vm
-                   incr: 5.160 sys,  0.150 user,  20.31M sys,  0.00M vm
-                   accu: 5.160 sys,  0.150 user,  20.31M sys,  0.00M vm
-              accu incr: 5.160 sys,  0.150 user,  20.31M sys,  0.00M vm
+          CPU/Mem usage: 1.250 sys,  0.390 user,  319.07M sys,  0.00M vm
+                   incr: 0.250 sys,  0.010 user,  20.32M sys,  0.00M vm
+                   accu: 0.250 sys,  0.010 user,  20.32M sys,  0.00M vm
+              accu incr: 0.250 sys,  0.010 user,  20.32M sys,  0.00M vm
 
-          Count usage: 131301 var,  131165 idcode,  48 callback
-                 incr: 131301 var,  131165 idcode,  48 callback
-                 accu: 131301 var,  131165 idcode,  48 callback
-            accu incr: 131301 var,  131165 idcode,  48 callback
+          Count usage: 131312 var,  131176 idcode,  52 callback
+                 incr: 131312 var,  131176 idcode,  52 callback
+                 accu: 131312 var,  131176 idcode,  52 callback
+            accu incr: 131312 var,  131176 idcode,  52 callback
 250 VC callback profile - scalar:0 vector:0
-251 Sat Nov 19 16:26:59 2022
+251 Mon Nov 21 16:14:53 2022
 252 fsdbDumpvars: profile - 
-          CPU/Mem usage: 9.760 sys,  0.580 user,  327.27M sys,  0.00M vm
-                   incr: 0.970 sys,  0.020 user,  8.25M sys,  0.00M vm
-                   accu: 6.130 sys,  0.170 user,  28.55M sys,  0.00M vm
-              accu incr: 0.970 sys,  0.020 user,  8.25M sys,  0.00M vm
+          CPU/Mem usage: 1.470 sys,  0.390 user,  327.31M sys,  0.00M vm
+                   incr: 0.220 sys,  0.000 user,  8.25M sys,  0.00M vm
+                   accu: 0.470 sys,  0.010 user,  28.56M sys,  0.00M vm
+              accu incr: 0.220 sys,  0.000 user,  8.25M sys,  0.00M vm
 
-          Count usage: 131301 var,  131165 idcode,  48 callback
+          Count usage: 131312 var,  131176 idcode,  52 callback
                  incr: 0 var,  0 idcode,  0 callback
-                 accu: 131301 var,  131165 idcode,  48 callback
+                 accu: 131312 var,  131176 idcode,  52 callback
             accu incr: 0 var,  0 idcode,  0 callback
-253 VC callback profile - scalar:13 vector:131136
-254 Sat Nov 19 16:27:00 2022
+253 VC callback profile - scalar:14 vector:131139
+254 Mon Nov 21 16:14:53 2022
 255 End of simulation at 10195000
-256 VC callback profile - scalar:1084 vector:132356
-257 Sat Nov 19 16:27:01 2022
+256 VC callback profile - scalar:1096 vector:132925
+257 Mon Nov 21 16:14:54 2022
 258 Parallel profile    -  Flush:3 Expand:0 ProduceWait:0 ConsumerWait:0 BlockUsed:0
-259                        ProduceTime:11.012531076 ConsumerTime:0.000000000 Buffer:64MB
+259                        ProduceTime:1.963534836 ConsumerTime:0.000000000 Buffer:64MB
 260 SimExit
 261 Sim process exit
