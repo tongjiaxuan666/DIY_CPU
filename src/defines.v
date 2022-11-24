@@ -56,6 +56,11 @@
 `define EXE_MULTU  6'b011001
 `define EXE_MUL  6'b000010
 
+`define EXE_MADD  6'b000000
+`define EXE_MADDU  6'b000001
+`define EXE_MSUB  6'b000100
+`define EXE_MSUBU  6'b000101
+
 `define EXE_NOP 6'b000000
 `define SSNOP 32'b00000000000000000000000001000000
 
@@ -106,6 +111,10 @@
 `define EXE_MULT_OP  8'b00011000
 `define EXE_MULTU_OP  8'b00011001
 `define EXE_MUL_OP  8'b10101001
+`define EXE_MADD_OP  8'b10100110
+`define EXE_MADDU_OP  8'b10101000
+`define EXE_MSUB_OP  8'b10101010
+`define EXE_MSUBU_OP  8'b10101011
 
 
 
@@ -135,3 +144,7 @@
 `define RegNum        32 //the num of reg
 `define RegNumLog2    5 //the num of common reg
 `define NOPRegAddr    5'b00000
+
+//*********************** ctrl.v
+`define Stop    1'b1 //stop
+`define NoStop  1'b0 //continue

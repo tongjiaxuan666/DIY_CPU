@@ -1,0 +1,85 @@
+{
+    "ObjArchives": [
+        {
+            "size": 85663,
+            "archive": "archive.5/_4432_archive_1.a",
+            "objects": [
+                [
+                    "gvrSa_d.o",
+                    85663
+                ]
+            ]
+        }
+    ],
+    "CompUnits": {
+        "gvrSa_d": {
+            "checksum": 0,
+            "mod": "openmips_min_sopc_tb",
+            "out": "gvrSa_d.o",
+            "bytes": 85663,
+            "mode": 4,
+            "archive": "archive.5/_4432_archive_1.a"
+        }
+    },
+    "Modules": {
+        "...MASTER...": {},
+        "mem_wb": {
+            "Compiled": "Yes",
+            "Compiled Times": 3
+        },
+        "std": {
+            "Compiled": "Yes",
+            "Compiled Times": 6
+        },
+        "inst_rom": {
+            "Compiled": "Yes",
+            "Compiled Times": 3
+        },
+        "mem": {
+            "Compiled": "Yes",
+            "Compiled Times": 3
+        },
+        "openmips_min_sopc_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 6
+        },
+        "ex_mem": {
+            "Compiled": "Yes",
+            "Compiled Times": 3
+        },
+        "hilo_reg": {
+            "Compiled": "Yes",
+            "Compiled Times": 3
+        },
+        "ctrl": {
+            "Compiled": "Yes",
+            "Compiled Times": 3
+        }
+    },
+    "reusePaths": {
+        "FSbWZ_d": {
+            "icPath": "csrc"
+        },
+        "amcQw_d": {
+            "icPath": "csrc"
+        },
+        "yUwqV_d": {
+            "icPath": "csrc"
+        },
+        "usA8F_d": {
+            "icPath": "csrc"
+        },
+        "reYIK_d": {
+            "icPath": "csrc"
+        },
+        "K7u6h_d": {
+            "icPath": "csrc"
+        },
+        "vnxvv_d": {
+            "icPath": "csrc"
+        },
+        "FzTxA_d": {
+            "icPath": "csrc"
+        }
+    }
+}

@@ -1,82 +1,144 @@
 {
+    "PEModules": [],
+    "CompileStrategy": "fullobj",
+    "stat": {
+        "outputSizePerQuad": 36.0,
+        "ru_self_cgstart": {
+            "ru_utime_sec": 0.27162700000000001,
+            "ru_majflt": 720,
+            "ru_stime_sec": 0.43762200000000001,
+            "ru_maxrss_kb": 86576,
+            "ru_nivcsw": 317,
+            "ru_minflt": 5266,
+            "ru_nvcsw": 795
+        },
+        "ru_self_end": {
+            "ru_utime_sec": 0.34944900000000001,
+            "ru_majflt": 765,
+            "ru_stime_sec": 0.46107799999999999,
+            "ru_maxrss_kb": 96172,
+            "ru_nivcsw": 357,
+            "ru_minflt": 7827,
+            "ru_nvcsw": 851
+        },
+        "ru_childs_cgstart": {
+            "ru_utime_sec": 0.0,
+            "ru_majflt": 0,
+            "ru_stime_sec": 0.0,
+            "ru_maxrss_kb": 0,
+            "ru_nivcsw": 0,
+            "ru_minflt": 0,
+            "ru_nvcsw": 0
+        },
+        "ru_childs_end": {
+            "ru_utime_sec": 0.0,
+            "ru_majflt": 0,
+            "ru_stime_sec": 0.0030569999999999998,
+            "ru_maxrss_kb": 18592,
+            "ru_nivcsw": 3,
+            "ru_minflt": 201,
+            "ru_nvcsw": 1
+        },
+        "nMops": 10565,
+        "nQuads": 5113,
+        "totalObjSize": 187792,
+        "mop/quad": 2.0663015841971446,
+        "mopSpeed": 135758.52586672149,
+        "quadSpeed": 65701.215594561945,
+        "Frontend(%)": 77.730083645968364,
+        "CodeGen(%)": 22.269916354031633
+    },
     "MlibObjs": {},
     "PrevCompiledModules": {
         "openmips_min_sopc_tb": {
             "gvrSa_d": {
-                "archive": "archive.2/_6978_archive_1.a",
-                "bytes": 57310,
-                "out": "gvrSa_d.o",
+                "bytes": 85483,
+                "checksum": 0,
                 "mod": "openmips_min_sopc_tb",
                 "mode": 4,
-                "checksum": 0
+                "archive": "archive.5/_4432_archive_1.a",
+                "out": "gvrSa_d.o"
+            }
+        },
+        "mem": {
+            "FSbWZ_d": {
+                "bytes": 9890,
+                "checksum": 0,
+                "mod": "mem",
+                "mode": 4,
+                "archive": "archive.5/_prev_archive_1.a",
+                "out": "FSbWZ_d.o"
+            }
+        },
+        "inst_rom": {
+            "vnxvv_d": {
+                "bytes": 9375,
+                "checksum": 0,
+                "mod": "inst_rom",
+                "mode": 4,
+                "archive": "archive.5/_prev_archive_1.a",
+                "out": "vnxvv_d.o"
             }
         },
         "std": {
             "reYIK_d": {
-                "archive": "archive.2/_prev_archive_1.a",
                 "bytes": 33397,
-                "out": "reYIK_d.o",
+                "checksum": 0,
                 "mod": "std",
                 "mode": 4,
-                "checksum": 0
+                "archive": "archive.5/_prev_archive_1.a",
+                "out": "reYIK_d.o"
+            }
+        },
+        "mem_wb": {
+            "usA8F_d": {
+                "bytes": 11717,
+                "checksum": 0,
+                "mod": "mem_wb",
+                "mode": 4,
+                "archive": "archive.5/_prev_archive_1.a",
+                "out": "usA8F_d.o"
             }
         },
         "...MASTER...": {
             "amcQw_d": {
                 "bytes": 7403,
-                "out": "objs/amcQw_d.o",
+                "checksum": 0,
                 "mod": "...MASTER...",
                 "mode": 4,
-                "checksum": 0
+                "out": "objs/amcQw_d.o"
+            }
+        },
+        "ctrl": {
+            "FzTxA_d": {
+                "bytes": 8143,
+                "checksum": 0,
+                "mod": "ctrl",
+                "mode": 4,
+                "archive": "archive.5/_prev_archive_1.a",
+                "out": "FzTxA_d.o"
+            }
+        },
+        "hilo_reg": {
+            "yUwqV_d": {
+                "bytes": 8718,
+                "checksum": 0,
+                "mod": "hilo_reg",
+                "mode": 4,
+                "archive": "archive.5/_prev_archive_1.a",
+                "out": "yUwqV_d.o"
+            }
+        },
+        "ex_mem": {
+            "K7u6h_d": {
+                "bytes": 13752,
+                "checksum": 0,
+                "mod": "ex_mem",
+                "out": "K7u6h_d.o",
+                "mode": 4,
+                "archive": "archive.5/_prev_archive_1.a"
             }
         }
-    },
-    "stat": {
-        "Frontend(%)": 67.833226505509273,
-        "ru_self_cgstart": {
-            "ru_utime_sec": 0.222242,
-            "ru_stime_sec": 0.24891199999999999,
-            "ru_maxrss_kb": 86156,
-            "ru_nivcsw": 284,
-            "ru_minflt": 5400,
-            "ru_nvcsw": 173,
-            "ru_majflt": 129
-        },
-        "ru_childs_cgstart": {
-            "ru_utime_sec": 0.0,
-            "ru_stime_sec": 0.0,
-            "ru_maxrss_kb": 0,
-            "ru_nivcsw": 0,
-            "ru_minflt": 0,
-            "ru_nvcsw": 0,
-            "ru_majflt": 0
-        },
-        "mopSpeed": 84231.601320833506,
-        "nMops": 8877,
-        "nQuads": 4355,
-        "ru_childs_end": {
-            "ru_utime_sec": 0.0031649999999999998,
-            "ru_stime_sec": 0.0063299999999999997,
-            "ru_maxrss_kb": 18220,
-            "ru_nivcsw": 10,
-            "ru_minflt": 201,
-            "ru_nvcsw": 1,
-            "ru_majflt": 0
-        },
-        "ru_self_end": {
-            "ru_utime_sec": 0.32762999999999998,
-            "ru_stime_sec": 0.40626200000000001,
-            "ru_maxrss_kb": 95264,
-            "ru_nivcsw": 474,
-            "ru_minflt": 7821,
-            "ru_nvcsw": 224,
-            "ru_majflt": 176
-        },
-        "totalObjSize": 187100,
-        "quadSpeed": 41323.490340456228,
-        "mop/quad": 2.0383467278989666,
-        "outputSizePerQuad": 42.0,
-        "CodeGen(%)": 32.166773494490734
     },
     "NameTable": {
         "std": [
@@ -84,44 +146,78 @@
             "reYIK",
             "module"
         ],
+        "inst_rom": [
+            "inst_rom",
+            "vnxvv",
+            "module"
+        ],
+        "mem": [
+            "mem",
+            "FSbWZ",
+            "module"
+        ],
         "openmips_min_sopc_tb": [
             "openmips_min_sopc_tb",
             "gvrSa",
+            "module"
+        ],
+        "ctrl": [
+            "ctrl",
+            "FzTxA",
+            "module"
+        ],
+        "ex_mem": [
+            "ex_mem",
+            "K7u6h",
             "module"
         ],
         "...MASTER...": [
             "SIM",
             "amcQw",
             "module"
+        ],
+        "mem_wb": [
+            "mem_wb",
+            "usA8F",
+            "module"
+        ],
+        "hilo_reg": [
+            "hilo_reg",
+            "yUwqV",
+            "module"
         ]
     },
-    "PEModules": [],
-    "CompileStrategy": "fullobj",
-    "CurCompileUdps": {},
-    "SIMBData": {
-        "out": "amcQwB.o",
-        "bytes": 101513
-    },
-    "Misc": {
-        "cwd": "/home/tjx/DIY_CPU",
-        "default_output_dir": "csrc",
-        "csrc": "csrc",
-        "daidir_abs": "/home/tjx/DIY_CPU/simv.daidir",
-        "csrc_abs": "/home/tjx/DIY_CPU/csrc",
-        "daidir": "simv.daidir",
-        "archive_dir": "archive.2"
-    },
-    "CurCompileModules": [
-        "...MASTER...",
-        "std",
-        "openmips_min_sopc_tb",
-        "openmips_min_sopc_tb"
-    ],
     "LVLData": [
         "SIM"
     ],
-    "CompileProcesses": [
-        "cgproc.6978.json"
+    "CurCompileUdps": {},
+    "CurCompileModules": [
+        "...MASTER...",
+        "std",
+        "mem",
+        "openmips_min_sopc_tb",
+        "openmips_min_sopc_tb",
+        "ex_mem",
+        "inst_rom",
+        "mem_wb",
+        "hilo_reg",
+        "ctrl"
     ],
+    "SIMBData": {
+        "out": "amcQwB.o",
+        "bytes": 102129
+    },
+    "CompileProcesses": [
+        "cgproc.4432.json"
+    ],
+    "Misc": {
+        "daidir": "simv.daidir",
+        "cwd": "/home/tjx/DIY_CPU",
+        "csrc_abs": "/home/tjx/DIY_CPU/csrc",
+        "csrc": "csrc",
+        "default_output_dir": "csrc",
+        "daidir_abs": "/home/tjx/DIY_CPU/simv.daidir",
+        "archive_dir": "archive.5"
+    },
     "CompileStatus": "Successful"
 }

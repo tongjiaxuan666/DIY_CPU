@@ -45,12 +45,15 @@ Back to file './src/mem_wb.v'.
 Parsing design file './src/hilo_reg.v'
 Parsing included file './src/defines.v'.
 Back to file './src/hilo_reg.v'.
+Parsing design file './src/ctrl.v'
+Parsing included file './src/defines.v'.
+Back to file './src/ctrl.v'.
 Top Level Modules:
        openmips_min_sopc_tb
 TimeScale is 1 ns / 1 ps
 Starting vcs inline pass...
-2 unique modules to generate
-2 modules and 0 UDP read. 
+8 unique modules to generate
+8 modules and 0 UDP read. 
 	However, due to incremental compilation, only 1 module needs to be compiled. 
 recompiling module openmips_min_sopc_tb
 All of 1 modules done
@@ -61,7 +64,7 @@ rm -f _csrc0.so
 if [ -x ../simv ]; then chmod -x ../simv; fi
 g++-4.8  -o ../simv   -Wl,-rpath-link=./ -Wl,-rpath='$ORIGIN'/simv.daidir/ -Wl,-rpath=./simv.daidir/ \
 -Wl,-rpath='$ORIGIN'/simv.daidir//scsim.db.dir  -Wl,--no-as-needed -rdynamic -rdynamic \
-amcQwB.o   _6978_archive_1.so _prev_archive_1.so _csrc0.so  SIM_l.o  _csrc0.so   \
+amcQwB.o   _4432_archive_1.so _prev_archive_1.so _csrc0.so  SIM_l.o  _csrc0.so   \
 rmapats_mop.o rmapats.o rmar.o  rmar_llvm_0_1.o rmar_llvm_0_0.o          /home/tjx/synopsys/vcs_2016.06/linux64/lib/libzerosoft_rt_stubs.so \
 /home/tjx/synopsys/vcs_2016.06/linux64/lib/libvirsim.so /home/tjx/synopsys/vcs_2016.06/linux64/lib/liberrorinf.so \
 /home/tjx/synopsys/vcs_2016.06/linux64/lib/libsnpsmalloc.so /home/tjx/synopsys/verdi_2016.06-1/share/PLI/VCS/LINUX64/pli.a \
@@ -88,5 +91,5 @@ $finish called from file "./src/openmips_min_sopc_tb.v", line 16.
 $finish at simulation time             10195000
            V C S   S i m u l a t i o n   R e p o r t 
 Time: 10195000 ps
-CPU Time:      1.960 seconds;       Data structure size:   2.0Mb
-Mon Nov 21 16:14:54 2022
+CPU Time:      0.550 seconds;       Data structure size:   2.0Mb
+Thu Nov 24 14:31:24 2022

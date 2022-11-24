@@ -3,6 +3,8 @@
 module id_ex (
     input wire   clk,
     input wire   rst,
+    //来自控制模块的信息
+	input wire[5:0]	stall,
     //message from decode
     input wire[`AluOpBus] id_aluop,
     input wire[`AluSelBus] id_alusel,
@@ -26,14 +28,21 @@ module id_ex (
             ex_reg2 <= `ZeroWord;
             ex_wd <= `NOPRegAddr;
             ex_wreg <= `WriteDisable;
-        end else begin
-            ex_aluop <= id_aluop;
-            ex_alusel <= id_alusel;
-            ex_reg1 <= id_reg1;
-            ex_reg2 <= id_reg2;
-            ex_wd <= id_wd;
-            ex_wreg <= id_wreg;           
-        end
+        end else if(stall[2] == `Stop && stall[3] == `NoStop) begin
+			ex_aluop <= `EXE_NOP_OP;
+			ex_alusel <= `EXE_RES_NOP;
+			ex_reg1 <= `ZeroWord;
+			ex_reg2 <= `ZeroWord;
+			ex_wd <= `NOPRegAddr;
+			ex_wreg <= `WriteDisable;			
+		end else if(stall[2] == `NoStop) begin		
+			ex_aluop <= id_aluop;
+			ex_alusel <= id_alusel;
+			ex_reg1 <= id_reg1;
+			ex_reg2 <= id_reg2;
+			ex_wd <= id_wd;
+			ex_wreg <= id_wreg;		
+		end
     end
     
 endmodule

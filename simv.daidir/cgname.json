@@ -4,14 +4,44 @@
         "reYIK",
         "module"
     ],
+    "inst_rom": [
+        "inst_rom",
+        "vnxvv",
+        "module"
+    ],
+    "mem": [
+        "mem",
+        "FSbWZ",
+        "module"
+    ],
     "openmips_min_sopc_tb": [
         "openmips_min_sopc_tb",
         "gvrSa",
         "module"
     ],
+    "ctrl": [
+        "ctrl",
+        "FzTxA",
+        "module"
+    ],
+    "ex_mem": [
+        "ex_mem",
+        "K7u6h",
+        "module"
+    ],
     "...MASTER...": [
         "SIM",
         "amcQw",
+        "module"
+    ],
+    "mem_wb": [
+        "mem_wb",
+        "usA8F",
+        "module"
+    ],
+    "hilo_reg": [
+        "hilo_reg",
+        "yUwqV",
         "module"
     ]
 }
