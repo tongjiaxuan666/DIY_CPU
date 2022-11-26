@@ -60,6 +60,9 @@
 `define EXE_MADDU  6'b000001
 `define EXE_MSUB  6'b000100
 `define EXE_MSUBU  6'b000101
+//div
+`define EXE_DIV  6'b011010
+`define EXE_DIVU  6'b011011
 
 `define EXE_NOP 6'b000000
 `define SSNOP 32'b00000000000000000000000001000000
@@ -115,8 +118,9 @@
 `define EXE_MADDU_OP  8'b10101000
 `define EXE_MSUB_OP  8'b10101010
 `define EXE_MSUBU_OP  8'b10101011
-
-
+//div
+`define EXE_DIV_OP  8'b00011010
+`define EXE_DIVU_OP  8'b00011011
 
 `define EXE_NOP_OP    8'b00000000
 
@@ -148,3 +152,13 @@
 //*********************** ctrl.v
 `define Stop    1'b1 //stop
 `define NoStop  1'b0 //continue
+
+//除法div
+`define DivFree 2'b00
+`define DivByZero 2'b01
+`define DivOn 2'b10
+`define DivEnd 2'b11
+`define DivResultReady 1'b1
+`define DivResultNotReady 1'b0
+`define DivStart 1'b1
+`define DivStop 1'b0

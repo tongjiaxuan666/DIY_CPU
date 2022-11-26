@@ -1,22 +1,17 @@
 {
-    "std": [
-        "std",
-        "reYIK",
-        "module"
-    ],
     "inst_rom": [
         "inst_rom",
         "vnxvv",
         "module"
     ],
-    "mem": [
-        "mem",
-        "FSbWZ",
+    "div": [
+        "div",
+        "rzVRz",
         "module"
     ],
-    "openmips_min_sopc_tb": [
-        "openmips_min_sopc_tb",
-        "gvrSa",
+    "std": [
+        "std",
+        "reYIK",
         "module"
     ],
     "ctrl": [
@@ -24,9 +19,19 @@
         "FzTxA",
         "module"
     ],
-    "ex_mem": [
-        "ex_mem",
-        "K7u6h",
+    "mem": [
+        "mem",
+        "FSbWZ",
+        "module"
+    ],
+    "hilo_reg": [
+        "hilo_reg",
+        "yUwqV",
+        "module"
+    ],
+    "openmips_min_sopc_tb": [
+        "openmips_min_sopc_tb",
+        "gvrSa",
         "module"
     ],
     "...MASTER...": [
@@ -39,9 +44,9 @@
         "usA8F",
         "module"
     ],
-    "hilo_reg": [
-        "hilo_reg",
-        "yUwqV",
+    "ex_mem": [
+        "ex_mem",
+        "K7u6h",
         "module"
     ]
 }

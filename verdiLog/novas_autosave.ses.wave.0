@@ -2,7 +2,7 @@ Magic 271485
 Revision Verdi3_L-2016.06-1
 
 ; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
-viewPort 0 28 1649 248 293 65
+viewPort 0 28 1653 243 293 65
 
 ; File list:
 ; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
@@ -16,16 +16,16 @@ signalSpacing 5
 
 ; windowTimeUnit is used for zoom, cursor & marker
 ; waveform viewport range
-zoom 0.000000 637187.500000
-cursor 310000.000000
+zoom 212474.420094 834259.229774
+cursor 390000.000000
 marker 0.000000
 
 ; user define markers
 ; userMarker time_pos marker_name color linestyle
 ; visible top row signal index
-top 14
+top 0
 ; marker line index
-markerPos 19
+markerPos 3
 
 ; event list
 ; addEvent event_name event_expression
@@ -49,23 +49,7 @@ addGroup "G1"
 activeDirFile "" "/home/tjx/DIY_CPU/tb.fsdb"
 addSignal -h 15 -UNSIGNED -HEX /openmips_min_sopc_tb/openmips_min_sopc0/openmips0/ex0/HI[31:0]
 addSignal -h 15 -UNSIGNED -HEX -holdScope LO[31:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope hi_o[31:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope aluop_i[7:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope hilo_temp1[31:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope hilo_temp1[63:32]
-addSignal -h 15 -UNSIGNED -HEX -holdScope cnt_i[1:0]
-addSignal -h 15 -UNSIGNED -HEX /openmips_min_sopc_tb/openmips_min_sopc0/openmips0/ex_mem0/hilo_o[63:0]
-addSignal -h 15 -UNSIGNED -HEX /openmips_min_sopc_tb/openmips_min_sopc0/openmips0/ex0/hilo_temp_i[63:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope HI[31:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope LO[31:0]
-addSignal -h 15 /openmips_min_sopc_tb/openmips_min_sopc0/openmips0/ex_mem0/stall[3]
-addSignal -h 15 -UNSIGNED -HEX -holdScope hilo_o[63:0]
-addSignal -h 15 -UNSIGNED -HEX /openmips_min_sopc_tb/openmips_min_sopc0/openmips0/ex0/hilo_temp[63:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope aluop_i[7:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope mulres[63:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope cnt_i[1:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope mulres[63:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope hilo_temp[63:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope wb_lo_i[31:0]
 addGroup "G2"
 
 ; getSignalForm Scope Hierarchy Status

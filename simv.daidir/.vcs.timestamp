@@ -65,11 +65,11 @@ VCS_DEPTH=0
 VCS_ARG_ADDED_FOR_TMP=1
 VCS_ARCH_OVERRIDE=linux
 VCS_ARCH=linux64
-UPSTART_SESSION=unix:abstract=/com/ubuntu/upstart-session/1000/2674
+UPSTART_SESSION=unix:abstract=/com/ubuntu/upstart-session/1000/2890
 UNAME=/bin/uname
 TOOL_HOME=/home/tjx/synopsys/vcs_2016.06/linux64
 SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
-SESSION_MANAGER=local/tjx-virtual-machine:@/tmp/.ICE-unix/2893,unix/tjx-virtual-machine:/tmp/.ICE-unix/2893
+SESSION_MANAGER=local/tjx-virtual-machine:@/tmp/.ICE-unix/3135,unix/tjx-virtual-machine:/tmp/.ICE-unix/3135
 SESSIONTYPE=gnome-session
 SESSION=ubuntu
 SCRNAME=vcs
@@ -83,8 +83,8 @@ OVA_UUM=0
 NOVAS_HOME=/home/tjx/synopsys/verdi_2016.06-1
 MFLAGS=
 MANDATORY_PATH=/usr/share/gconf/ubuntu.mandatory.path
-MAKE_TERMOUT=/dev/pts/1
-MAKE_TERMERR=/dev/pts/1
+MAKE_TERMOUT=/dev/pts/18
+MAKE_TERMERR=/dev/pts/18
 MAKELEVEL=1
 MAKEFLAGS=
 LESSOPEN=| /usr/bin/lesspipe %s
@@ -104,28 +104,29 @@ GDM_LANG=zh_CN
 GDMSESSION=ubuntu
 DESKTOP_SESSION=ubuntu
 DEFAULTS_PATH=/usr/share/gconf/ubuntu.default.path
-DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-wkG2bLoQLt
+DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-EtGgR0lQQu
 COMPIZ_CONFIG_PROFILE=ubuntu
 CLUTTER_IM_MODULE=xim
 0
-19
+20
+1669446543 ./src/div.v
 1669193568 ./src/ctrl.v
 1668843838 ./src/hilo_reg.v
 1669188741 ./src/mem_wb.v
 1668413962 ./src/regfile.v
 1669188279 ./src/id_ex.v
-1669189002 ./src/defines.v
-1669193273 ./src/openmips.v
+1669349020 ./src/defines.v
+1669444699 ./src/openmips.v
 1668482465 ./src/inst_rom.v
-1669193406 ./src/id.v
+1669349154 ./src/id.v
 1669188042 ./src/if_id.v
 1669194321 ./src/ex_mem.v
 1667564766 ./src/openmips_min_sopc.v
-1669271443 ./src/ex.v
+1669349772 ./src/ex.v
 1668501563 ./src/openmips_min_sopc_tb.v
 1669187444 ./src/pc_reg.v
 1668845185 ./src/mem.v
-1669186744 filelist.f
+1669344676 filelist.f
 1464145466 /home/tjx/synopsys/vcs_2016.06/linux64/lib/vcsdp.tab
 1468145700 /home/tjx/synopsys/verdi_2016.06-1/share/PLI/VCS/LINUX64/novas.tab
 5
@@ -134,4 +135,4 @@ CLUTTER_IM_MODULE=xim
 1464147272 /home/tjx/synopsys/vcs_2016.06/linux64/lib/liberrorinf.so
 1464147248 /home/tjx/synopsys/vcs_2016.06/linux64/lib/libsnpsmalloc.so
 1468144468 /home/tjx/synopsys/verdi_2016.06-1/share/PLI/VCS/LINUX64/pli.a
-1669271484 simv.daidir
+1669446575 simv.daidir

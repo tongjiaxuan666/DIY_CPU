@@ -1,152 +1,100 @@
 {
-    "Misc": {
-        "default_output_dir": "csrc",
-        "daidir": "simv.daidir",
-        "cwd": "/home/tjx/DIY_CPU",
-        "csrc_abs": "/home/tjx/DIY_CPU/csrc",
-        "csrc": "csrc",
-        "daidir_abs": "/home/tjx/DIY_CPU/simv.daidir",
-        "archive_dir": "archive.4"
-    },
     "MlibObjs": {},
     "PrevCompiledModules": {
         "openmips_min_sopc_tb": {
             "gvrSa_d": {
-                "bytes": 85483,
+                "archive": "archive.6/_4161_archive_1.a",
+                "bytes": 85663,
+                "checksum": 0,
                 "mod": "openmips_min_sopc_tb",
                 "out": "gvrSa_d.o",
-                "archive": "archive.4/_prev_archive_1.a",
-                "checksum": 0,
-                "mode": 4
-            }
-        },
-        "ctrl": {
-            "FzTxA_d": {
-                "bytes": 8143,
-                "mod": "ctrl",
-                "out": "FzTxA_d.o",
-                "archive": "archive.4/_prev_archive_1.a",
-                "checksum": 0,
-                "mode": 4
-            }
-        },
-        "mem": {
-            "FSbWZ_d": {
-                "bytes": 9890,
-                "mod": "mem",
-                "out": "FSbWZ_d.o",
-                "archive": "archive.4/_prev_archive_1.a",
-                "checksum": 0,
-                "mode": 4
-            }
-        },
-        "inst_rom": {
-            "vnxvv_d": {
-                "bytes": 9375,
-                "mod": "inst_rom",
-                "out": "vnxvv_d.o",
-                "archive": "archive.4/_prev_archive_1.a",
-                "checksum": 0,
-                "mode": 4
-            }
-        },
-        "std": {
-            "reYIK_d": {
-                "bytes": 33397,
-                "mod": "std",
-                "archive": "archive.4/_prev_archive_1.a",
-                "checksum": 0,
-                "mode": 4,
-                "out": "reYIK_d.o"
-            }
-        },
-        "mem_wb": {
-            "usA8F_d": {
-                "bytes": 11717,
-                "mod": "mem_wb",
-                "out": "usA8F_d.o",
-                "archive": "archive.4/_prev_archive_1.a",
-                "checksum": 0,
-                "mode": 4
-            }
-        },
-        "...MASTER...": {
-            "amcQw_d": {
-                "bytes": 7403,
-                "mod": "...MASTER...",
-                "out": "objs/amcQw_d.o",
-                "checksum": 0,
                 "mode": 4
             }
         },
         "hilo_reg": {
             "yUwqV_d": {
+                "archive": "archive.6/_prev_archive_1.a",
                 "bytes": 8718,
-                "mod": "hilo_reg",
-                "out": "yUwqV_d.o",
-                "archive": "archive.4/_prev_archive_1.a",
                 "checksum": 0,
-                "mode": 4
+                "mod": "hilo_reg",
+                "mode": 4,
+                "out": "yUwqV_d.o"
+            }
+        },
+        "ctrl": {
+            "FzTxA_d": {
+                "archive": "archive.6/_prev_archive_1.a",
+                "bytes": 8143,
+                "checksum": 0,
+                "mod": "ctrl",
+                "mode": 4,
+                "out": "FzTxA_d.o"
             }
         },
         "ex_mem": {
             "K7u6h_d": {
-                "bytes": 13992,
-                "mod": "ex_mem",
-                "out": "K7u6h_d.o",
-                "archive": "archive.4/_9880_archive_1.a",
+                "archive": "archive.6/_prev_archive_1.a",
+                "bytes": 13752,
                 "checksum": 0,
-                "mode": 4
+                "mod": "ex_mem",
+                "mode": 4,
+                "out": "K7u6h_d.o"
+            }
+        },
+        "inst_rom": {
+            "vnxvv_d": {
+                "archive": "archive.6/_prev_archive_1.a",
+                "bytes": 9375,
+                "checksum": 0,
+                "mod": "inst_rom",
+                "mode": 4,
+                "out": "vnxvv_d.o"
+            }
+        },
+        "...MASTER...": {
+            "amcQw_d": {
+                "bytes": 7403,
+                "checksum": 0,
+                "mod": "...MASTER...",
+                "mode": 4,
+                "out": "objs/amcQw_d.o"
+            }
+        },
+        "mem": {
+            "FSbWZ_d": {
+                "archive": "archive.6/_prev_archive_1.a",
+                "bytes": 9890,
+                "checksum": 0,
+                "mod": "mem",
+                "mode": 4,
+                "out": "FSbWZ_d.o"
+            }
+        },
+        "mem_wb": {
+            "usA8F_d": {
+                "archive": "archive.6/_prev_archive_1.a",
+                "bytes": 11717,
+                "checksum": 0,
+                "mod": "mem_wb",
+                "mode": 4,
+                "out": "usA8F_d.o"
+            }
+        },
+        "std": {
+            "reYIK_d": {
+                "archive": "archive.6/_prev_archive_1.a",
+                "bytes": 33397,
+                "checksum": 0,
+                "mod": "std",
+                "mode": 4,
+                "out": "reYIK_d.o"
             }
         }
     },
-    "CurCompileModules": [
-        "...MASTER...",
-        "std",
-        "mem",
-        "openmips_min_sopc_tb",
-        "ex_mem",
-        "ex_mem",
-        "inst_rom",
-        "mem_wb",
-        "hilo_reg",
-        "ctrl"
-    ],
-    "CurCompileUdps": {},
     "NameTable": {
-        "std": [
-            "std",
-            "reYIK",
-            "module"
-        ],
-        "inst_rom": [
-            "inst_rom",
-            "vnxvv",
-            "module"
-        ],
         "mem": [
             "mem",
             "FSbWZ",
-            "module"
-        ],
-        "openmips_min_sopc_tb": [
-            "openmips_min_sopc_tb",
-            "gvrSa",
-            "module"
-        ],
-        "ctrl": [
-            "ctrl",
-            "FzTxA",
-            "module"
-        ],
-        "ex_mem": [
-            "ex_mem",
-            "K7u6h",
-            "module"
-        ],
-        "...MASTER...": [
-            "SIM",
-            "amcQw",
             "module"
         ],
         "mem_wb": [
@@ -154,70 +102,129 @@
             "usA8F",
             "module"
         ],
+        "div": [
+            "div",
+            "rzVRz",
+            "module"
+        ],
+        "std": [
+            "std",
+            "reYIK",
+            "module"
+        ],
+        "ctrl": [
+            "ctrl",
+            "FzTxA",
+            "module"
+        ],
+        "openmips_min_sopc_tb": [
+            "openmips_min_sopc_tb",
+            "gvrSa",
+            "module"
+        ],
         "hilo_reg": [
             "hilo_reg",
             "yUwqV",
             "module"
+        ],
+        "...MASTER...": [
+            "SIM",
+            "amcQw",
+            "module"
+        ],
+        "ex_mem": [
+            "ex_mem",
+            "K7u6h",
+            "module"
+        ],
+        "inst_rom": [
+            "inst_rom",
+            "vnxvv",
+            "module"
         ]
     },
-    "CompileStrategy": "fullobj",
-    "PEModules": [],
-    "stat": {
-        "ru_self_cgstart": {
-            "ru_majflt": 0,
-            "ru_utime_sec": 0.131825,
-            "ru_nivcsw": 426,
-            "ru_nvcsw": 18,
-            "ru_stime_sec": 0.045315000000000001,
-            "ru_maxrss_kb": 87020,
-            "ru_minflt": 5517
-        },
-        "mopSpeed": 328842.06577466562,
-        "ru_childs_cgstart": {
-            "ru_majflt": 0,
-            "ru_utime_sec": 0.0,
-            "ru_nivcsw": 0,
-            "ru_nvcsw": 0,
-            "ru_stime_sec": 0.0,
-            "ru_maxrss_kb": 0,
-            "ru_minflt": 0
-        },
-        "totalObjSize": 115881,
-        "mop/quad": 2.058915639068311,
-        "nMops": 10519,
-        "nQuads": 5109,
-        "ru_self_end": {
-            "ru_majflt": 0,
-            "ru_utime_sec": 0.16381299999999999,
-            "ru_nivcsw": 444,
-            "ru_nvcsw": 19,
-            "ru_stime_sec": 0.077811000000000005,
-            "ru_maxrss_kb": 95056,
-            "ru_minflt": 7669
-        },
-        "CodeGen(%)": 19.527143755379605,
-        "outputSizePerQuad": 22.0,
-        "ru_childs_end": {
-            "ru_majflt": 0,
-            "ru_utime_sec": 0.0,
-            "ru_nivcsw": 2,
-            "ru_nvcsw": 1,
-            "ru_stime_sec": 0.002464,
-            "ru_maxrss_kb": 18692,
-            "ru_minflt": 198
-        },
-        "quadSpeed": 159716.14355383275,
-        "Frontend(%)": 80.472856244620388
-    },
-    "SIMBData": {
-        "out": "amcQwB.o",
-        "bytes": 102129
-    },
+    "CurCompileModules": [
+        "...MASTER...",
+        "std",
+        "mem",
+        "openmips_min_sopc_tb",
+        "openmips_min_sopc_tb",
+        "ex_mem",
+        "inst_rom",
+        "mem_wb",
+        "hilo_reg",
+        "ctrl",
+        "div",
+        "div"
+    ],
     "LVLData": [
         "SIM"
     ],
+    "CompileStrategy": "fullobj",
+    "stat": {
+        "ru_childs_end": {
+            "ru_utime_sec": 0.0,
+            "ru_nivcsw": 1,
+            "ru_maxrss_kb": 18852,
+            "ru_stime_sec": 0.0061460000000000004,
+            "ru_minflt": 202,
+            "ru_nvcsw": 1,
+            "ru_majflt": 0
+        },
+        "ru_self_cgstart": {
+            "ru_utime_sec": 0.40509800000000001,
+            "ru_nivcsw": 165,
+            "ru_maxrss_kb": 86836,
+            "ru_stime_sec": 0.45431500000000002,
+            "ru_minflt": 5324,
+            "ru_nvcsw": 821,
+            "ru_majflt": 721
+        },
+        "quadSpeed": 86831.47808723386,
+        "ru_childs_cgstart": {
+            "ru_utime_sec": 0.0,
+            "ru_nivcsw": 0,
+            "ru_maxrss_kb": 0,
+            "ru_stime_sec": 0.0,
+            "ru_minflt": 0,
+            "ru_nvcsw": 0,
+            "ru_majflt": 0
+        },
+        "mopSpeed": 179325.55471113304,
+        "nQuads": 5827,
+        "totalObjSize": 211125,
+        "nMops": 12034,
+        "ru_self_end": {
+            "ru_utime_sec": 0.47220499999999999,
+            "ru_nivcsw": 191,
+            "ru_maxrss_kb": 97384,
+            "ru_stime_sec": 0.555983,
+            "ru_minflt": 8134,
+            "ru_nvcsw": 881,
+            "ru_majflt": 766
+        },
+        "Frontend(%)": 85.788587583782473,
+        "mop/quad": 2.0652136605457354,
+        "outputSizePerQuad": 36.0,
+        "CodeGen(%)": 14.211412416217527
+    },
+    "CurCompileUdps": {},
+    "SIMBData": {
+        "out": "amcQwB.o",
+        "bytes": 102427
+    },
+    "Misc": {
+        "cwd": "/home/tjx/DIY_CPU",
+        "default_output_dir": "csrc",
+        "csrc_abs": "/home/tjx/DIY_CPU/csrc",
+        "csrc": "csrc",
+        "daidir": "simv.daidir",
+        "daidir_abs": "/home/tjx/DIY_CPU/simv.daidir",
+        "archive_dir": "archive.6"
+    },
+    "PEModules": [],
     "CompileProcesses": [
-        "cgproc.9880.json"
+        "cgproc.4161.json"
     ],
     "CompileStatus": "Successful"
 }

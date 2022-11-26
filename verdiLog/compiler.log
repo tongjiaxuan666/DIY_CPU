@@ -18,6 +18,7 @@ Command arguments:
         ./src/mem_wb.v
         ./src/hilo_reg.v
         ./src/ctrl.v
+        ./src/div.v
 
 Highest level modules:
 openmips_min_sopc_tb

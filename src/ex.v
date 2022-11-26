@@ -19,7 +19,9 @@ module ex (
 	input wire[`RegBus]           wb_hi_i,
 	input wire[`RegBus]           wb_lo_i,
 	input wire                    wb_whilo_i,
-	
+	//与除法模块相连
+	input wire[`DoubleRegBus]     div_result_i,
+	input wire                    div_ready_i,
 	//访存阶段的指令是否要写HI、LO，用于检测HI、LO的数据相关
 	input wire[`RegBus]           mem_hi_i,
 	input wire[`RegBus]           mem_lo_i,
@@ -34,6 +36,11 @@ module ex (
     //增加输出接口
     output reg[`DoubleRegBus]     hilo_temp_o,
 	output reg[1:0]               cnt_o,
+	//新增除法模块的除数
+	output reg[`RegBus]           div_opdata1_o,
+	output reg[`RegBus]           div_opdata2_o,
+	output reg                    div_start_o,
+	output reg                    signed_div_o,
 	output reg		stallreq       
 
 );
@@ -45,7 +52,8 @@ module ex (
 	reg[`RegBus] LO;    //special reg LO
     reg[`RegBus] arithmeticres;//保存算数运算的结果
 	reg[`DoubleRegBus] mulres;//保存乘法结果宽度为64位
-    reg stallreq_for_madd_msub;	                                                                                                                 
+    reg stallreq_for_madd_msub;	           
+	reg stallreq_for_div;//由于除法模块导致流水线暂停                                                                                                      
     wire[`RegBus] reg2_i_mux;//保存第二个操作数reg2_i的补码
 	wire[`RegBus] reg1_i_not;//保存第一个操作数reg1_i取反后的值
 	wire[`RegBus] result_sum;//保存加法的结果
@@ -290,9 +298,72 @@ always @ (*) begin
 			endcase
 		end
 	end	
+
+  //DIV、DIVU指令，输出div模块的控制信息，获取div模块给出的结果
+	always @ (*) begin
+		if(rst == `RstEnable) begin
+			stallreq_for_div <= `NoStop;
+	    	div_opdata1_o <= `ZeroWord;
+			div_opdata2_o <= `ZeroWord;
+			div_start_o <= `DivStop;
+			signed_div_o <= 1'b0;
+		end else begin
+			stallreq_for_div <= `NoStop;
+	    	div_opdata1_o <= `ZeroWord;
+			div_opdata2_o <= `ZeroWord;
+			div_start_o <= `DivStop;
+			signed_div_o <= 1'b0;	
+			case (aluop_i) 
+				`EXE_DIV_OP:		begin
+					if(div_ready_i == `DivResultNotReady) begin
+	    				div_opdata1_o <= reg1_i;
+						div_opdata2_o <= reg2_i;
+						div_start_o <= `DivStart;
+						signed_div_o <= 1'b1;
+						stallreq_for_div <= `Stop;
+					end else if(div_ready_i == `DivResultReady) begin
+	    				div_opdata1_o <= reg1_i;
+						div_opdata2_o <= reg2_i;
+						div_start_o <= `DivStop;
+						signed_div_o <= 1'b1;
+						stallreq_for_div <= `NoStop;
+					end else begin						
+	    				div_opdata1_o <= `ZeroWord;
+						div_opdata2_o <= `ZeroWord;
+						div_start_o <= `DivStop;
+						signed_div_o <= 1'b0;
+						stallreq_for_div <= `NoStop;
+					end					
+				end
+				`EXE_DIVU_OP:		begin
+					if(div_ready_i == `DivResultNotReady) begin
+	    				div_opdata1_o <= reg1_i;
+						div_opdata2_o <= reg2_i;
+						div_start_o <= `DivStart;
+						signed_div_o <= 1'b0;
+						stallreq_for_div <= `Stop;
+					end else if(div_ready_i == `DivResultReady) begin
+	    				div_opdata1_o <= reg1_i;
+						div_opdata2_o <= reg2_i;
+						div_start_o <= `DivStop;
+						signed_div_o <= 1'b0;
+						stallreq_for_div <= `NoStop;
+					end else begin						
+	    				div_opdata1_o <= `ZeroWord;
+						div_opdata2_o <= `ZeroWord;
+						div_start_o <= `DivStop;
+						signed_div_o <= 1'b0;
+						stallreq_for_div <= `NoStop;
+					end					
+				end
+				default: begin
+				end
+			endcase
+		end
+	end
     //流水线暂停：chapter7.1只有累加乘和累加减法指令会让流水线暂停，所以stallreq直接等于stallreq_for_madd_msub
 always @ (*) begin
-    stallreq = stallreq_for_madd_msub;
+    stallreq = stallreq_for_madd_msub||stallreq_for_div;
 end
 //stage two: compute instead of alusel_i
     always @(*) begin
@@ -343,6 +414,10 @@ end
 			whilo_o <= `WriteEnable;
 			hi_o <= hilo_temp1[63:32];
 			lo_o <= hilo_temp1[31:0];	
+		end else if((aluop_i == `EXE_DIV_OP) || (aluop_i == `EXE_DIVU_OP)) begin
+			whilo_o <= `WriteEnable;
+			hi_o <= div_result_i[63:32];
+			lo_o <= div_result_i[31:0];	
 		end else if(aluop_i == `EXE_MTHI_OP) begin
 			whilo_o <= `WriteEnable;
 			hi_o <= reg1_i;
