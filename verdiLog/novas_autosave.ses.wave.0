@@ -2,7 +2,7 @@ Magic 271485
 Revision Verdi3_L-2016.06-1
 
 ; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
-viewPort 0 28 1653 243 293 65
+viewPort 0 28 1653 266 293 65
 
 ; File list:
 ; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
@@ -16,8 +16,8 @@ signalSpacing 5
 
 ; windowTimeUnit is used for zoom, cursor & marker
 ; waveform viewport range
-zoom 212474.420094 834259.229774
-cursor 390000.000000
+zoom 861517.145887 1891212.145887
+cursor 0.000000
 marker 0.000000
 
 ; user define markers
@@ -25,7 +25,7 @@ marker 0.000000
 ; visible top row signal index
 top 0
 ; marker line index
-markerPos 3
+markerPos 33
 
 ; event list
 ; addEvent event_name event_expression
@@ -47,9 +47,39 @@ curSTATUS ByChange
 
 addGroup "G1"
 activeDirFile "" "/home/tjx/DIY_CPU/tb.fsdb"
-addSignal -h 15 -UNSIGNED -HEX /openmips_min_sopc_tb/openmips_min_sopc0/openmips0/ex0/HI[31:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope LO[31:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope wb_lo_i[31:0]
+addSignal -expanded -h 15 -UNSIGNED -HEX /openmips_min_sopc_tb/openmips_min_sopc0/openmips0/regfile1/regs[0:31]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[0][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[1][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[2][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[3][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[4][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[5][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[6][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[7][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[8][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[9][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[10][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[11][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[12][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[13][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[14][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[15][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[16][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[17][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[18][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[19][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[20][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[21][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[22][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[23][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[24][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[25][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[26][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[27][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[28][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[29][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[30][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[31][31:0]
 addGroup "G2"
 
 ; getSignalForm Scope Hierarchy Status

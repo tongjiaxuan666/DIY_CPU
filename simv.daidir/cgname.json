@@ -1,12 +1,7 @@
 {
-    "inst_rom": [
-        "inst_rom",
-        "vnxvv",
-        "module"
-    ],
-    "div": [
-        "div",
-        "rzVRz",
+    "hilo_reg": [
+        "hilo_reg",
+        "yUwqV",
         "module"
     ],
     "std": [
@@ -14,24 +9,14 @@
         "reYIK",
         "module"
     ],
-    "ctrl": [
-        "ctrl",
-        "FzTxA",
+    "ex_mem": [
+        "ex_mem",
+        "K7u6h",
         "module"
     ],
-    "mem": [
-        "mem",
-        "FSbWZ",
-        "module"
-    ],
-    "hilo_reg": [
-        "hilo_reg",
-        "yUwqV",
-        "module"
-    ],
-    "openmips_min_sopc_tb": [
-        "openmips_min_sopc_tb",
-        "gvrSa",
+    "inst_rom": [
+        "inst_rom",
+        "vnxvv",
         "module"
     ],
     "...MASTER...": [
@@ -39,14 +24,44 @@
         "amcQw",
         "module"
     ],
+    "mem": [
+        "mem",
+        "FSbWZ",
+        "module"
+    ],
+    "div": [
+        "div",
+        "rzVRz",
+        "module"
+    ],
+    "ex": [
+        "ex",
+        "r2dgF",
+        "module"
+    ],
+    "id_ex": [
+        "id_ex",
+        "UmCUI",
+        "module"
+    ],
+    "openmips_min_sopc_tb": [
+        "openmips_min_sopc_tb",
+        "gvrSa",
+        "module"
+    ],
+    "regfile": [
+        "regfile",
+        "Nxspn",
+        "module"
+    ],
+    "ctrl": [
+        "ctrl",
+        "FzTxA",
+        "module"
+    ],
     "mem_wb": [
         "mem_wb",
         "usA8F",
-        "module"
-    ],
-    "ex_mem": [
-        "ex_mem",
-        "K7u6h",
         "module"
     ]
 }

@@ -4,6 +4,9 @@ module pc_reg (
     input wire    clk,
     input wire    rst,
     input wire[5:0] stall,
+    //来自译码阶段的信息
+	input wire                    branch_flag_i,
+	input wire[`RegBus]           branch_target_address_i,
     output reg[`InstAddrBus] pc,
     output reg ce
 );
@@ -20,7 +23,11 @@ module pc_reg (
             pc <= `ZeroWord;
         end
         else if(stall[0] == `NoStop )begin
-            pc <= pc + 4'h4;      //enable pc + 4
+            	if(branch_flag_i == `Branch) begin
+					pc <= branch_target_address_i;
+				end else begin
+                    pc <= pc + 4'h4;      //enable pc + 4
+                end
         end
     end
 endmodule

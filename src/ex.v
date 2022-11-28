@@ -26,6 +26,9 @@ module ex (
 	input wire[`RegBus]           mem_hi_i,
 	input wire[`RegBus]           mem_lo_i,
 	input wire                    mem_whilo_i,
+	//是否转移、以及link address
+	input wire[`RegBus]           link_address_i,
+	input wire                    is_in_delayslot_i,	
     //the result to output
     output reg[`RegAddrBus] wd_o,
     output reg wreg_o,
@@ -391,6 +394,9 @@ end
 	 	    `EXE_RES_MUL:		begin
 	 		    wdata_o <= mulres[31:0];
 	 	    end	
+			`EXE_RES_JUMP_BRANCH:	begin
+	 			wdata_o <= link_address_i;
+	 		end	 
             default: begin
                 wdata_o <= `ZeroWord;
             end
