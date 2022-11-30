@@ -1,7 +1,7 @@
 0 
 37
 +cli+1
-+itf+/home/tjx/synopsys/vcs_2016.06/linux64/lib/vcsdp.tab
++itf+/home/zzy/synopsys/vcs_2016.06/linux64/lib/vcsdp.tab
 +memcbk
 +v2k
 +vcsd
@@ -9,19 +9,19 @@
 -Mamsrun=
 -Masflags=
 -Mcc=gcc-4.8
--Mcfl= -pipe -fPIC -O -I/home/tjx/synopsys/vcs_2016.06/include
+-Mcfl= -pipe -fPIC -O -I/home/zzy/synopsys/vcs_2016.06/include
 -Mcplusplus=g++-4.8
 -Mcrt0=
 -Mcrtn=
 -Mcsrc=
 -Mexternalobj=
 -Mldflags= -Wl,--no-as-needed -rdynamic -rdynamic
--Mobjects= /home/tjx/synopsys/vcs_2016.06/linux64/lib/libvirsim.so /home/tjx/synopsys/vcs_2016.06/linux64/lib/liberrorinf.so /home/tjx/synopsys/vcs_2016.06/linux64/lib/libsnpsmalloc.so /home/tjx/synopsys/verdi_2016.06-1/share/PLI/VCS/LINUX64/pli.a
+-Mobjects= /home/zzy/synopsys/vcs_2016.06/linux64/lib/libvirsim.so /home/zzy/synopsys/vcs_2016.06/linux64/lib/liberrorinf.so /home/zzy/synopsys/vcs_2016.06/linux64/lib/libsnpsmalloc.so /home/zzy/synopsys/verdi_2016.06-1/share/PLI/VCS/LINUX64/pli.a
 -Mout=simv
--Msaverestoreobj=/home/tjx/synopsys/vcs_2016.06/linux64/lib/vcs_save_restore_new.o
+-Msaverestoreobj=/home/zzy/synopsys/vcs_2016.06/linux64/lib/vcs_save_restore_new.o
 -Msyslibs=-ldl -lm
 -Mvcsaceobjs=
--Mxcflags= -pipe -fPIC -I/home/tjx/synopsys/vcs_2016.06/include
+-Mxcflags= -pipe -fPIC -I/home/zzy/synopsys/vcs_2016.06/include
 -P
 -Xcbug=0x1
 -Xpiyushb1=0x80
@@ -34,11 +34,11 @@
 -nc
 -picarchive
 -sverilog
-/home/tjx/synopsys/vcs_2016.06/linux64/bin/vcs1
-/home/tjx/synopsys/verdi_2016.06-1/share/PLI/VCS/LINUX64/novas.tab
+/home/zzy/synopsys/vcs_2016.06/linux64/bin/vcs1
+/home/zzy/synopsys/verdi_2016.06-1/share/PLI/VCS/LINUX64/novas.tab
 com.log
 69
-sysc_uni_pwd=/home/tjx/DIY_CPU
+sysc_uni_pwd=/home/zzy/DIY_CPU
 XMODIFIERS=@im=fcitx
 XDG_VTNR=7
 XDG_SESSION_TYPE=x11
@@ -49,27 +49,27 @@ XDG_SEAT_PATH=/org/freedesktop/DisplayManager/Seat0
 XDG_SEAT=seat0
 XDG_RUNTIME_DIR=/run/user/1000
 XDG_MENU_PREFIX=gnome-
-XDG_GREETER_DATA_DIR=/var/lib/lightdm-data/tjx
+XDG_GREETER_DATA_DIR=/var/lib/lightdm-data/zzy
 XDG_DATA_DIRS=/usr/share/ubuntu:/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop
 XDG_CURRENT_DESKTOP=Unity
 XDG_CONFIG_DIRS=/etc/xdg/xdg-ubuntu:/usr/share/upstart/xdg:/etc/xdg
-XAUTHORITY=/home/tjx/.Xauthority
+XAUTHORITY=/home/zzy/.Xauthority
 VTE_VERSION=4205
 VMR_MODE_FLAG=64
-VERDI_HOME=/home/tjx/synopsys/verdi_2016.06-1
+VERDI_HOME=/home/zzy/synopsys/verdi_2016.06-1
 VCS_MX_HOME_INTERNAL=1
 VCS_MODE_FLAG=64
 VCS_LOG_FILE=com.log
-VCS_HOME=/home/tjx/synopsys/vcs_2016.06
+VCS_HOME=/home/zzy/synopsys/vcs_2016.06
 VCS_DEPTH=0
 VCS_ARG_ADDED_FOR_TMP=1
 VCS_ARCH_OVERRIDE=linux
 VCS_ARCH=linux64
-UPSTART_SESSION=unix:abstract=/com/ubuntu/upstart-session/1000/3051
+UPSTART_SESSION=unix:abstract=/com/ubuntu/upstart-session/1000/2908
 UNAME=/bin/uname
-TOOL_HOME=/home/tjx/synopsys/vcs_2016.06/linux64
+TOOL_HOME=/home/zzy/synopsys/vcs_2016.06/linux64
 SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
-SESSION_MANAGER=local/tjx-virtual-machine:@/tmp/.ICE-unix/3403,unix/tjx-virtual-machine:/tmp/.ICE-unix/3403
+SESSION_MANAGER=local/zzy-virtual-machine:@/tmp/.ICE-unix/3136,unix/zzy-virtual-machine:/tmp/.ICE-unix/3136
 SESSIONTYPE=gnome-session
 SESSION=ubuntu
 SCRNAME=vcs
@@ -80,11 +80,11 @@ QT_IM_MODULE=fcitx
 QT_ACCESSIBILITY=1
 QT4_IM_MODULE=fcitx
 OVA_UUM=0
-NOVAS_HOME=/home/tjx/synopsys/verdi_2016.06-1
+NOVAS_HOME=/home/zzy/synopsys/verdi_2016.06-1
 MFLAGS=
 MANDATORY_PATH=/usr/share/gconf/ubuntu.mandatory.path
-MAKE_TERMOUT=/dev/pts/2
-MAKE_TERMERR=/dev/pts/2
+MAKE_TERMOUT=/dev/pts/18
+MAKE_TERMERR=/dev/pts/18
 MAKELEVEL=1
 MAKEFLAGS=
 LESSOPEN=| /usr/bin/lesspipe %s
@@ -96,7 +96,7 @@ IM_CONFIG_PHASE=1
 GTK_MODULES=gail:atk-bridge:unity-gtk-module
 GTK_IM_MODULE=fcitx
 GTK2_MODULES=overlay-scrollbar
-GPG_AGENT_INFO=/home/tjx/.gnupg/S.gpg-agent:0:1
+GPG_AGENT_INFO=/home/zzy/.gnupg/S.gpg-agent:0:1
 GNOME_KEYRING_PID=
 GNOME_KEYRING_CONTROL=
 GNOME_DESKTOP_SESSION_ID=this-is-deprecated
@@ -104,35 +104,36 @@ GDM_LANG=zh_CN
 GDMSESSION=ubuntu
 DESKTOP_SESSION=ubuntu
 DEFAULTS_PATH=/usr/share/gconf/ubuntu.default.path
-DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-hhd4ob56w5
+DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-1kYzDZK5TD
 COMPIZ_CONFIG_PROFILE=ubuntu
 CLUTTER_IM_MODULE=xim
 0
-20
-1669446543 ./src/div.v
-1669193568 ./src/ctrl.v
-1668843838 ./src/hilo_reg.v
-1669188741 ./src/mem_wb.v
-1668413962 ./src/regfile.v
-1669606649 ./src/id_ex.v
-1669603509 ./src/defines.v
-1669606632 ./src/openmips.v
-1668482465 ./src/inst_rom.v
-1669605349 ./src/id.v
-1669188042 ./src/if_id.v
-1669194321 ./src/ex_mem.v
-1667564766 ./src/openmips_min_sopc.v
-1669605858 ./src/ex.v
-1668501563 ./src/openmips_min_sopc_tb.v
-1669602194 ./src/pc_reg.v
-1668845185 ./src/mem.v
-1669344676 filelist.f
-1464145466 /home/tjx/synopsys/vcs_2016.06/linux64/lib/vcsdp.tab
-1468145700 /home/tjx/synopsys/verdi_2016.06-1/share/PLI/VCS/LINUX64/novas.tab
+21
+1669804279 ./src/data_ram.v
+1669794410 ./src/div.v
+1669794410 ./src/ctrl.v
+1669794410 ./src/hilo_reg.v
+1669794410 ./src/mem_wb.v
+1669794410 ./src/regfile.v
+1669801035 ./src/id_ex.v
+1669803773 ./src/defines.v
+1669807418 ./src/openmips.v
+1669794410 ./src/inst_rom.v
+1669805542 ./src/id.v
+1669794410 ./src/if_id.v
+1669801717 ./src/ex_mem.v
+1669805449 ./src/openmips_min_sopc.v
+1669801485 ./src/ex.v
+1669794410 ./src/openmips_min_sopc_tb.v
+1669794410 ./src/pc_reg.v
+1669803533 ./src/mem.v
+1669803683 filelist.f
+1464145466 /home/zzy/synopsys/vcs_2016.06/linux64/lib/vcsdp.tab
+1468145700 /home/zzy/synopsys/verdi_2016.06-1/share/PLI/VCS/LINUX64/novas.tab
 5
 0 
-1464147802 /home/tjx/synopsys/vcs_2016.06/linux64/lib/libvirsim.so
-1464147272 /home/tjx/synopsys/vcs_2016.06/linux64/lib/liberrorinf.so
-1464147248 /home/tjx/synopsys/vcs_2016.06/linux64/lib/libsnpsmalloc.so
-1468144468 /home/tjx/synopsys/verdi_2016.06-1/share/PLI/VCS/LINUX64/pli.a
-1669606663 simv.daidir
+1464147802 /home/zzy/synopsys/vcs_2016.06/linux64/lib/libvirsim.so
+1464147272 /home/zzy/synopsys/vcs_2016.06/linux64/lib/liberrorinf.so
+1464147248 /home/zzy/synopsys/vcs_2016.06/linux64/lib/libsnpsmalloc.so
+1468144468 /home/zzy/synopsys/verdi_2016.06-1/share/PLI/VCS/LINUX64/pli.a
+1669817190 simv.daidir

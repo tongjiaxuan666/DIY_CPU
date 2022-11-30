@@ -15,6 +15,10 @@ module ex_mem (
     //因为累加和累乘增加的端口
 	input wire[`DoubleRegBus]     hilo_i,	
 	input wire[1:0]               cnt_i,	
+    //为实现加载、访存指令而添加
+    input wire[`AluOpBus]        ex_aluop,
+	input wire[`RegBus]          ex_mem_addr,
+	input wire[`RegBus]          ex_reg2,
     //output to mem
     output reg[`RegAddrBus] mem_wd,
     output reg mem_wreg,
@@ -22,6 +26,10 @@ module ex_mem (
 	output reg[`RegBus]          mem_hi,
 	output reg[`RegBus]          mem_lo,
 	output reg                   mem_whilo,
+    //为实现加载、访存指令而添加
+    output reg[`AluOpBus]        mem_aluop,
+	output reg[`RegBus]          mem_mem_addr,
+	output reg[`RegBus]          mem_reg2,
     output reg[`DoubleRegBus]    hilo_o,
 	output reg[1:0]              cnt_o	
 );
@@ -55,6 +63,9 @@ module ex_mem (
 			    mem_whilo <= ex_whilo;
                 hilo_o <= {`ZeroWord, `ZeroWord};
 			    cnt_o <= 2'b00;
+                mem_aluop <= ex_aluop;
+			    mem_mem_addr <= ex_mem_addr;
+			    mem_reg2 <= ex_reg2;
             end else begin
                 hilo_o <= hilo_i;
 			    cnt_o <= cnt_i;

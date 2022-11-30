@@ -9,6 +9,7 @@ module ex (
     input wire[`RegBus] reg2_i,
     input wire[`RegAddrBus] wd_i,
     input wire wreg_i,
+	input wire[`RegBus]           inst_i,
     //HI、LO寄存器的值
 	input wire[`RegBus]           hi_i,
 	input wire[`RegBus]           lo_i,
@@ -44,6 +45,10 @@ module ex (
 	output reg[`RegBus]           div_opdata2_o,
 	output reg                    div_start_o,
 	output reg                    signed_div_o,
+	//下面新增的几个输出是为加载、存储指令准备的
+	output wire[`AluOpBus]        aluop_o,
+	output wire[`RegBus]          mem_addr_o,
+	output wire[`RegBus]          reg2_o,//lwl,lwr ,要加载目的寄存器原始值
 	output reg		stallreq       
 
 );
@@ -67,6 +72,14 @@ module ex (
 	wire[`RegBus] opdata2_mult;//乘法操作中的乘数
 	wire[`DoubleRegBus] hilo_temp;//临时保存乘法结果，宽度为64位
     reg[`DoubleRegBus] hilo_temp1;//用于累加累乘
+  //aluop_o传递到访存阶段，用于加载、存储指令
+  assign aluop_o = aluop_i;
+  
+  //mem_addr传递到访存阶段，是加载、存储指令对应的存储器地址
+  assign mem_addr_o = reg1_i + {{16{inst_i[15]}},inst_i[15:0]};
+
+  //将两个操作数也传递到访存阶段，也是为记载、存储指令准备的
+  assign reg2_o = reg2_i;
 //stage one: compute with aluop_i
     always @(*) begin
         if(rst == `RstEnable) begin

@@ -34,7 +34,8 @@ module id (
 	output reg[`RegBus] branch_target_address_o,       
 	output reg[`RegBus] link_addr_o,
 	output reg          is_in_delayslot_o,
-    output wire  stallreq
+    output wire  stallreq,
+    output wire[`RegBus] inst_o//传输给SRAM
 );
 //get order num and get function
 //[26-31] is for ori ,you can judge if ori from it
@@ -55,6 +56,7 @@ assign pc_plus_4 = pc_i +4;//保存当前译码指令后面紧接着的指令地
 //imm_sll2_signedext 对应分支指令中的offset左移两位，再符号扩展至32位的值
 assign imm_sll2_signedext = {{14{inst_i[15]}}, inst_i[15:0], 2'b00 };  
 assign stallreq = `NoStop;
+assign inst_o = inst_i;
 //stage one : decode
 always @(*) begin
     if(rst ==`RstEnable) begin
@@ -493,6 +495,108 @@ always @(*) begin
 			    next_inst_in_delayslot_o <= `InDelaySlot;		  	
 			end
         end
+        `EXE_LB:	begin
+		  	wreg_o <= `WriteEnable;		
+            aluop_o <= `EXE_LB_OP;
+		  	alusel_o <= `EXE_RES_LOAD_STORE; 
+            reg1_read_o <= 1'b1;	
+            reg2_read_o <= 1'b0;	  	
+			wd_o <= inst_i[20:16]; 
+            instvalid <= `InstValid;	
+		end
+        `EXE_LBU:	begin
+		  	wreg_o <= `WriteEnable;		
+            aluop_o <= `EXE_LBU_OP;
+		  	alusel_o <= `EXE_RES_LOAD_STORE; 
+            reg1_read_o <= 1'b1;	
+            reg2_read_o <= 1'b0;	  	
+			wd_o <= inst_i[20:16]; 
+            instvalid <= `InstValid;	
+		end
+        `EXE_LH:	begin
+		  	wreg_o <= `WriteEnable;		
+            aluop_o <= `EXE_LH_OP;
+		  	alusel_o <= `EXE_RES_LOAD_STORE; 
+            reg1_read_o <= 1'b1;	
+            reg2_read_o <= 1'b0;	  	
+			wd_o <= inst_i[20:16]; 
+            instvalid <= `InstValid;	
+		end
+        `EXE_LHU:	begin
+		  	wreg_o <= `WriteEnable;		
+            aluop_o <= `EXE_LHU_OP;
+		  	alusel_o <= `EXE_RES_LOAD_STORE; 
+            reg1_read_o <= 1'b1;	
+            reg2_read_o <= 1'b0;	  	
+			wd_o <= inst_i[20:16]; 
+            instvalid <= `InstValid;	
+		end
+        `EXE_LW:	begin
+		  	wreg_o <= `WriteEnable;		
+            aluop_o <= `EXE_LW_OP;
+		  	alusel_o <= `EXE_RES_LOAD_STORE; 
+            reg1_read_o <= 1'b1;	
+            reg2_read_o <= 1'b0;	  	
+			wd_o <= inst_i[20:16]; 
+            instvalid <= `InstValid;	
+		end
+        `EXE_LWL:	begin
+		  	wreg_o <= `WriteEnable;		
+            aluop_o <= `EXE_LWL_OP;
+		  	alusel_o <= `EXE_RES_LOAD_STORE; 
+            reg1_read_o <= 1'b1;	
+            reg2_read_o <= 1'b1;	  	
+			wd_o <= inst_i[20:16]; 
+            instvalid <= `InstValid;	
+		end
+        `EXE_LWR:	begin
+		  	wreg_o <= `WriteEnable;		
+            aluop_o <= `EXE_LWR_OP;
+		  	alusel_o <= `EXE_RES_LOAD_STORE; 
+            reg1_read_o <= 1'b1;	
+            reg2_read_o <= 1'b1;	  	
+			wd_o <= inst_i[20:16]; instvalid <= `InstValid;	
+		end
+        `EXE_SB:	begin
+		  	wreg_o <= `WriteDisable;		
+            aluop_o <= `EXE_SB_OP;
+		  	reg1_read_o <= 1'b1;	
+            reg2_read_o <= 1'b1; 
+            instvalid <= `InstValid;	
+		  	alusel_o <= `EXE_RES_LOAD_STORE; 
+		end
+        `EXE_SH:			begin
+		  	wreg_o <= `WriteDisable;		
+            aluop_o <= `EXE_SH_OP;
+		  	reg1_read_o <= 1'b1;	
+            reg2_read_o <= 1'b1; 
+            instvalid <= `InstValid;	
+		  	alusel_o <= `EXE_RES_LOAD_STORE; 
+		end
+		`EXE_SW:			begin
+		  	wreg_o <= `WriteDisable;		
+            aluop_o <= `EXE_SW_OP;
+		  	reg1_read_o <= 1'b1;	
+            reg2_read_o <= 1'b1; 
+            instvalid <= `InstValid;	
+		  	alusel_o <= `EXE_RES_LOAD_STORE; 
+		end
+        `EXE_SWL:			begin
+		  	wreg_o <= `WriteDisable;		
+            aluop_o <= `EXE_SWL_OP;
+		    reg1_read_o <= 1'b1;	
+            reg2_read_o <= 1'b1; 
+            instvalid <= `InstValid;	
+		  	alusel_o <= `EXE_RES_LOAD_STORE; 
+		end
+		`EXE_SWR:			begin
+		  	wreg_o <= `WriteDisable;		
+            aluop_o <= `EXE_SWR_OP;
+		  	reg1_read_o <= 1'b1;	
+            reg2_read_o <= 1'b1; 
+            instvalid <= `InstValid;	
+		  	alusel_o <= `EXE_RES_LOAD_STORE; 
+		end
         `EXE_REGIMM_INST:		begin
             case (op4)
                 `EXE_BGEZ:	begin

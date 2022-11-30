@@ -1,0 +1,117 @@
+{
+    "Modules": {
+        "...MASTER...": {},
+        "pc_reg": {
+            "Compiled": "Yes",
+            "Compiled Times": 3
+        },
+        "std": {
+            "Compiled": "Yes",
+            "Compiled Times": 13
+        },
+        "mem_wb": {
+            "Compiled": "Yes",
+            "Compiled Times": 10
+        },
+        "mem": {
+            "Compiled": "Yes",
+            "Compiled Times": 10
+        },
+        "openmips_min_sopc_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 13
+        },
+        "ex": {
+            "Compiled": "Yes",
+            "Compiled Times": 5
+        },
+        "hilo_reg": {
+            "Compiled": "Yes",
+            "Compiled Times": 10
+        },
+        "ex_mem": {
+            "Compiled": "Yes",
+            "Compiled Times": 10
+        },
+        "if_id": {
+            "Compiled": "Yes",
+            "Compiled Times": 3
+        },
+        "id_ex": {
+            "Compiled": "Yes",
+            "Compiled Times": 5
+        },
+        "inst_rom": {
+            "Compiled": "Yes",
+            "Compiled Times": 10
+        },
+        "ctrl": {
+            "Compiled": "Yes",
+            "Compiled Times": 10
+        },
+        "regfile": {
+            "Compiled": "Yes",
+            "Compiled Times": 5
+        },
+        "div": {
+            "Compiled": "Yes",
+            "Compiled Times": 7
+        },
+        "data_ram": {
+            "Compiled": "Yes",
+            "Compiled Times": 3
+        }
+    },
+    "reusePaths": {
+        "FSbWZ_d": {
+            "icPath": "csrc"
+        },
+        "K7u6h_d": {
+            "icPath": "csrc"
+        },
+        "Nxspn_d": {
+            "icPath": "csrc"
+        },
+        "amcQw_d": {
+            "icPath": "csrc"
+        },
+        "reYIK_d": {
+            "icPath": "csrc"
+        },
+        "hBiVG_d": {
+            "icPath": "csrc"
+        },
+        "wxG7b_d": {
+            "icPath": "csrc"
+        },
+        "gvrSa_d": {
+            "icPath": "csrc"
+        },
+        "UmCUI_d": {
+            "icPath": "csrc"
+        },
+        "r2dgF_d": {
+            "icPath": "csrc"
+        },
+        "rzVRz_d": {
+            "icPath": "csrc"
+        },
+        "vnxvv_d": {
+            "icPath": "csrc"
+        },
+        "FzTxA_d": {
+            "icPath": "csrc"
+        },
+        "usA8F_d": {
+            "icPath": "csrc"
+        },
+        "yUwqV_d": {
+            "icPath": "csrc"
+        },
+        "KA3k1_d": {
+            "icPath": "csrc"
+        }
+    },
+    "CompUnits": {},
+    "ObjArchives": []
+}

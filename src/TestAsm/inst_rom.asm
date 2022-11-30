@@ -4,50 +4,45 @@ inst_rom.om:     file format elf32-tradbigmips
 Disassembly of section .text:
 
 00000000 <_start>:
-   0:	34018000 	li	at,0x8000
-   4:	00010c00 	sll	at,at,0x10
-   8:	34210010 	ori	at,at,0x10
-   c:	34028000 	li	v0,0x8000
-  10:	00021400 	sll	v0,v0,0x10
-  14:	34420001 	ori	v0,v0,0x1
-  18:	34030000 	li	v1,0x0
-  1c:	00411821 	addu	v1,v0,at
-  20:	34030000 	li	v1,0x0
-  24:	00411820 	add	v1,v0,at
-  28:	00231822 	sub	v1,at,v1
-  2c:	00621823 	subu	v1,v1,v0
-  30:	20630002 	addi	v1,v1,2
-  34:	34030000 	li	v1,0x0
-  38:	24638000 	addiu	v1,v1,-32768
-  3c:	3401ffff 	li	at,0xffff
-  40:	00010c00 	sll	at,at,0x10
-  44:	0020102a 	slt	v0,at,zero
-  48:	0020102b 	sltu	v0,at,zero
-  4c:	28228000 	slti	v0,at,-32768
-  50:	2c228000 	sltiu	v0,at,-32768
-  54:	3c010000 	lui	at,0x0
-  58:	70221021 	clo	v0,at
-  5c:	70221020 	clz	v0,at
-  60:	3c01ffff 	lui	at,0xffff
-  64:	3421ffff 	ori	at,at,0xffff
-  68:	70221020 	clz	v0,at
-  6c:	70221021 	clo	v0,at
-  70:	3c01a100 	lui	at,0xa100
-  74:	70221020 	clz	v0,at
-  78:	70221021 	clo	v0,at
-  7c:	3c011100 	lui	at,0x1100
-  80:	70221020 	clz	v0,at
-  84:	70221021 	clo	v0,at
-  88:	3401ffff 	li	at,0xffff
-  8c:	00010c00 	sll	at,at,0x10
-  90:	3421fffb 	ori	at,at,0xfffb
-  94:	34020006 	li	v0,0x6
-  98:	70221802 	mul	v1,at,v0
-  9c:	00220018 	mult	at,v0
-  a0:	00220019 	multu	at,v0
-	...
+   0:	3403eeff 	li	v1,0xeeff
+   4:	a0030003 	sb	v1,3(zero)
+   8:	00031a02 	srl	v1,v1,0x8
+   c:	a0030002 	sb	v1,2(zero)
+  10:	3403ccdd 	li	v1,0xccdd
+  14:	a0030001 	sb	v1,1(zero)
+  18:	00031a02 	srl	v1,v1,0x8
+  1c:	a0030000 	sb	v1,0(zero)
+  20:	80010003 	lb	at,3(zero)
+  24:	90010002 	lbu	at,2(zero)
+  28:	00000000 	nop
+  2c:	3403aabb 	li	v1,0xaabb
+  30:	a4030004 	sh	v1,4(zero)
+  34:	94010004 	lhu	at,4(zero)
+  38:	84010004 	lh	at,4(zero)
+  3c:	34038899 	li	v1,0x8899
+  40:	a4030006 	sh	v1,6(zero)
+  44:	84010006 	lh	at,6(zero)
+  48:	94010006 	lhu	at,6(zero)
+  4c:	34034455 	li	v1,0x4455
+  50:	00031c00 	sll	v1,v1,0x10
+  54:	34636677 	ori	v1,v1,0x6677
+  58:	ac030008 	sw	v1,8(zero)
+  5c:	8c010008 	lw	at,8(zero)
+  60:	00000000 	nop
+  64:	88010005 	lwl	at,5(zero)
+  68:	00000000 	nop
+  6c:	98010008 	lwr	at,8(zero)
+  70:	00000000 	nop
+  74:	b8010002 	swr	at,2(zero)
+  78:	a8010007 	swl	at,7(zero)
+  7c:	8c010000 	lw	at,0(zero)
+  80:	8c010004 	lw	at,4(zero)
+
+00000084 <_loop>:
+  84:	08000021 	j	84 <_loop>
+  88:	00000000 	nop
 Disassembly of section .reginfo:
 
-00000000 <_ram_end-0xb0>:
-   0:	0000000e 	0xe
+00000000 <_ram_end-0x90>:
+   0:	0000000a 	movz	zero,zero,zero
 	...

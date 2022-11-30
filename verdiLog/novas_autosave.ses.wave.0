@@ -2,11 +2,11 @@ Magic 271485
 Revision Verdi3_L-2016.06-1
 
 ; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
-viewPort 0 28 1653 266 293 65
+viewPort 0 28 1653 157 293 65
 
 ; File list:
 ; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
-openDirFile -d / "" "/home/tjx/DIY_CPU/tb.fsdb"
+openDirFile -d / "" "/home/zzy/DIY_CPU/tb.fsdb"
 
 ; file time scale:
 ; fileTimeScale ### s|ms|us|ns|ps
@@ -16,16 +16,16 @@ signalSpacing 5
 
 ; windowTimeUnit is used for zoom, cursor & marker
 ; waveform viewport range
-zoom 861517.145887 1891212.145887
-cursor 0.000000
+zoom 835193.909816 1350041.409816
+cursor 710000.000000
 marker 0.000000
 
 ; user define markers
 ; userMarker time_pos marker_name color linestyle
 ; visible top row signal index
-top 0
+top 187
 ; marker line index
-markerPos 33
+markerPos 218
 
 ; event list
 ; addEvent event_name event_expression
@@ -46,7 +46,192 @@ curSTATUS ByChange
 
 
 addGroup "G1"
-activeDirFile "" "/home/tjx/DIY_CPU/tb.fsdb"
+activeDirFile "" "/home/zzy/DIY_CPU/tb.fsdb"
+addSignal -h 15 -UNSIGNED -HEX /openmips_min_sopc_tb/openmips_min_sopc0/data_ram0/data_i[31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope data_i[31:24]
+addSignal -h 15 -UNSIGNED -HEX -holdScope addr[18:2]
+addSignal -expanded -h 15 -UNSIGNED -HEX /openmips_min_sopc_tb/openmips_min_sopc0/openmips0/regfile1/regs[0:31]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[0][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[1][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[2][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[3][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[4][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[5][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[6][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[7][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[8][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[9][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[10][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[11][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[12][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[13][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[14][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[15][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[16][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[17][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[18][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[19][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[20][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[21][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[22][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[23][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[24][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[25][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[26][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[27][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[28][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[29][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[30][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[31][31:0]
+addSignal -h 15 -UNSIGNED -HEX /openmips_min_sopc_tb/openmips_min_sopc0/openmips0/mem0/reg2_i[7:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope wdata_o[31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope mem_data_i[23:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope reg2_i[31:24]
+addSignal -h 15 -UNSIGNED -HEX -holdScope reg2_i[31:16]
+addSignal -h 15 -UNSIGNED -HEX -holdScope reg2_i[31:8]
+addSignal -h 15 -UNSIGNED -HEX -holdScope reg2_i[31:0]
+addSignal -h 15 -UNSIGNED -HEX /openmips_min_sopc_tb/openmips_min_sopc0/openmips0/regfile1/raddr2[4:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope rdata2[31:0]
+addSignal -h 15 -UNSIGNED -HEX /openmips_min_sopc_tb/openmips_min_sopc0/openmips0/mem0/mem_data_o[31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope reg2_i[7:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope mem_data_i[23:0]
+addSignal -h 15 -UNSIGNED -HEX /openmips_min_sopc_tb/openmips_min_sopc0/openmips0/ex_reg2_o[31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope mem_reg2_i[31:0]
+addSignal -h 15 -UNSIGNED -HEX /openmips_min_sopc_tb/openmips_min_sopc0/data_ram0/data_i[31:24]
+addSignal -h 15 -UNSIGNED -HEX -holdScope data_i[23:16]
+addSignal -h 15 -UNSIGNED -HEX -holdScope data_i[15:8]
+addSignal -h 15 -UNSIGNED -HEX -holdScope data_i[7:0]
+addSignal -expanded -h 15 -UNSIGNED -HEX /openmips_min_sopc_tb/openmips_min_sopc0/openmips0/regfile1/regs[0:31]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[0][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[1][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[2][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[3][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[4][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[5][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[6][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[7][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[8][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[9][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[10][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[11][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[12][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[13][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[14][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[15][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[16][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[17][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[18][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[19][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[20][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[21][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[22][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[23][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[24][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[25][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[26][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[27][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[28][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[29][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[30][31:0]
+addSignal -expanded -h 15 -UNSIGNED -HEX -holdScope regs[31][31:0]
+addSignal -h 15 -holdScope regs[31][31]
+addSignal -h 15 -holdScope regs[31][30]
+addSignal -h 15 -holdScope regs[31][29]
+addSignal -h 15 -holdScope regs[31][28]
+addSignal -h 15 -holdScope regs[31][27]
+addSignal -h 15 -holdScope regs[31][26]
+addSignal -h 15 -holdScope regs[31][25]
+addSignal -h 15 -holdScope regs[31][24]
+addSignal -h 15 -holdScope regs[31][23]
+addSignal -h 15 -holdScope regs[31][22]
+addSignal -h 15 -holdScope regs[31][21]
+addSignal -h 15 -holdScope regs[31][20]
+addSignal -h 15 -holdScope regs[31][19]
+addSignal -h 15 -holdScope regs[31][18]
+addSignal -h 15 -holdScope regs[31][17]
+addSignal -h 15 -holdScope regs[31][16]
+addSignal -h 15 -holdScope regs[31][15]
+addSignal -h 15 -holdScope regs[31][14]
+addSignal -h 15 -holdScope regs[31][13]
+addSignal -h 15 -holdScope regs[31][12]
+addSignal -h 15 -holdScope regs[31][11]
+addSignal -h 15 -holdScope regs[31][10]
+addSignal -h 15 -holdScope regs[31][9]
+addSignal -h 15 -holdScope regs[31][8]
+addSignal -h 15 -holdScope regs[31][7]
+addSignal -h 15 -holdScope regs[31][6]
+addSignal -h 15 -holdScope regs[31][5]
+addSignal -h 15 -holdScope regs[31][4]
+addSignal -h 15 -holdScope regs[31][3]
+addSignal -h 15 -holdScope regs[31][2]
+addSignal -h 15 -holdScope regs[31][1]
+addSignal -h 15 -holdScope regs[31][0]
+addSignal -h 15 -UNSIGNED -HEX /openmips_min_sopc_tb/openmips_min_sopc0/openmips0/id0/reg2_o[31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope reg2_addr_o[4:0]
+addSignal -h 15 -UNSIGNED -HEX /openmips_min_sopc_tb/openmips_min_sopc0/openmips0/mem0/reg2_i[7:0]
+addSignal -h 15 /openmips_min_sopc_tb/openmips_min_sopc0/openmips0/id0/mem_wreg_i
+addSignal -h 15 -UNSIGNED -HEX -holdScope reg2_o[31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope mem_wdata_i[31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope reg2_o[31:0]
+addSignal -h 15 -UNSIGNED -HEX /openmips_min_sopc_tb/openmips_min_sopc0/openmips0/mem0/reg2_i[31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope reg2_i[7:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope mem_data_i[23:0]
+addSignal -h 15 -UNSIGNED -HEX /openmips_min_sopc_tb/openmips_min_sopc0/openmips0/id0/reg2_addr_o[4:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope reg2_o[31:0]
+addSignal -expanded -h 15 -UNSIGNED -HEX /openmips_min_sopc_tb/openmips_min_sopc0/openmips0/regfile1/regs[0:31]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[0][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[1][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[2][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[3][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[4][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[5][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[6][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[7][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[8][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[9][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[10][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[11][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[12][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[13][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[14][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[15][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[16][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[17][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[18][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[19][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[20][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[21][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[22][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[23][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[24][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[25][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[26][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[27][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[28][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[29][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[30][31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope regs[31][31:0]
+addSignal -h 15 -UNSIGNED -HEX /openmips_min_sopc_tb/openmips_min_sopc0/openmips0/mem0/mem_data_i[23:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope reg2_i[7:0]
+addSignal -h 15 /openmips_min_sopc_tb/openmips_min_sopc0/openmips0/ex_mem0/mem_wreg
+addSignal -h 15 -UNSIGNED -HEX /openmips_min_sopc_tb/openmips_min_sopc0/openmips0/id0/mem_wd_i[4:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope reg2_addr_o[4:0]
+addSignal -h 15 -holdScope mem_wreg_i
+addSignal -h 15 -holdScope reg2_read_o
+addSignal -h 15 -UNSIGNED -HEX -holdScope mem_wdata_i[31:0]
+addSignal -h 15 -UNSIGNED -HEX /openmips_min_sopc_tb/openmips_min_sopc0/openmips0/mem0/mem_data_o[31:0]
+addSignal -h 15 -UNSIGNED -HEX /openmips_min_sopc_tb/openmips_min_sopc0/openmips0/id0/mem_wdata_i[31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope ex_wdata_i[31:0]
+addSignal -h 15 -holdScope ex_wreg_i
+addSignal -h 15 -UNSIGNED -HEX -holdScope ex_wd_i[4:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope reg2_addr_o[4:0]
+addSignal -h 15 -holdScope reg2_read_o
+addSignal -h 15 -UNSIGNED -HEX -holdScope reg2_o[31:0]
+addSignal -h 15 -holdScope reg2_read_o
+addSignal -h 15 -holdScope ex_wreg_i
+addSignal -h 15 -UNSIGNED -HEX -holdScope ex_wd_i[4:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope reg2_addr_o[4:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope ex_wdata_i[31:0]
 addSignal -expanded -h 15 -UNSIGNED -HEX /openmips_min_sopc_tb/openmips_min_sopc0/openmips0/regfile1/regs[0:31]
 addSignal -h 15 -UNSIGNED -HEX -holdScope regs[0][31:0]
 addSignal -h 15 -UNSIGNED -HEX -holdScope regs[1][31:0]
