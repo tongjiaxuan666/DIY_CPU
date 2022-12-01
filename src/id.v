@@ -540,6 +540,14 @@ always @(*) begin
 			wd_o <= inst_i[20:16]; 
             instvalid <= `InstValid;	
 		end
+        `EXE_LL:	begin
+		  	wreg_o <= `WriteEnable;		
+            aluop_o <= `EXE_LL_OP;
+		  	alusel_o <= `EXE_RES_LOAD_STORE; 
+            reg1_read_o <= 1'b1;	
+            reg2_read_o <= 1'b0;	  	
+			wd_o <= inst_i[20:16]; instvalid <= `InstValid;	
+		end
         `EXE_LWL:	begin
 		  	wreg_o <= `WriteEnable;		
             aluop_o <= `EXE_LWL_OP;
@@ -596,6 +604,16 @@ always @(*) begin
             reg2_read_o <= 1'b1; 
             instvalid <= `InstValid;	
 		  	alusel_o <= `EXE_RES_LOAD_STORE; 
+		end
+        `EXE_SC:			begin
+		  	wreg_o <= `WriteEnable;		
+            aluop_o <= `EXE_SC_OP;
+		  	alusel_o <= `EXE_RES_LOAD_STORE; 
+            reg1_read_o <= 1'b1;	
+            reg2_read_o <= 1'b1;	  	
+			wd_o <= inst_i[20:16]; 
+            instvalid <= `InstValid;	
+			alusel_o <= `EXE_RES_LOAD_STORE; 
 		end
         `EXE_REGIMM_INST:		begin
             case (op4)

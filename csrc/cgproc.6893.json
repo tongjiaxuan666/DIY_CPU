@@ -1,0 +1,168 @@
+{
+    "reusePaths": {
+        "rzVRz_d": {
+            "icPath": "csrc"
+        },
+        "amcQw_d": {
+            "icPath": "csrc"
+        },
+        "reYIK_d": {
+            "icPath": "csrc"
+        },
+        "wxG7b_d": {
+            "icPath": "csrc"
+        },
+        "hBiVG_d": {
+            "icPath": "csrc"
+        },
+        "r2dgF_d": {
+            "icPath": "csrc"
+        },
+        "K7u6h_d": {
+            "icPath": "csrc"
+        },
+        "vnxvv_d": {
+            "icPath": "csrc"
+        },
+        "UmCUI_d": {
+            "icPath": "csrc"
+        },
+        "Nxspn_d": {
+            "icPath": "csrc"
+        },
+        "yUwqV_d": {
+            "icPath": "csrc"
+        },
+        "FzTxA_d": {
+            "icPath": "csrc"
+        },
+        "KA3k1_d": {
+            "icPath": "csrc"
+        }
+    },
+    "Modules": {
+        "mem": {
+            "Compiled Times": 11,
+            "Compiled": "Yes"
+        },
+        "...MASTER...": {},
+        "pc_reg": {
+            "Compiled Times": 4,
+            "Compiled": "Yes"
+        },
+        "std": {
+            "Compiled Times": 14,
+            "Compiled": "Yes"
+        },
+        "div": {
+            "Compiled Times": 8,
+            "Compiled": "Yes"
+        },
+        "openmips_min_sopc_tb": {
+            "Compiled Times": 14,
+            "Compiled": "Yes"
+        },
+        "regfile": {
+            "Compiled Times": 6,
+            "Compiled": "Yes"
+        },
+        "data_ram": {
+            "Compiled Times": 4,
+            "Compiled": "Yes"
+        },
+        "ex": {
+            "Compiled Times": 6,
+            "Compiled": "Yes"
+        },
+        "inst_rom": {
+            "Compiled Times": 11,
+            "Compiled": "Yes"
+        },
+        "ex_mem": {
+            "Compiled Times": 11,
+            "Compiled": "Yes"
+        },
+        "if_id": {
+            "Compiled Times": 4,
+            "Compiled": "Yes"
+        },
+        "id_ex": {
+            "Compiled Times": 6,
+            "Compiled": "Yes"
+        },
+        "ctrl": {
+            "Compiled Times": 11,
+            "Compiled": "Yes"
+        },
+        "mem_wb": {
+            "Compiled Times": 11,
+            "Compiled": "Yes"
+        },
+        "hilo_reg": {
+            "Compiled Times": 11,
+            "Compiled": "Yes"
+        },
+        "LLbit_reg": {
+            "Compiled Times": 1,
+            "Compiled": "Yes"
+        }
+    },
+    "CompUnits": {
+        "re2bz_d": {
+            "mod": "LLbit_reg",
+            "out": "re2bz_d.o",
+            "bytes": 8182,
+            "checksum": 0,
+            "mode": 4,
+            "archive": "archive.13/_6893_archive_1.a"
+        },
+        "FSbWZ_d": {
+            "mod": "mem",
+            "out": "FSbWZ_d.o",
+            "bytes": 25805,
+            "checksum": 0,
+            "mode": 4,
+            "archive": "archive.13/_6893_archive_1.a"
+        },
+        "gvrSa_d": {
+            "mod": "openmips_min_sopc_tb",
+            "out": "gvrSa_d.o",
+            "bytes": 63660,
+            "checksum": 0,
+            "mode": 4,
+            "archive": "archive.13/_6893_archive_1.a"
+        },
+        "usA8F_d": {
+            "mod": "mem_wb",
+            "out": "usA8F_d.o",
+            "bytes": 12837,
+            "checksum": 0,
+            "mode": 4,
+            "archive": "archive.13/_6893_archive_1.a"
+        }
+    },
+    "ObjArchives": [
+        {
+            "archive": "archive.13/_6893_archive_1.a",
+            "objects": [
+                [
+                    "FSbWZ_d.o",
+                    25805
+                ],
+                [
+                    "gvrSa_d.o",
+                    63660
+                ],
+                [
+                    "usA8F_d.o",
+                    12837
+                ],
+                [
+                    "re2bz_d.o",
+                    8182
+                ]
+            ],
+            "size": 110484
+        }
+    ]
+}

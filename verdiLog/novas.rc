@@ -224,9 +224,9 @@ autoSaveSession = FALSE
 TclAutoSource = 
 cmd_enter_form = FALSE
 SyncBrowserDir = TRUE
-version = Verdi3_L-2016.06-1
 SignalCaseInSensitive = FALSE
 ShowWndCtntDuringResizing = FALSE
+version = Verdi3_L-2016.06-1
 [GlobalProp]
 ErrWindow_Font = Helvetica_M_R_12
 [Globals]

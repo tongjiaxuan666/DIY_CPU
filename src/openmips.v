@@ -67,6 +67,8 @@ wire[`RegBus] mem_wdata_o;
 wire[`RegBus] mem_hi_o;
 wire[`RegBus] mem_lo_o;
 wire mem_whilo_o;	
+wire mem_LLbit_value_o;
+wire mem_LLbit_we_o;
 //mem/wb to regfile
 //ex_mem to mem
 wire wb_wreg_i;
@@ -75,6 +77,8 @@ wire[`RegBus] wb_wdata_i;
 wire[`RegBus] wb_hi_i;
 wire[`RegBus] wb_lo_i;
 wire wb_whilo_i;
+wire wb_LLbit_value_i;
+wire wb_LLbit_we_i;	
 //id to regfile
 wire reg1_read;
 wire reg2_read;
@@ -109,6 +113,8 @@ wire[`RegBus] branch_target_address;
 wire[5:0] stall;
 wire stallreq_from_id;
 wire stallreq_from_ex;
+
+wire LLbit_o;
 //pc_reg
 pc_reg pc_reg0(
     .clk(clk),
@@ -293,6 +299,15 @@ mem mem0(
     .wd_i(mem_wd_i),
     .wreg_i(mem_wreg_i),
     .wdata_i(mem_wdata_i),
+
+    //LLbit_i是LLbit寄存器的值
+    .LLbit_i(LLbit_o),
+    //但不一定是最新值，回写阶段可能要写LLbit，所以还要进一步判断
+    .wb_LLbit_we_i(wb_LLbit_we_i),
+    .wb_LLbit_value_i(wb_LLbit_value_i),
+
+    .LLbit_we_o(mem_LLbit_we_o),
+    .LLbit_value_o(mem_LLbit_value_o),
     .hi_i(mem_hi_i),
     .lo_i(mem_lo_i),
     .whilo_i(mem_whilo_i),
@@ -328,13 +343,18 @@ mem_wb mem_wb0(
     .mem_hi(mem_hi_o),
     .mem_lo(mem_lo_o),
     .mem_whilo(mem_whilo_o),	
+
+    .mem_LLbit_we(mem_LLbit_we_o),
+    .mem_LLbit_value(mem_LLbit_value_o),	
      //to mem
     .wb_wd(wb_wd_i),
     .wb_wreg(wb_wreg_i),
     .wb_wdata(wb_wdata_i),
     .wb_hi(wb_hi_i),
     .wb_lo(wb_lo_i),
-    .wb_whilo(wb_whilo_i)
+    .wb_whilo(wb_whilo_i),
+    .wb_LLbit_we(wb_LLbit_we_i),
+    .wb_LLbit_value(wb_LLbit_value_i)	
 );
 hilo_reg hilo_reg0(
     .clk(clk),
@@ -372,4 +392,17 @@ div div0(
 		.result_o(div_result),
 		.ready_o(div_ready)
 	);
+LLbit_reg LLbit_reg0(
+    .clk(clk),
+    .rst(rst),
+    .flush(1'b0),//异常标志位
+    
+    //写端口
+    .LLbit_i(wb_LLbit_value_i),
+    .we(wb_LLbit_we_i),
+
+    //读端口1
+    .LLbit_o(LLbit_o)
+
+);
 endmodule

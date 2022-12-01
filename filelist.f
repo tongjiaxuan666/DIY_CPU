@@ -16,3 +16,4 @@
 ./src/ctrl.v
 ./src/div.v
 ./src/data_ram.v
+./src/LLbit_reg.v
