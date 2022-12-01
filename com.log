@@ -69,7 +69,7 @@ Warning-[PCWM-W] Port connection width mismatch
 
 
 Warning-[PCWM-W] Port connection width mismatch
-./src/openmips.v, 296
+./src/openmips.v, 298
 "mem mem0( .rst (rst),  .wd_i (mem_wd_i),  .wreg_i (mem_wreg_i),  .wdata_i (mem_wdata_i),  .LLbit_i (LLbit_o),  .wb_LLbit_we_i (wb_LLbit_we_i),  .wb_LLbit_value_i (wb_LLbit_value_i),  .LLbit_we_o (mem_LLbit_we_o),  .LLbit_value_o (mem_LLbit_value_o),  .hi_i (mem_hi_i),  .lo_i (mem_lo_i),  .whilo_i (mem_whilo_i),  .aluop_i (mem_aluop_i),  .mem_addr_i (mem_mem_addr_i),  .reg2_i (mem_reg2_i),  .mem_data_i (ram_data_i),  .wd_o (mem_wd_o),  .wreg_o (mem_wreg_o),  .wdata_o (mem_wdata_o),  .hi_o (mem_hi_o),  .lo_o (mem_lo_o),  .whilo_o (mem_whilo_o),  .mem_addr_o (ram_addr_o),  .mem_we_o (ram_we_o),  .mem_sel_o (ram_sel_o),  .mem_data_o (ram_data_o),  .mem_ce_o (ram_ce_o));"
   The following 4-bit expression is connected to 1-bit port "mem_ce_o" of 
   module "mem", instance "mem0".
@@ -79,12 +79,9 @@ Warning-[PCWM-W] Port connection width mismatch
 Starting vcs inline pass...
 16 unique modules to generate
 16 modules and 0 UDP read. 
-	However, due to incremental compilation, only 4 modules need to be compiled. 
-recompiling module mem
+	However, due to incremental compilation, only 1 module needs to be compiled. 
 recompiling module openmips_min_sopc_tb
-recompiling module mem_wb
-recompiling module LLbit_reg
-All of 4 modules done
+All of 1 modules done
 make[1]: Entering directory '/home/tjx/DIY_CPU/csrc'
 rm -f _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
 ld -shared  -o .//../simv.daidir//_csrc0.so objs/amcQw_d.o 
@@ -92,7 +89,7 @@ rm -f _csrc0.so
 if [ -x ../simv ]; then chmod -x ../simv; fi
 g++-4.8  -o ../simv   -Wl,-rpath-link=./ -Wl,-rpath='$ORIGIN'/simv.daidir/ -Wl,-rpath=./simv.daidir/ \
 -Wl,-rpath='$ORIGIN'/simv.daidir//scsim.db.dir  -Wl,--no-as-needed -rdynamic -rdynamic \
-amcQwB.o   _6893_archive_1.so _prev_archive_1.so _csrc0.so  SIM_l.o  _csrc0.so   \
+amcQwB.o   _7836_archive_1.so _prev_archive_1.so _csrc0.so  SIM_l.o  _csrc0.so   \
 rmapats_mop.o rmapats.o rmar.o  rmar_llvm_0_1.o rmar_llvm_0_0.o          /home/tjx/synopsys/vcs_2016.06/linux64/lib/libzerosoft_rt_stubs.so \
 /home/tjx/synopsys/vcs_2016.06/linux64/lib/libvirsim.so /home/tjx/synopsys/vcs_2016.06/linux64/lib/liberrorinf.so \
 /home/tjx/synopsys/vcs_2016.06/linux64/lib/libsnpsmalloc.so /home/tjx/synopsys/verdi_2016.06-1/share/PLI/VCS/LINUX64/pli.a \
@@ -119,5 +116,5 @@ $finish called from file "./src/openmips_min_sopc_tb.v", line 16.
 $finish at simulation time             10195000
            V C S   S i m u l a t i o n   R e p o r t 
 Time: 10195000 ps
-CPU Time:      2.470 seconds;       Data structure size:   2.0Mb
-Thu Dec  1 11:27:51 2022
+CPU Time:      0.840 seconds;       Data structure size:   2.0Mb
+Thu Dec  1 11:47:51 2022

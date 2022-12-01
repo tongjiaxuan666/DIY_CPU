@@ -1,27 +1,7 @@
 {
-    "...MASTER...": [
-        "SIM",
-        "amcQw",
-        "module"
-    ],
-    "mem": [
-        "mem",
-        "FSbWZ",
-        "module"
-    ],
-    "pc_reg": [
-        "pc_reg",
-        "wxG7b",
-        "module"
-    ],
     "std": [
         "std",
         "reYIK",
-        "module"
-    ],
-    "div": [
-        "div",
-        "rzVRz",
         "module"
     ],
     "openmips_min_sopc_tb": [
@@ -29,49 +9,14 @@
         "gvrSa",
         "module"
     ],
-    "regfile": [
-        "regfile",
-        "Nxspn",
+    "LLbit_reg": [
+        "LLbit_reg",
+        "re2bz",
         "module"
     ],
-    "data_ram": [
-        "data_ram",
-        "KA3k1",
-        "module"
-    ],
-    "ex": [
-        "ex",
-        "r2dgF",
-        "module"
-    ],
-    "ex_mem": [
-        "ex_mem",
-        "K7u6h",
-        "module"
-    ],
-    "inst_rom": [
-        "inst_rom",
-        "vnxvv",
-        "module"
-    ],
-    "if_id": [
-        "if_id",
-        "hBiVG",
-        "module"
-    ],
-    "id_ex": [
-        "id_ex",
-        "UmCUI",
-        "module"
-    ],
-    "ctrl": [
-        "ctrl",
-        "FzTxA",
-        "module"
-    ],
-    "mem_wb": [
-        "mem_wb",
-        "usA8F",
+    "mem": [
+        "mem",
+        "FSbWZ",
         "module"
     ],
     "hilo_reg": [
@@ -79,9 +24,64 @@
         "yUwqV",
         "module"
     ],
-    "LLbit_reg": [
-        "LLbit_reg",
-        "re2bz",
+    "data_ram": [
+        "data_ram",
+        "KA3k1",
+        "module"
+    ],
+    "pc_reg": [
+        "pc_reg",
+        "wxG7b",
+        "module"
+    ],
+    "ex_mem": [
+        "ex_mem",
+        "K7u6h",
+        "module"
+    ],
+    "ctrl": [
+        "ctrl",
+        "FzTxA",
+        "module"
+    ],
+    "ex": [
+        "ex",
+        "r2dgF",
+        "module"
+    ],
+    "regfile": [
+        "regfile",
+        "Nxspn",
+        "module"
+    ],
+    "div": [
+        "div",
+        "rzVRz",
+        "module"
+    ],
+    "if_id": [
+        "if_id",
+        "hBiVG",
+        "module"
+    ],
+    "inst_rom": [
+        "inst_rom",
+        "vnxvv",
+        "module"
+    ],
+    "...MASTER...": [
+        "SIM",
+        "amcQw",
+        "module"
+    ],
+    "id_ex": [
+        "id_ex",
+        "UmCUI",
+        "module"
+    ],
+    "mem_wb": [
+        "mem_wb",
+        "usA8F",
         "module"
     ]
 }

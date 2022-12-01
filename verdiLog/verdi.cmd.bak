@@ -1,6 +1,6 @@
-verdiWindowResize -win $_Verdi_1 "65" "24" "1653" "864"
+verdiWindowResize -win $_Verdi_1 "65" "24" "1653" "902"
 debImport "-f" "filelist.f"
-debLoadSimResult /home/zzy/DIY_CPU/tb.fsdb
+debLoadSimResult /home/tjx/DIY_CPU/tb.fsdb
 wvCreateWindow
 verdiDockWidgetDisplay -dock widgetDock_WelcomePage
 verdiDockWidgetHide -dock widgetDock_WelcomePage
@@ -19,9 +19,6 @@ srcSelect -signal "regs" -win $_nTrace1
 srcAddSelectedToWave -win $_nTrace1
 wvSelectSignal -win $_nWave2 {( "G1" 1 )} 
 wvExpandBus -win $_nWave2 {("G1" 1)}
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
 wvScrollUp -win $_nWave2 1
 wvScrollUp -win $_nWave2 1
 wvScrollUp -win $_nWave2 1
@@ -40,11 +37,14 @@ wvScrollUp -win $_nWave2 1
 wvScrollUp -win $_nWave2 1
 wvScrollUp -win $_nWave2 1
 wvScrollUp -win $_nWave2 1
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
 wvZoomIn -win $_nWave2
 wvZoomIn -win $_nWave2
-wvZoomIn -win $_nWave2
-wvZoomIn -win $_nWave2
-wvZoomIn -win $_nWave2
-wvSetCursor -win $_nWave2 808911.859368 -snap {("G1" 3)}

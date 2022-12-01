@@ -153,6 +153,8 @@ id id0(
     //from regfile input
     .reg1_data_i(reg1_data),
     .reg2_data_i(reg2_data),
+    //解决load问题
+    .ex_aluop_i(ex_aluop_o),
     // output to regfile
     .reg1_read_o(reg1_read),
     .reg2_read_o(reg2_read),
