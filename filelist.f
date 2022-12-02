@@ -17,3 +17,4 @@
 ./src/div.v
 ./src/data_ram.v
 ./src/LLbit_reg.v
+./src/cp0_reg.v

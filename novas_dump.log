@@ -73,19 +73,19 @@ VCS compile option:
  option[2]: -nc
  option[3]: -a
  option[4]: com.log
- option[5]: /home/tjx/synopsys/vcs_2016.06/linux64/bin/vcs1
+ option[5]: /home/zzy/synopsys/vcs_2016.06/linux64/bin/vcs1
  option[6]: -Mcc=gcc-4.8
  option[7]: -Mcplusplus=g++-4.8
  option[8]: -Masflags=
- option[9]: -Mcfl= -pipe -fPIC -O -I/home/tjx/synopsys/vcs_2016.06/include 
- option[10]: -Mxcflags= -pipe -fPIC -I/home/tjx/synopsys/vcs_2016.06/include
+ option[9]: -Mcfl= -pipe -fPIC -O -I/home/zzy/synopsys/vcs_2016.06/include 
+ option[10]: -Mxcflags= -pipe -fPIC -I/home/zzy/synopsys/vcs_2016.06/include
  option[11]: -Mldflags= -Wl,--no-as-needed -rdynamic -rdynamic 
  option[12]: -Mout=simv
  option[13]: -Mamsrun=
  option[14]: -Mvcsaceobjs=
- option[15]: -Mobjects= /home/tjx/synopsys/vcs_2016.06/linux64/lib/libvirsim.so /home/tjx/synopsys/vcs_2016.06/linux64/lib/liberrorinf.so /home/tjx/synopsys/vcs_2016.06/linux64/lib/libsnpsmalloc.so /home/tjx/synopsys/verdi_2016.06-1/share/PLI/VCS/LINUX64/pli.a 
+ option[15]: -Mobjects= /home/zzy/synopsys/vcs_2016.06/linux64/lib/libvirsim.so /home/zzy/synopsys/vcs_2016.06/linux64/lib/liberrorinf.so /home/zzy/synopsys/vcs_2016.06/linux64/lib/libsnpsmalloc.so /home/zzy/synopsys/verdi_2016.06-1/share/PLI/VCS/LINUX64/pli.a 
  option[16]: -Mexternalobj=
- option[17]: -Msaverestoreobj=/home/tjx/synopsys/vcs_2016.06/linux64/lib/vcs_save_restore_new.o
+ option[17]: -Msaverestoreobj=/home/zzy/synopsys/vcs_2016.06/linux64/lib/vcs_save_restore_new.o
  option[18]: -Mcrt0=
  option[19]: -Mcrtn=
  option[20]: -Mcsrc=
@@ -99,10 +99,10 @@ VCS compile option:
  option[28]: -Xcbug=0x1
  option[29]: -Xpiyushb1=0x80
  option[30]: -P
- option[31]: /home/tjx/synopsys/verdi_2016.06-1/share/PLI/VCS/LINUX64/novas.tab
+ option[31]: /home/zzy/synopsys/verdi_2016.06-1/share/PLI/VCS/LINUX64/novas.tab
  option[32]: -picarchive
  option[33]: +vcsd
- option[34]: +itf+/home/tjx/synopsys/vcs_2016.06/linux64/lib/vcsdp.tab
+ option[34]: +itf+/home/zzy/synopsys/vcs_2016.06/linux64/lib/vcsdp.tab
  option[35]: +cli+1
  option[36]: -debug=1
  option[37]: +memcbk
@@ -132,13 +132,13 @@ maxproc			15446
 Runtime environment variables:
 XDG_VTNR=7
 XDG_SESSION_ID=c2
-XDG_GREETER_DATA_DIR=/var/lib/lightdm-data/tjx
+XDG_GREETER_DATA_DIR=/var/lib/lightdm-data/zzy
 CLUTTER_IM_MODULE=xim
 UNAME=/bin/uname
 SESSION=ubuntu
 SCRNAME=vcs
-NOVAS_HOME=/home/tjx/synopsys/verdi_2016.06-1
-GPG_AGENT_INFO=/home/tjx/.gnupg/S.gpg-agent:0:1
+NOVAS_HOME=/home/zzy/synopsys/verdi_2016.06-1
+GPG_AGENT_INFO=/home/zzy/.gnupg/S.gpg-agent:0:1
 VCS_DEPTH=0
 TERM=xterm-256color
 XDG_MENU_PREFIX=gnome-
@@ -146,14 +146,14 @@ VTE_VERSION=4205
 SHELL=/bin/bash
 MAKEFLAGS=
 QT_LINUX_ACCESSIBILITY_ALWAYS_ON=1
-WINDOWID=56623114
+WINDOWID=58720266
 VCS_LOG_FILE=com.log
-UPSTART_SESSION=unix:abstract=/com/ubuntu/upstart-session/1000/3388
+UPSTART_SESSION=unix:abstract=/com/ubuntu/upstart-session/1000/3451
 GNOME_KEYRING_CONTROL=
 GTK_MODULES=gail:atk-bridge:unity-gtk-module
 LC_ALL=C
-USER=tjx
-LD_LIBRARY_PATH=/home/tjx/synopsys/vcs_2016.06/linux64/lib:
+USER=zzy
+LD_LIBRARY_PATH=/home/zzy/synopsys/vcs_2016.06/linux64/lib:
 QT_ACCESSIBILITY=1
 LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
 XDG_SESSION_PATH=/org/freedesktop/DisplayManager/Session0
@@ -164,20 +164,20 @@ VCS_MX_HOME_INTERNAL=1
 SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
 MAKELEVEL=1
 DEFAULTS_PATH=/usr/share/gconf/ubuntu.default.path
-SESSION_MANAGER=local/tjx-virtual-machine:@/tmp/.ICE-unix/3618,unix/tjx-virtual-machine:/tmp/.ICE-unix/3618
+SESSION_MANAGER=local/zzy-virtual-machine:@/tmp/.ICE-unix/3681,unix/zzy-virtual-machine:/tmp/.ICE-unix/3681
 OVA_UUM=0
 MFLAGS=
 VCS_MODE_FLAG=64
 XDG_CONFIG_DIRS=/etc/xdg/xdg-ubuntu:/usr/share/upstart/xdg:/etc/xdg
-PATH=.:/home/tjx/bin:/home/tjx/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/tjx/synopsys/vcs_2016.06/gui/dve/bin:/home/tjx/synopsys/vcs_2016.06/bin:/home/tjx/synopsys/verdi_2016.06-1/bin:/home/tjx/synopsys/dc/bin:/home/tjx/synopsys/scl_11.9/amd64/bin:/home/tjx/DIY_CPU/mips-4.3/bin
+PATH=.:/home/zzy/bin:/home/zzy/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/zzy/synopsys/vcs_2016.06/gui/dve/bin:/home/zzy/synopsys/vcs_2016.06/bin:/home/zzy/synopsys/verdi_2016.06-1/bin:/home/zzy/synopsys/dc/bin:/home/zzy/synopsys/scl_11.9/amd64/bin:/home/zzy/DIY_CPU/mips-4.3/bin
 DESKTOP_SESSION=ubuntu
 QT_IM_MODULE=fcitx
 QT_QPA_PLATFORMTHEME=appmenu-qt5
-VERDI_HOME=/home/tjx/synopsys/verdi_2016.06-1
-PWD=/home/tjx/DIY_CPU
+VERDI_HOME=/home/zzy/synopsys/verdi_2016.06-1
+PWD=/home/zzy/DIY_CPU
 JOB=dbus
 XDG_SESSION_TYPE=x11
-VCS_HOME=/home/tjx/synopsys/vcs_2016.06
+VCS_HOME=/home/zzy/synopsys/vcs_2016.06
 XMODIFIERS=@im=fcitx
 LANG=zh_CN.UTF-8
 GNOME_KEYRING_PID=
@@ -187,38 +187,38 @@ VCS_ARCH_OVERRIDE=linux
 COMPIZ_CONFIG_PROFILE=ubuntu
 IM_CONFIG_PHASE=1
 VMR_MODE_FLAG=64
-LM_LICENSE_FILE=27000@tjx-virtual-machine
+LM_LICENSE_FILE=27000@zzy-virtual-machine
 GDMSESSION=ubuntu
 VCS_ARG_ADDED_FOR_TMP=1
-SNPS_VCS_TMPDIR=/tmp/vcs_20221201034747_7375
+SNPS_VCS_TMPDIR=/tmp/vcs_20221202090620_9747
 GTK2_MODULES=overlay-scrollbar
 SESSIONTYPE=gnome-session
 SHLVL=2
 XDG_SEAT=seat0
-HOME=/home/tjx
+HOME=/home/zzy
 LANGUAGE=zh_CN:zh
 GNOME_DESKTOP_SESSION_ID=this-is-deprecated
-VCS_COM=/home/tjx/synopsys/vcs_2016.06/linux64/bin/vcs1
-LOGNAME=tjx
+VCS_COM=/home/zzy/synopsys/vcs_2016.06/linux64/bin/vcs1
+LOGNAME=zzy
 XDG_SESSION_DESKTOP=ubuntu
 MAKE_TERMERR=/dev/pts/2
 QT4_IM_MODULE=fcitx
-DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-dfqy10sZoQ
+DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-xKho8p7vK2
 XDG_DATA_DIRS=/usr/share/ubuntu:/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop
 LESSOPEN=| /usr/bin/lesspipe %s
-sysc_uni_pwd=/home/tjx/DIY_CPU
+sysc_uni_pwd=/home/zzy/DIY_CPU
 INSTANCE=
 DISPLAY=unix:0
 XDG_RUNTIME_DIR=/run/user/1000
 VCS_ARCH=linux64
-TOOL_HOME=/home/tjx/synopsys/vcs_2016.06/linux64
+TOOL_HOME=/home/zzy/synopsys/vcs_2016.06/linux64
 XDG_CURRENT_DESKTOP=Unity
 GTK_IM_MODULE=fcitx
 LESSCLOSE=/usr/bin/lesspipe %s %s
-XAUTHORITY=/home/tjx/.Xauthority
+XAUTHORITY=/home/zzy/.Xauthority
 _=./simv
 VCS_PATHMAP_PRELOAD_DONE=1
-DVE=/home/tjx/synopsys/vcs_2016.06/gui/dve
+DVE=/home/zzy/synopsys/vcs_2016.06/gui/dve
 SPECMAN_OUTPUT_TO_TTY=1
 Runtime command line arguments:
 argv[0]=simv
@@ -227,16 +227,16 @@ argv[2]=-nc
 argv[3]=-a
 argv[4]=com.log
 228 profile - 100
-          CPU/Mem usage: 0.050 sys,  0.210 user,  220.70M sys,  0.00M vm
+          CPU/Mem usage: 1.080 sys,  0.540 user,  220.73M sys,  0.00M vm
 229 VC callback profile - scalar:0 vector:0
-230 Thu Dec  1 11:47:50 2022
+230 Fri Dec  2 17:06:33 2022
 231 pliAppInit
 232 *Verdi3* : FSDB_GATE is set.
 233 *Verdi3* : FSDB_RTL is set.
 234 *Verdi3* : Enable Parallel Dumping.
 235 pliAppMiscSet: New Sim Round
 236 pliEntryInit
-237 LIBSSCORE=found /home/tjx/synopsys/verdi_2016.06-1/share/PLI/lib/LINUXAMD64/libsscore_vcs201606.so through $NOVAS_HOME setting.
+237 LIBSSCORE=found /home/zzy/synopsys/verdi_2016.06-1/share/PLI/lib/LINUXAMD64/libsscore_vcs201606.so through $NOVAS_HOME setting.
 238 FSDB Dumper for VCS, Release Verdi3_L-2016.06-1, Linux x86_64/64bit, 07/10/2016
 239 (C) 1996 - 2016 by Synopsys, Inc.
 240 sps_call_fsdbDumpfile at 0 : ./src/openmips_min_sopc_tb.v(23)
@@ -249,33 +249,33 @@ argv[4]=com.log
 247 *Verdi3* : Enable +all dumping.
 248 *Verdi3* : End of traversing.
 249 fsdbDumpvars traverse var: profile - 
-          CPU/Mem usage: 0.220 sys,  0.280 user,  364.06M sys,  0.00M vm
-                   incr: 0.160 sys,  0.070 user,  63.02M sys,  0.00M vm
-                   accu: 0.160 sys,  0.070 user,  63.02M sys,  0.00M vm
-              accu incr: 0.160 sys,  0.070 user,  63.02M sys,  0.00M vm
+          CPU/Mem usage: 2.830 sys,  0.660 user,  364.24M sys,  0.00M vm
+                   incr: 1.750 sys,  0.110 user,  63.16M sys,  0.00M vm
+                   accu: 1.750 sys,  0.110 user,  63.16M sys,  0.00M vm
+              accu incr: 1.750 sys,  0.110 user,  63.16M sys,  0.00M vm
 
-          Count usage: 655760 var,  655609 idcode,  119 callback
-                 incr: 655760 var,  655609 idcode,  119 callback
-                 accu: 655760 var,  655609 idcode,  119 callback
-            accu incr: 655760 var,  655609 idcode,  119 callback
+          Count usage: 655823 var,  655650 idcode,  143 callback
+                 incr: 655823 var,  655650 idcode,  143 callback
+                 accu: 655823 var,  655650 idcode,  143 callback
+            accu incr: 655823 var,  655650 idcode,  143 callback
 250 VC callback profile - scalar:0 vector:0
-251 Thu Dec  1 11:47:50 2022
+251 Fri Dec  2 17:06:35 2022
 252 fsdbDumpvars: profile - 
-          CPU/Mem usage: 0.290 sys,  0.320 user,  392.98M sys,  0.00M vm
-                   incr: 0.070 sys,  0.040 user,  28.92M sys,  0.00M vm
-                   accu: 0.230 sys,  0.110 user,  91.94M sys,  0.00M vm
-              accu incr: 0.070 sys,  0.040 user,  28.92M sys,  0.00M vm
+          CPU/Mem usage: 3.340 sys,  0.670 user,  393.02M sys,  0.00M vm
+                   incr: 0.510 sys,  0.010 user,  28.79M sys,  0.00M vm
+                   accu: 2.260 sys,  0.120 user,  91.95M sys,  0.00M vm
+              accu incr: 0.510 sys,  0.010 user,  28.79M sys,  0.00M vm
 
-          Count usage: 655760 var,  655609 idcode,  119 callback
+          Count usage: 655823 var,  655650 idcode,  143 callback
                  incr: 0 var,  0 idcode,  0 callback
-                 accu: 655760 var,  655609 idcode,  119 callback
+                 accu: 655823 var,  655650 idcode,  143 callback
             accu incr: 0 var,  0 idcode,  0 callback
-253 VC callback profile - scalar:41 vector:655460
-254 Thu Dec  1 11:47:50 2022
+253 VC callback profile - scalar:47 vector:655478
+254 Fri Dec  2 17:06:36 2022
 255 End of simulation at 10195000
-256 VC callback profile - scalar:5536 vector:661591
-257 Thu Dec  1 11:47:50 2022
+256 VC callback profile - scalar:6069 vector:662162
+257 Fri Dec  2 17:06:36 2022
 258 Parallel profile    -  Flush:3 Expand:0 ProduceWait:0 ConsumerWait:0 BlockUsed:0
-259                        ProduceTime:0.842392896 ConsumerTime:0.000000000 Buffer:64MB
+259                        ProduceTime:4.333059634 ConsumerTime:0.000000000 Buffer:64MB
 260 SimExit
 261 Sim process exit

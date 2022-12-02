@@ -1,6 +1,6 @@
 Command: vcs -full64 -cpp g++-4.8 -cc gcc-4.8 -LDFLAGS -Wl,--no-as-needed -sverilog \
-+v2k -R -nc -debug_pp -LDFLAGS -rdynamic -P /home/tjx/synopsys/verdi_2016.06-1/share/PLI/VCS/LINUX64/novas.tab \
-/home/tjx/synopsys/verdi_2016.06-1/share/PLI/VCS/LINUX64/pli.a -f filelist.f -l com.log \
++v2k -R -nc -debug_pp -LDFLAGS -rdynamic -P /home/zzy/synopsys/verdi_2016.06-1/share/PLI/VCS/LINUX64/novas.tab \
+/home/zzy/synopsys/verdi_2016.06-1/share/PLI/VCS/LINUX64/pli.a -f filelist.f -l com.log \
 
 Parsing design file './src/mem.v'
 Parsing included file './src/defines.v'.
@@ -55,13 +55,24 @@ Parsing design file './src/data_ram.v'
 Parsing included file './src/defines.v'.
 Back to file './src/data_ram.v'.
 Parsing design file './src/LLbit_reg.v'
+Parsing design file './src/cp0_reg.v'
+Parsing included file './src/defines.v'.
+Back to file './src/cp0_reg.v'.
 Top Level Modules:
        openmips_min_sopc_tb
 TimeScale is 1 ns / 1 ps
 
+Warning-[TFIPC] Too few instance port connections
+./src/openmips.v, 461
+"cp0_reg cp0_reg0( .clk (clk),  .rst (rst),  .we_i (wb_cp0_reg_we_i),  .waddr_i (wb_cp0_reg_write_addr_i),  .raddr_i (cp0_raddr_i),  .data_i (wb_cp0_reg_data_i),  .int_i (int_i),  .data_o (cp0_data_o),  .timer_int_o (timer_int_o));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
 Warning-[PCWM-W] Port connection width mismatch
-./src/openmips_min_sopc.v, 18
-"openmips openmips0( .clk (clk),  .rst (rst),  .rom_addr_o (inst_addr),  .rom_data_i (inst),  .rom_ce_o (rom_ce),  .ram_we_o (mem_we_i),  .ram_addr_o (mem_addr_i),  .ram_sel_o (mem_sel_i),  .ram_data_o (mem_data_i),  .ram_data_i (mem_data_o),  .ram_ce_o (mem_ce_i));"
+./src/openmips_min_sopc.v, 23
+"openmips openmips0( .clk (clk),  .rst (rst),  .rom_addr_o (inst_addr),  .rom_data_i (inst),  .rom_ce_o (rom_ce),  .int_i (inte),  .ram_we_o (mem_we_i),  .ram_addr_o (mem_addr_i),  .ram_sel_o (mem_sel_i),  .ram_data_o (mem_data_i),  .ram_data_i (mem_data_o),  .ram_ce_o (mem_ce_i),  .timer_int_o (timer_int));"
   The following 1-bit expression is connected to 4-bit port "ram_ce_o" of 
   module "openmips", instance "openmips0".
   Expression: mem_ce_i
@@ -69,37 +80,42 @@ Warning-[PCWM-W] Port connection width mismatch
 
 
 Warning-[PCWM-W] Port connection width mismatch
-./src/openmips.v, 298
-"mem mem0( .rst (rst),  .wd_i (mem_wd_i),  .wreg_i (mem_wreg_i),  .wdata_i (mem_wdata_i),  .LLbit_i (LLbit_o),  .wb_LLbit_we_i (wb_LLbit_we_i),  .wb_LLbit_value_i (wb_LLbit_value_i),  .LLbit_we_o (mem_LLbit_we_o),  .LLbit_value_o (mem_LLbit_value_o),  .hi_i (mem_hi_i),  .lo_i (mem_lo_i),  .whilo_i (mem_whilo_i),  .aluop_i (mem_aluop_i),  .mem_addr_i (mem_mem_addr_i),  .reg2_i (mem_reg2_i),  .mem_data_i (ram_data_i),  .wd_o (mem_wd_o),  .wreg_o (mem_wreg_o),  .wdata_o (mem_wdata_o),  .hi_o (mem_hi_o),  .lo_o (mem_lo_o),  .whilo_o (mem_whilo_o),  .mem_addr_o (ram_addr_o),  .mem_we_o (ram_we_o),  .mem_sel_o (ram_sel_o),  .mem_data_o (ram_data_o),  .mem_ce_o (ram_ce_o));"
+./src/openmips.v, 337
+"mem mem0( .rst (rst),  .wd_i (mem_wd_i),  .wreg_i (mem_wreg_i),  .wdata_i (mem_wdata_i),  .LLbit_i (LLbit_o),  .wb_LLbit_we_i (wb_LLbit_we_i),  .wb_LLbit_value_i (wb_LLbit_value_i),  .LLbit_we_o (mem_LLbit_we_o),  .LLbit_value_o (mem_LLbit_value_o),  .hi_i (mem_hi_i),  .lo_i (mem_lo_i),  .whilo_i (mem_whilo_i),  .aluop_i (mem_aluop_i),  .mem_addr_i (mem_mem_addr_i),  .reg2_i (mem_reg2_i),  .cp0_reg_we_i (mem_cp0_reg_we_i),  .cp0_reg_write_addr_i (mem_cp0_reg_write_addr_i),  .cp0_reg_data_i (mem_cp0_reg_data_i),  .cp0_reg_we_o (mem_cp0_reg_we_o),  .cp0_reg_write_addr_o (mem_cp0_reg_write_addr_o),  .cp0_reg_data_o (mem_cp0_reg_data_o),  .mem_data_i (ram_data_i),  .wd_o (mem_wd_o),  .wreg_o (mem_wreg_o),  .wdata_o (mem_wdata_o),  .hi_o (mem_hi_o),  .lo_o ( ... "
   The following 4-bit expression is connected to 1-bit port "mem_ce_o" of 
   module "mem", instance "mem0".
   Expression: ram_ce_o
   	use +lint=PCWM for more details
 
 Starting vcs inline pass...
-16 unique modules to generate
-16 modules and 0 UDP read. 
-	However, due to incremental compilation, only 1 module needs to be compiled. 
+17 unique modules to generate
+17 modules and 0 UDP read. 
+	However, due to incremental compilation, only 6 modules need to be compiled. 
+recompiling module mem
 recompiling module openmips_min_sopc_tb
-All of 1 modules done
-make[1]: Entering directory '/home/tjx/DIY_CPU/csrc'
+recompiling module ex
+recompiling module ex_mem
+recompiling module mem_wb
+recompiling module cp0_reg
+All of 6 modules done
+make[1]: Entering directory '/home/zzy/DIY_CPU/csrc'
 rm -f _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
 ld -shared  -o .//../simv.daidir//_csrc0.so objs/amcQw_d.o 
 rm -f _csrc0.so
 if [ -x ../simv ]; then chmod -x ../simv; fi
 g++-4.8  -o ../simv   -Wl,-rpath-link=./ -Wl,-rpath='$ORIGIN'/simv.daidir/ -Wl,-rpath=./simv.daidir/ \
 -Wl,-rpath='$ORIGIN'/simv.daidir//scsim.db.dir  -Wl,--no-as-needed -rdynamic -rdynamic \
-amcQwB.o   _7836_archive_1.so _prev_archive_1.so _csrc0.so  SIM_l.o  _csrc0.so   \
-rmapats_mop.o rmapats.o rmar.o  rmar_llvm_0_1.o rmar_llvm_0_0.o          /home/tjx/synopsys/vcs_2016.06/linux64/lib/libzerosoft_rt_stubs.so \
-/home/tjx/synopsys/vcs_2016.06/linux64/lib/libvirsim.so /home/tjx/synopsys/vcs_2016.06/linux64/lib/liberrorinf.so \
-/home/tjx/synopsys/vcs_2016.06/linux64/lib/libsnpsmalloc.so /home/tjx/synopsys/verdi_2016.06-1/share/PLI/VCS/LINUX64/pli.a \
-/home/tjx/synopsys/vcs_2016.06/linux64/lib/libvcsnew.so /home/tjx/synopsys/vcs_2016.06/linux64/lib/libsimprofile.so \
-/home/tjx/synopsys/vcs_2016.06/linux64/lib/libuclinative.so   -Wl,-whole-archive \
-/home/tjx/synopsys/vcs_2016.06/linux64/lib/libvcsucli.so -Wl,-no-whole-archive   \
-_vcs_pli_stub_.o   /home/tjx/synopsys/vcs_2016.06/linux64/lib/vcs_save_restore_new.o \
+amcQwB.o   _10208_archive_1.so _prev_archive_1.so _csrc0.so  SIM_l.o  _csrc0.so  \
+rmapats_mop.o rmapats.o rmar.o  rmar_llvm_0_1.o rmar_llvm_0_0.o          /home/zzy/synopsys/vcs_2016.06/linux64/lib/libzerosoft_rt_stubs.so \
+/home/zzy/synopsys/vcs_2016.06/linux64/lib/libvirsim.so /home/zzy/synopsys/vcs_2016.06/linux64/lib/liberrorinf.so \
+/home/zzy/synopsys/vcs_2016.06/linux64/lib/libsnpsmalloc.so /home/zzy/synopsys/verdi_2016.06-1/share/PLI/VCS/LINUX64/pli.a \
+/home/zzy/synopsys/vcs_2016.06/linux64/lib/libvcsnew.so /home/zzy/synopsys/vcs_2016.06/linux64/lib/libsimprofile.so \
+/home/zzy/synopsys/vcs_2016.06/linux64/lib/libuclinative.so   -Wl,-whole-archive \
+/home/zzy/synopsys/vcs_2016.06/linux64/lib/libvcsucli.so -Wl,-no-whole-archive   \
+_vcs_pli_stub_.o   /home/zzy/synopsys/vcs_2016.06/linux64/lib/vcs_save_restore_new.o \
 -ldl -lm  -lc -lpthread -ldl 
 ../simv up to date
-make[1]: Leaving directory '/home/tjx/DIY_CPU/csrc'
+make[1]: Leaving directory '/home/zzy/DIY_CPU/csrc'
 Command: ./simv +v2k -nc -a com.log
 *Verdi3* Loading libsscore_vcs201606.so
 *Verdi3* : FSDB_GATE is set.
@@ -116,5 +132,5 @@ $finish called from file "./src/openmips_min_sopc_tb.v", line 16.
 $finish at simulation time             10195000
            V C S   S i m u l a t i o n   R e p o r t 
 Time: 10195000 ps
-CPU Time:      0.840 seconds;       Data structure size:   2.0Mb
-Thu Dec  1 11:47:51 2022
+CPU Time:      4.320 seconds;       Data structure size:   2.0Mb
+Fri Dec  2 17:06:36 2022

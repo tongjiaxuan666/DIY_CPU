@@ -1,0 +1,193 @@
+{
+    "Modules": {
+        "...MASTER...": {},
+        "std": {
+            "Compiled": "Yes",
+            "Compiled Times": 16
+        },
+        "ex": {
+            "Compiled": "Yes",
+            "Compiled Times": 8
+        },
+        "data_ram": {
+            "Compiled": "Yes",
+            "Compiled Times": 6
+        },
+        "mem": {
+            "Compiled": "Yes",
+            "Compiled Times": 13
+        },
+        "pc_reg": {
+            "Compiled": "Yes",
+            "Compiled Times": 6
+        },
+        "openmips_min_sopc_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 16
+        },
+        "if_id": {
+            "Compiled": "Yes",
+            "Compiled Times": 6
+        },
+        "ex_mem": {
+            "Compiled": "Yes",
+            "Compiled Times": 13
+        },
+        "inst_rom": {
+            "Compiled": "Yes",
+            "Compiled Times": 13
+        },
+        "id_ex": {
+            "Compiled": "Yes",
+            "Compiled Times": 8
+        },
+        "regfile": {
+            "Compiled": "Yes",
+            "Compiled Times": 8
+        },
+        "mem_wb": {
+            "Compiled": "Yes",
+            "Compiled Times": 13
+        },
+        "ctrl": {
+            "Compiled": "Yes",
+            "Compiled Times": 13
+        },
+        "hilo_reg": {
+            "Compiled": "Yes",
+            "Compiled Times": 13
+        },
+        "div": {
+            "Compiled": "Yes",
+            "Compiled Times": 10
+        },
+        "LLbit_reg": {
+            "Compiled": "Yes",
+            "Compiled Times": 3
+        },
+        "cp0_reg": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        }
+    },
+    "CompUnits": {
+        "usA8F_d": {
+            "bytes": 14745,
+            "mod": "mem_wb",
+            "out": "usA8F_d.o",
+            "archive": "archive.15/_10208_archive_1.a",
+            "mode": 4,
+            "checksum": 0
+        },
+        "FSbWZ_d": {
+            "bytes": 27089,
+            "mod": "mem",
+            "out": "FSbWZ_d.o",
+            "archive": "archive.15/_10208_archive_1.a",
+            "mode": 4,
+            "checksum": 0
+        },
+        "gvrSa_d": {
+            "bytes": 72884,
+            "mod": "openmips_min_sopc_tb",
+            "out": "gvrSa_d.o",
+            "archive": "archive.15/_10208_archive_1.a",
+            "mode": 4,
+            "checksum": 0
+        },
+        "y5PkS_d": {
+            "bytes": 15248,
+            "mod": "cp0_reg",
+            "out": "y5PkS_d.o",
+            "archive": "archive.15/_10208_archive_1.a",
+            "mode": 4,
+            "checksum": 0
+        },
+        "r2dgF_d": {
+            "bytes": 54999,
+            "mod": "ex",
+            "out": "r2dgF_d.o",
+            "archive": "archive.15/_10208_archive_1.a",
+            "mode": 4,
+            "checksum": 0
+        },
+        "K7u6h_d": {
+            "bytes": 18164,
+            "mod": "ex_mem",
+            "out": "K7u6h_d.o",
+            "archive": "archive.15/_10208_archive_1.a",
+            "mode": 4,
+            "checksum": 0
+        }
+    },
+    "reusePaths": {
+        "amcQw_d": {
+            "icPath": "csrc"
+        },
+        "hBiVG_d": {
+            "icPath": "csrc"
+        },
+        "rzVRz_d": {
+            "icPath": "csrc"
+        },
+        "reYIK_d": {
+            "icPath": "csrc"
+        },
+        "wxG7b_d": {
+            "icPath": "csrc"
+        },
+        "KA3k1_d": {
+            "icPath": "csrc"
+        },
+        "Nxspn_d": {
+            "icPath": "csrc"
+        },
+        "vnxvv_d": {
+            "icPath": "csrc"
+        },
+        "UmCUI_d": {
+            "icPath": "csrc"
+        },
+        "yUwqV_d": {
+            "icPath": "csrc"
+        },
+        "re2bz_d": {
+            "icPath": "csrc"
+        },
+        "FzTxA_d": {
+            "icPath": "csrc"
+        }
+    },
+    "ObjArchives": [
+        {
+            "archive": "archive.15/_10208_archive_1.a",
+            "objects": [
+                [
+                    "FSbWZ_d.o",
+                    27089
+                ],
+                [
+                    "gvrSa_d.o",
+                    72884
+                ],
+                [
+                    "r2dgF_d.o",
+                    54999
+                ],
+                [
+                    "K7u6h_d.o",
+                    18164
+                ],
+                [
+                    "usA8F_d.o",
+                    14745
+                ],
+                [
+                    "y5PkS_d.o",
+                    15248
+                ]
+            ],
+            "size": 203129
+        }
+    ]
+}

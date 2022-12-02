@@ -1,6 +1,6 @@
 psSimBaseName                      	simv
 psLogFileName                      	com.log
-pDaiDir                            	/home/tjx/DIY_CPU/simv.daidir
+pDaiDir                            	/home/zzy/DIY_CPU/simv.daidir
 destPath                           	csrc/
 fSharedMaster                      	0
 hsMainFileCount                    	0

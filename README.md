@@ -20,3 +20,4 @@ make verdi //查看波形
 - chapter 9.1 增加了SRAM模块，发现了因为读写内存没有EXE过程，所以执行阶段得到的数据不能立即传输给译码阶段，修改了书上的测试用例，增加了空指令。得到了正确结果。
 - chapter 9.2 增加了sc ll命令。和LLbit_reg模块
 - chapter 9.3 解决了load问题。使用了流水线暂停技术
+- chapter 10 实现了协处理器CP0

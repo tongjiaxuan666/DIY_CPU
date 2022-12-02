@@ -21,14 +21,15 @@ Command arguments:
         ./src/div.v
         ./src/data_ram.v
         ./src/LLbit_reg.v
+        ./src/cp0_reg.v
 
 Highest level modules:
 openmips_min_sopc_tb
 
 
 *Warning* port sizes differ (4 vs 1) in port connection (port ram_ce_o)
-"./src/openmips_min_sopc.v", 30: 
+"./src/openmips_min_sopc.v", 35: 
 
 *Warning* port sizes differ (1 vs 4) in port connection (port mem_ce_o)
-"./src/openmips.v", 334: 
+"./src/openmips.v", 379: 
 Total	0 error(s),   2 warning(s)

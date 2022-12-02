@@ -13,6 +13,8 @@
 `define NotInDelaySlot 1'b0
 `define Branch 1'b1
 `define NotBranch 1'b0
+`define InterruptAssert 1'b1
+`define InterruptNotAssert 1'b0
 `define True_v      1'b1//meaning true
 `define False_v     1'b0//meaning false
 `define ChipDisable 1'b0
@@ -189,6 +191,9 @@
 `define EXE_SWL_OP  8'b11101010
 `define EXE_SWR_OP  8'b11101110
 
+`define EXE_MFC0_OP 8'b01011101
+`define EXE_MTC0_OP 8'b01100000
+
 `define EXE_NOP_OP    8'b00000000
 
 //AluSel
@@ -238,3 +243,12 @@
 `define DataMemNum 131071
 `define DataMemNumLog2 17
 `define ByteWidth 7:0
+
+//CP0寄存器地址
+`define CP0_REG_COUNT    5'b01001        //可读写
+`define CP0_REG_COMPARE    5'b01011      //可读写
+`define CP0_REG_STATUS    5'b01100       //可读写
+`define CP0_REG_CAUSE    5'b01101        //只读
+`define CP0_REG_EPC    5'b01110          //可读写
+`define CP0_REG_PrId    5'b01111         //只读
+`define CP0_REG_CONFIG    5'b10000       //只读

@@ -30,6 +30,24 @@ module ex (
 	//是否转移、以及link address
 	input wire[`RegBus]           link_address_i,
 	input wire                    is_in_delayslot_i,	
+		//访存阶段的指令是否要写CP0，用来检测数据相关
+  	input wire                    mem_cp0_reg_we,
+	input wire[4:0]               mem_cp0_reg_write_addr,
+	input wire[`RegBus]           mem_cp0_reg_data,
+	
+	//回写阶段的指令是否要写CP0，用来检测数据相关
+  	input wire                    wb_cp0_reg_we,
+	input wire[4:0]               wb_cp0_reg_write_addr,
+	input wire[`RegBus]           wb_cp0_reg_data,
+
+	//与CP0相连，读取其中CP0寄存器的值
+	input wire[`RegBus]           cp0_reg_data_i,
+	output reg[4:0]               cp0_reg_read_addr_o,
+
+	//向下一流水级传递，用于写CP0中的寄存器
+	output reg                    cp0_reg_we_o,
+	output reg[4:0]               cp0_reg_write_addr_o,
+	output reg[`RegBus]           cp0_reg_data_o,
     //the result to output
     output reg[`RegAddrBus] wd_o,
     output reg wreg_o,
@@ -268,6 +286,17 @@ always @ (*) begin
     `EXE_MOVN_OP:		begin
         moveres <= reg1_i;
     end
+	`EXE_MFC0_OP:		begin
+		cp0_reg_read_addr_o <= inst_i[15:11];
+		moveres <= cp0_reg_data_i;
+		if( mem_cp0_reg_we == `WriteEnable &&
+					mem_cp0_reg_write_addr == inst_i[15:11] ) begin
+			moveres <= mem_cp0_reg_data;
+		end else if( wb_cp0_reg_we == `WriteEnable &&
+												wb_cp0_reg_write_addr == inst_i[15:11] ) begin
+			moveres <= wb_cp0_reg_data;
+		end
+	end	
     default : begin
     end
     endcase
@@ -451,5 +480,20 @@ end
 			lo_o <= `ZeroWord;
 		end				
 	end	
+	always @ (*) begin
+		if(rst == `RstEnable) begin
+			cp0_reg_write_addr_o <= 5'b00000;
+			cp0_reg_we_o <= `WriteDisable;
+			cp0_reg_data_o <= `ZeroWord;
+		end else if(aluop_i == `EXE_MTC0_OP) begin
+			cp0_reg_write_addr_o <= inst_i[15:11];
+			cp0_reg_we_o <= `WriteEnable;
+			cp0_reg_data_o <= reg1_i;
+	 	end else begin
+			cp0_reg_write_addr_o <= 5'b00000;
+			cp0_reg_we_o <= `WriteDisable;
+			cp0_reg_data_o <= `ZeroWord;
+		end				
+	end		
     
 endmodule

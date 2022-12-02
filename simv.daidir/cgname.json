@@ -4,24 +4,9 @@
         "reYIK",
         "module"
     ],
-    "openmips_min_sopc_tb": [
-        "openmips_min_sopc_tb",
-        "gvrSa",
-        "module"
-    ],
-    "LLbit_reg": [
-        "LLbit_reg",
-        "re2bz",
-        "module"
-    ],
-    "mem": [
-        "mem",
-        "FSbWZ",
-        "module"
-    ],
-    "hilo_reg": [
-        "hilo_reg",
-        "yUwqV",
+    "ex": [
+        "ex",
+        "r2dgF",
         "module"
     ],
     "data_ram": [
@@ -29,34 +14,19 @@
         "KA3k1",
         "module"
     ],
+    "mem": [
+        "mem",
+        "FSbWZ",
+        "module"
+    ],
     "pc_reg": [
         "pc_reg",
         "wxG7b",
         "module"
     ],
-    "ex_mem": [
-        "ex_mem",
-        "K7u6h",
-        "module"
-    ],
-    "ctrl": [
-        "ctrl",
-        "FzTxA",
-        "module"
-    ],
-    "ex": [
-        "ex",
-        "r2dgF",
-        "module"
-    ],
-    "regfile": [
-        "regfile",
-        "Nxspn",
-        "module"
-    ],
-    "div": [
-        "div",
-        "rzVRz",
+    "openmips_min_sopc_tb": [
+        "openmips_min_sopc_tb",
+        "gvrSa",
         "module"
     ],
     "if_id": [
@@ -64,14 +34,14 @@
         "hBiVG",
         "module"
     ],
+    "ex_mem": [
+        "ex_mem",
+        "K7u6h",
+        "module"
+    ],
     "inst_rom": [
         "inst_rom",
         "vnxvv",
-        "module"
-    ],
-    "...MASTER...": [
-        "SIM",
-        "amcQw",
         "module"
     ],
     "id_ex": [
@@ -79,9 +49,44 @@
         "UmCUI",
         "module"
     ],
+    "regfile": [
+        "regfile",
+        "Nxspn",
+        "module"
+    ],
     "mem_wb": [
         "mem_wb",
         "usA8F",
+        "module"
+    ],
+    "ctrl": [
+        "ctrl",
+        "FzTxA",
+        "module"
+    ],
+    "hilo_reg": [
+        "hilo_reg",
+        "yUwqV",
+        "module"
+    ],
+    "LLbit_reg": [
+        "LLbit_reg",
+        "re2bz",
+        "module"
+    ],
+    "div": [
+        "div",
+        "rzVRz",
+        "module"
+    ],
+    "cp0_reg": [
+        "cp0_reg",
+        "y5PkS",
+        "module"
+    ],
+    "...MASTER...": [
+        "SIM",
+        "amcQw",
         "module"
     ]
 }
