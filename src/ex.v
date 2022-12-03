@@ -10,6 +10,9 @@ module ex (
     input wire[`RegAddrBus] wd_i,
     input wire wreg_i,
 	input wire[`RegBus]           inst_i,
+	//从译码阶段过来的异常信息
+	input wire[31:0]             excepttype_i,
+	input wire[`RegBus]          current_inst_address_i,
     //HI、LO寄存器的值
 	input wire[`RegBus]           hi_i,
 	input wire[`RegBus]           lo_i,
@@ -67,6 +70,10 @@ module ex (
 	output wire[`AluOpBus]        aluop_o,
 	output wire[`RegBus]          mem_addr_o,
 	output wire[`RegBus]          reg2_o,//lwl,lwr ,要加载目的寄存器原始值
+	output wire[31:0]             excepttype_o,
+	//传递到访存的异常信号
+	output wire                   is_in_delayslot_o,
+	output wire[`RegBus]          current_inst_address_o,
 	output reg		stallreq       
 
 );
@@ -79,7 +86,9 @@ module ex (
     reg[`RegBus] arithmeticres;//保存算数运算的结果
 	reg[`DoubleRegBus] mulres;//保存乘法结果宽度为64位
     reg stallreq_for_madd_msub;	           
-	reg stallreq_for_div;//由于除法模块导致流水线暂停                                                                                                      
+	reg stallreq_for_div;//由于除法模块导致流水线暂停         
+	reg trapassert;//是否为自陷异常
+	reg ovassert; //是否为溢出异常                                                                           
     wire[`RegBus] reg2_i_mux;//保存第二个操作数reg2_i的补码
 	wire[`RegBus] reg1_i_not;//保存第一个操作数reg1_i取反后的值
 	wire[`RegBus] result_sum;//保存加法的结果
@@ -98,6 +107,12 @@ module ex (
 
   //将两个操作数也传递到访存阶段，也是为记载、存储指令准备的
   assign reg2_o = reg2_i;
+  //执行阶段输出的异常信息就是译码阶段的异常信息加上自陷异常，溢出异常的信息10bit表示自陷异常，11bit表示溢出异常
+  assign excepttype_o = {excepttype_i[31:12],ovassert,trapassert,excepttype_i[9:8],8'h00};
+  //是否为延迟槽指令
+  assign is_in_delayslot_o = is_in_delayslot_i;
+  //处于执行阶段的指令地址
+  assign current_inst_address_o = current_inst_address_i;
 //stage one: compute with aluop_i
     always @(*) begin
         if(rst == `RstEnable) begin
@@ -144,11 +159,15 @@ always @(*) begin
         end//if
 end
 //算数运算的第一段，算出下面五个变量的值
-//（1） 如果是减法或者有符号比较运算，那么reg2_i_mux等于第二个操作数reg2_i的补码
+//（1） 如果是减法或者有符号比较运算，有符号自陷指令，那么reg2_i_mux等于第二个操作数reg2_i的补码
 //否则reg2_i_mux直接等于reg2_i
 assign reg2_i_mux = ((aluop_i == `EXE_SUB_OP) || 
                      (aluop_i == `EXE_SUBU_OP) ||
-					 (aluop_i == `EXE_SLT_OP) ) ? 
+					 (aluop_i == `EXE_SLT_OP) ||
+					 (aluop_i == `EXE_TLT_OP) ||
+	                 (aluop_i == `EXE_TLTI_OP) || 
+					 (aluop_i == `EXE_TGE_OP) ||
+	                 (aluop_i == `EXE_TGEI_OP)) ? 
                      (~reg2_i)+1 : reg2_i;
 //(2)分三种情况：
     //A：如果是加法运算：此时reg2_i_mux就是第二个操作数reg2_i,所以result_sum就是
@@ -173,7 +192,11 @@ assign ov_sum = ((!reg1_i[31] && !reg2_i_mux[31]) && result_sum[31]) ||
 //      A3:reg1_i为负数，reg2_i为负数，并且reg1_i减去reg2_i的值小于零（即result_sum为负数），
 //        此时reg1_i<reg2_i
 //  B:无符号数比较可以直接用比较运算符比较reg1_i和reg2_i
-assign reg1_lt_reg2 = ((aluop_i == `EXE_SLT_OP)) ?
+assign reg1_lt_reg2 = ((aluop_i == `EXE_SLT_OP)|| 
+					   (aluop_i == `EXE_TLT_OP) ||
+	                   (aluop_i == `EXE_TLTI_OP) || 
+					   (aluop_i == `EXE_TGE_OP) ||
+	                   (aluop_i == `EXE_TGEI_OP)) ?
 					((reg1_i[31] && !reg2_i[31]) || 
 					 (!reg1_i[31] && !reg2_i[31] && result_sum[31])||
 			        (reg1_i[31] && reg2_i[31] && result_sum[31]))
@@ -223,6 +246,39 @@ always @ (*) begin
 				end
 				default:				begin
 					arithmeticres <= `ZeroWord;
+				end
+			endcase
+		end
+	end
+	//根据上述结果判断是否处于自陷指令
+	always @ (*) begin
+		if(rst == `RstEnable) begin
+			trapassert <= `TrapNotAssert;
+		end else begin
+			trapassert <= `TrapNotAssert;
+			case (aluop_i)
+				`EXE_TEQ_OP, `EXE_TEQI_OP:		begin
+					if( reg1_i == reg2_i ) begin
+						trapassert <= `TrapAssert;
+					end
+				end
+				`EXE_TGE_OP, `EXE_TGEI_OP, `EXE_TGEIU_OP, `EXE_TGEU_OP:		begin
+					if( ~reg1_lt_reg2 ) begin
+						trapassert <= `TrapAssert;
+					end
+				end
+				`EXE_TLT_OP, `EXE_TLTI_OP, `EXE_TLTIU_OP, `EXE_TLTU_OP:		begin
+					if( reg1_lt_reg2 ) begin
+						trapassert <= `TrapAssert;
+					end
+				end
+				`EXE_TNE_OP, `EXE_TNEI_OP:		begin
+					if( reg1_i != reg2_i ) begin
+						trapassert <= `TrapAssert;
+					end
+				end
+				default:				begin
+					trapassert <= `TrapNotAssert;
 				end
 			endcase
 		end
@@ -417,8 +473,10 @@ end
         if(((aluop_i == `EXE_ADD_OP) || (aluop_i == `EXE_ADDI_OP) || 
             (aluop_i == `EXE_SUB_OP)) && (ov_sum == 1'b1)) begin
             wreg_o <= `WriteDisable;
+			ovassert <= 1'b1;//发生自陷异常
         end else begin
             wreg_o <= wreg_i;
+			ovassert <= 1'b0;
         end
         case (alusel_i)
             `EXE_RES_LOGIC: begin

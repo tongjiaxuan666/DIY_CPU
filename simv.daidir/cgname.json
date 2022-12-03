@@ -4,19 +4,14 @@
         "reYIK",
         "module"
     ],
-    "ex": [
-        "ex",
-        "r2dgF",
+    "regfile": [
+        "regfile",
+        "Nxspn",
         "module"
     ],
-    "data_ram": [
-        "data_ram",
-        "KA3k1",
-        "module"
-    ],
-    "mem": [
-        "mem",
-        "FSbWZ",
+    "...MASTER...": [
+        "SIM",
+        "amcQw",
         "module"
     ],
     "pc_reg": [
@@ -24,14 +19,14 @@
         "wxG7b",
         "module"
     ],
+    "mem": [
+        "mem",
+        "FSbWZ",
+        "module"
+    ],
     "openmips_min_sopc_tb": [
         "openmips_min_sopc_tb",
         "gvrSa",
-        "module"
-    ],
-    "if_id": [
-        "if_id",
-        "hBiVG",
         "module"
     ],
     "ex_mem": [
@@ -44,24 +39,9 @@
         "vnxvv",
         "module"
     ],
-    "id_ex": [
-        "id_ex",
-        "UmCUI",
-        "module"
-    ],
-    "regfile": [
-        "regfile",
-        "Nxspn",
-        "module"
-    ],
-    "mem_wb": [
-        "mem_wb",
-        "usA8F",
-        "module"
-    ],
-    "ctrl": [
-        "ctrl",
-        "FzTxA",
+    "ex": [
+        "ex",
+        "r2dgF",
         "module"
     ],
     "hilo_reg": [
@@ -74,9 +54,9 @@
         "re2bz",
         "module"
     ],
-    "div": [
-        "div",
-        "rzVRz",
+    "if_id": [
+        "if_id",
+        "hBiVG",
         "module"
     ],
     "cp0_reg": [
@@ -84,9 +64,29 @@
         "y5PkS",
         "module"
     ],
-    "...MASTER...": [
-        "SIM",
-        "amcQw",
+    "id_ex": [
+        "id_ex",
+        "UmCUI",
+        "module"
+    ],
+    "mem_wb": [
+        "mem_wb",
+        "usA8F",
+        "module"
+    ],
+    "ctrl": [
+        "ctrl",
+        "FzTxA",
+        "module"
+    ],
+    "div": [
+        "div",
+        "rzVRz",
+        "module"
+    ],
+    "data_ram": [
+        "data_ram",
+        "KA3k1",
         "module"
     ]
 }

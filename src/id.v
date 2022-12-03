@@ -37,6 +37,8 @@ module id (
 	output reg[`RegBus] link_addr_o,
 	output reg          is_in_delayslot_o,
     output wire  stallreq,
+    output wire[31:0]             excepttype_o,//异常类型
+    output wire[`RegBus]          current_inst_address_o,//保存当前指令地址
     output wire[`RegBus] inst_o//传输给SRAM
 );
 //get order num and get function
@@ -56,7 +58,8 @@ wire[`RegBus] imm_sll2_signedext;
 reg stallreq_for_reg1_loadrelate;//读取的寄存器1是否存在Load相关
 reg stallreq_for_reg2_loadrelate;//读取的寄存器2是否存在Load相关
 wire pre_inst_is_load;//表示上一条指令是否为加载指令
-
+reg excepttype_is_syscall;//是否调用系统异常syscall
+reg excepttype_is_eret;//是否是异常返回指令eret
 assign pc_plus_8 = pc_i + 8;//保存当前译码指令后面第二条指令
 assign pc_plus_4 = pc_i +4;//保存当前译码指令后面紧接着的指令地址
 //imm_sll2_signedext 对应分支指令中的offset左移两位，再符号扩展至32位的值
@@ -73,6 +76,12 @@ assign pre_inst_is_load = ((ex_aluop_i == `EXE_LB_OP) ||
                                                 (ex_aluop_i == `EXE_LL_OP) ||
                                                 (ex_aluop_i == `EXE_SC_OP)) ? 1'b1 : 1'b0;
 assign inst_o = inst_i;
+//exceptiontype的低8bit留给外部中断，第9bit表示是否是syscall指令
+//第10bit表示是否是无效指令，第11bit表示是否是trap指令，第13bit判断是否为返回异常eret
+assign excepttype_o = {19'b0,excepttype_is_eret,2'b0,
+                                            instvalid, excepttype_is_syscall,8'b0};
+//输入信号pc_i就是处在译码阶段的指令地址
+assign current_inst_address_o = pc_i;
 //stage one : decode
 always @(*) begin
     if(rst ==`RstEnable) begin
@@ -89,7 +98,9 @@ always @(*) begin
         link_addr_o <= `ZeroWord;
         branch_target_address_o <= `ZeroWord;
         branch_flag_o <= `NotBranch;
-        next_inst_in_delayslot_o <= `NotInDelaySlot;		
+        next_inst_in_delayslot_o <= `NotInDelaySlot;	
+        excepttype_is_syscall <= `False_v;
+        excepttype_is_eret <= `False_v;	
     end else begin
          aluop_o <= `EXE_NOP_OP;
         alusel_o <= `EXE_RES_NOP;
@@ -105,6 +116,8 @@ always @(*) begin
 		branch_target_address_o <= `ZeroWord;
 		branch_flag_o <= `NotBranch;	
 		next_inst_in_delayslot_o <= `NotInDelaySlot; 	
+        excepttype_is_syscall <= `False_v;	
+		excepttype_is_eret <= `False_v;
     case (op)
         `EXE_SPECIAL_INST: begin
             case(op2)
@@ -333,10 +346,71 @@ always @(*) begin
                 endcase//op3
             end
             default: begin
-                
             end
             endcase//op2
+                case (op3)
+					`EXE_TEQ: begin
+                        wreg_o <= `WriteDisable;		
+                        aluop_o <= `EXE_TEQ_OP;
+                        alusel_o <= `EXE_RES_NOP;   
+                        reg1_read_o <= 1'b0;	
+                        reg2_read_o <= 1'b0;
+                        instvalid <= `InstValid;
+		  			end
+                    `EXE_TGE: begin
+                        wreg_o <= `WriteDisable;		
+                        aluop_o <= `EXE_TGE_OP;
+                        alusel_o <= `EXE_RES_NOP;   
+                        reg1_read_o <= 1'b1;	
+                        reg2_read_o <= 1'b1;
+                        instvalid <= `InstValid;
+                    end		
+                    `EXE_TGEU: begin
+                        wreg_o <= `WriteDisable;		
+                        aluop_o <= `EXE_TGEU_OP;
+                        alusel_o <= `EXE_RES_NOP;   
+                        reg1_read_o <= 1'b1;	
+                        reg2_read_o <= 1'b1;
+                        instvalid <= `InstValid;
+                    end	
+                    `EXE_TLT: begin
+                        wreg_o <= `WriteDisable;		
+                        aluop_o <= `EXE_TLT_OP;
+                        alusel_o <= `EXE_RES_NOP;   
+                        reg1_read_o <= 1'b1;	
+                        reg2_read_o <= 1'b1;
+                        instvalid <= `InstValid;
+                    end
+                    `EXE_TLTU: begin
+                        wreg_o <= `WriteDisable;		
+                        aluop_o <= `EXE_TLTU_OP;
+                        alusel_o <= `EXE_RES_NOP;   
+                        reg1_read_o <= 1'b1;	
+                        reg2_read_o <= 1'b1;
+                        instvalid <= `InstValid;
+                    end	
+                    `EXE_TNE: begin
+                        wreg_o <= `WriteDisable;		
+                        aluop_o <= `EXE_TNE_OP;
+                        alusel_o <= `EXE_RES_NOP;   
+                        reg1_read_o <= 1'b1;	
+                        reg2_read_o <= 1'b1;
+                        instvalid <= `InstValid;
+                    end
+                    `EXE_SYSCALL: begin
+                        wreg_o <= `WriteDisable;		
+                        aluop_o <= `EXE_SYSCALL_OP;
+                        alusel_o <= `EXE_RES_NOP;   
+                        reg1_read_o <= 1'b0;	
+                        reg2_read_o <= 1'b0;
+                        instvalid <= `InstValid; 
+                        excepttype_is_syscall<= `True_v;
+                    end							 																					
+                    default:	begin
+                    end	
+                endcase		
         end    
+
         `EXE_ORI:   begin
             //ori want to write in wanted write,so put wreg_o to writeable
             wreg_o <= `WriteEnable;
@@ -689,6 +763,60 @@ always @(*) begin
                         next_inst_in_delayslot_o <= `InDelaySlot;
                     end
                 end
+                `EXE_TEQI:			begin
+                    wreg_o <= `WriteDisable;		
+                    aluop_o <= `EXE_TEQI_OP;
+                    alusel_o <= `EXE_RES_NOP; 
+                    reg1_read_o <= 1'b1;	
+                    reg2_read_o <= 1'b0;	  	
+                    imm <= {{16{inst_i[15]}}, inst_i[15:0]};		  	
+                    instvalid <= `InstValid;	
+                end
+                `EXE_TGEI:			begin
+                    wreg_o <= `WriteDisable;		
+                    aluop_o <= `EXE_TGEI_OP;
+                    alusel_o <= `EXE_RES_NOP; 
+                    reg1_read_o <= 1'b1;	
+                    reg2_read_o <= 1'b0;	  	
+                    imm <= {{16{inst_i[15]}}, inst_i[15:0]};		  	
+                    instvalid <= `InstValid;	
+                end
+                `EXE_TGEIU:			begin
+                    wreg_o <= `WriteDisable;		
+                    aluop_o <= `EXE_TGEIU_OP;
+                    alusel_o <= `EXE_RES_NOP; 
+                    reg1_read_o <= 1'b1;	
+                    reg2_read_o <= 1'b0;	  	
+                    imm <= {{16{inst_i[15]}}, inst_i[15:0]};		  	
+                    instvalid <= `InstValid;	
+                end
+                `EXE_TLTI:			begin
+                     wreg_o <= `WriteDisable;		
+                     aluop_o <= `EXE_TLTI_OP;
+                     alusel_o <= `EXE_RES_NOP; 
+                     reg1_read_o <= 1'b1;	
+                     reg2_read_o <= 1'b0;	  	
+                     imm <= {{16{inst_i[15]}}, inst_i[15:0]};		  	
+                     instvalid <= `InstValid;	
+                end
+                `EXE_TLTIU:			begin
+                     wreg_o <= `WriteDisable;		
+                     aluop_o <= `EXE_TLTIU_OP;
+                     alusel_o <= `EXE_RES_NOP; 
+                     reg1_read_o <= 1'b1;	
+                     reg2_read_o <= 1'b0;	  	
+                     imm <= {{16{inst_i[15]}}, inst_i[15:0]};		  	
+                     instvalid <= `InstValid;	
+                end
+                `EXE_TNEI:			begin
+                    wreg_o <= `WriteDisable;		
+                    aluop_o <= `EXE_TNEI_OP;
+                    alusel_o <= `EXE_RES_NOP; 
+                    reg1_read_o <= 1'b1;	
+                    reg2_read_o <= 1'b0;	  	
+                    imm <= {{16{inst_i[15]}}, inst_i[15:0]};		  	
+                    instvalid <= `InstValid;	
+                end				
                 default:	begin
                 end
             endcase
@@ -789,7 +917,15 @@ always @(*) begin
 			instvalid <= `InstValid;	
 		end
 	end	
-    if(inst_i[31:21] == 11'b01000000000 &&  inst_i[10:0] == 11'b00000000000) begin
+    if(inst_i == `EXE_ERET) begin
+        wreg_o <= `WriteDisable;		
+        aluop_o <= `EXE_ERET_OP;
+        alusel_o <= `EXE_RES_NOP;   
+        reg1_read_o <= 1'b0;	
+        reg2_read_o <= 1'b0;
+        instvalid <= `InstValid; 
+        excepttype_is_eret<= `True_v;
+    end else if(inst_i[31:21] == 11'b01000000000 &&  inst_i[10:0] == 11'b00000000000) begin
         aluop_o <= `EXE_MFC0_OP;
         alusel_o <= `EXE_RES_MOVE;
         wd_o <= inst_i[20:16];
@@ -806,6 +942,7 @@ always @(*) begin
         reg1_addr_o <= inst_i[20:16];
         reg2_read_o <= 1'b0;					
     end
+
     end //if
 end // always
 //stage two : confirm source data one

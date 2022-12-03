@@ -65,11 +65,11 @@ VCS_DEPTH=0
 VCS_ARG_ADDED_FOR_TMP=1
 VCS_ARCH_OVERRIDE=linux
 VCS_ARCH=linux64
-UPSTART_SESSION=unix:abstract=/com/ubuntu/upstart-session/1000/3451
+UPSTART_SESSION=unix:abstract=/com/ubuntu/upstart-session/1000/3758
 UNAME=/bin/uname
 TOOL_HOME=/home/zzy/synopsys/vcs_2016.06/linux64
 SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
-SESSION_MANAGER=local/zzy-virtual-machine:@/tmp/.ICE-unix/3681,unix/zzy-virtual-machine:/tmp/.ICE-unix/3681
+SESSION_MANAGER=local/zzy-virtual-machine:@/tmp/.ICE-unix/3984,unix/zzy-virtual-machine:/tmp/.ICE-unix/3984
 SESSIONTYPE=gnome-session
 SESSION=ubuntu
 SCRNAME=vcs
@@ -83,8 +83,8 @@ OVA_UUM=0
 NOVAS_HOME=/home/zzy/synopsys/verdi_2016.06-1
 MFLAGS=
 MANDATORY_PATH=/usr/share/gconf/ubuntu.mandatory.path
-MAKE_TERMOUT=/dev/pts/2
-MAKE_TERMERR=/dev/pts/2
+MAKE_TERMOUT=/dev/pts/8
+MAKE_TERMERR=/dev/pts/8
 MAKELEVEL=1
 MAKEFLAGS=
 LESSOPEN=| /usr/bin/lesspipe %s
@@ -104,31 +104,31 @@ GDM_LANG=zh_CN
 GDMSESSION=ubuntu
 DESKTOP_SESSION=ubuntu
 DEFAULTS_PATH=/usr/share/gconf/ubuntu.default.path
-DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-xKho8p7vK2
+DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-xJkbicvWAj
 COMPIZ_CONFIG_PROFILE=ubuntu
 CLUTTER_IM_MODULE=xim
 0
 23
-1669969360 ./src/cp0_reg.v
+1670040987 ./src/cp0_reg.v
 1669968837 ./src/LLbit_reg.v
 1669804279 ./src/data_ram.v
 1669794410 ./src/div.v
-1669794410 ./src/ctrl.v
+1670041252 ./src/ctrl.v
 1669794410 ./src/hilo_reg.v
-1669971076 ./src/mem_wb.v
+1670040786 ./src/mem_wb.v
 1669794410 ./src/regfile.v
-1669801035 ./src/id_ex.v
-1669970240 ./src/defines.v
-1669971637 ./src/openmips.v
+1670037121 ./src/id_ex.v
+1670035091 ./src/defines.v
+1670050146 ./src/openmips.v
 1669794410 ./src/inst_rom.v
-1669970414 ./src/id.v
-1669794410 ./src/if_id.v
-1669970839 ./src/ex_mem.v
-1669971844 ./src/openmips_min_sopc.v
-1669971972 ./src/ex.v
+1670056804 ./src/id.v
+1670050308 ./src/if_id.v
+1670050354 ./src/ex_mem.v
+1670050170 ./src/openmips_min_sopc.v
+1670056838 ./src/ex.v
 1669794410 ./src/openmips_min_sopc_tb.v
-1669794410 ./src/pc_reg.v
-1669970952 ./src/mem.v
+1670050258 ./src/pc_reg.v
+1670040622 ./src/mem.v
 1669970181 filelist.f
 1464145466 /home/zzy/synopsys/vcs_2016.06/linux64/lib/vcsdp.tab
 1468145700 /home/zzy/synopsys/verdi_2016.06-1/share/PLI/VCS/LINUX64/novas.tab
@@ -138,4 +138,4 @@ CLUTTER_IM_MODULE=xim
 1464147272 /home/zzy/synopsys/vcs_2016.06/linux64/lib/liberrorinf.so
 1464147248 /home/zzy/synopsys/vcs_2016.06/linux64/lib/libsnpsmalloc.so
 1468144468 /home/zzy/synopsys/verdi_2016.06-1/share/PLI/VCS/LINUX64/pli.a
-1669971996 simv.daidir
+1670056848 simv.daidir

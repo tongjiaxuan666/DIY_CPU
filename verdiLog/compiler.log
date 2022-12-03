@@ -31,5 +31,5 @@ openmips_min_sopc_tb
 "./src/openmips_min_sopc.v", 35: 
 
 *Warning* port sizes differ (1 vs 4) in port connection (port mem_ce_o)
-"./src/openmips.v", 379: 
+"./src/openmips.v", 444: 
 Total	0 error(s),   2 warning(s)

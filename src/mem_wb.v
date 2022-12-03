@@ -5,6 +5,7 @@ module mem_wb (
     input wire rst,
     //来自控制模块的信息
 	input wire[5:0]               stall,	
+    input wire                    flush,	
     //come from execiton
     input wire[`RegAddrBus] mem_wd,
     input wire mem_wreg,
@@ -43,6 +44,18 @@ always @(posedge clk) begin
         wb_cp0_reg_we <= `WriteDisable;
         wb_cp0_reg_write_addr <= 5'b00000;
         wb_cp0_reg_data <= `ZeroWord;
+    end else if(flush == 1'b1 ) begin
+        wb_wd <= `NOPRegAddr;
+        wb_wreg <= `WriteDisable;
+        wb_wdata <= `ZeroWord;
+        wb_hi <= `ZeroWord;
+        wb_lo <= `ZeroWord;
+        wb_whilo <= `WriteDisable;
+        wb_LLbit_we <= 1'b0;
+        wb_LLbit_value <= 1'b0;	
+        wb_cp0_reg_we <= `WriteDisable;
+        wb_cp0_reg_write_addr <= 5'b00000;
+        wb_cp0_reg_data <= `ZeroWord;	
     end else if(stall[4] == `Stop && stall[5] == `NoStop) begin
 		wb_wd <= `NOPRegAddr;
 		wb_wreg <= `WriteDisable;
@@ -69,5 +82,4 @@ always @(posedge clk) begin
         wb_cp0_reg_data <= mem_cp0_reg_data;		
     end    //if
 end
-    
 endmodule
