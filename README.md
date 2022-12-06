@@ -22,3 +22,4 @@ make verdi //查看波形
 - chapter 9.3 解决了load问题。使用了流水线暂停技术
 - chapter 10 实现了协处理器CP0
 - chapter 11 实现了中断，系统调用等异常情况的跳转，到这里openmips的功能已经完成了。
+- chapter 12 增加了 wishbone总线 修改了openmips，去除了rom和ram接口

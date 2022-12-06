@@ -3,21 +3,31 @@
 module openmips (
     input wire clk,
     input wire rst,
-    input wire[`RegBus] rom_data_i,
     input wire[5:0]                int_i,
-    output wire[`RegBus] rom_addr_o,
-    output wire rom_ce_o,
-     //连接数据存储器data_ram
-	input wire[`RegBus]            ram_data_i,
-	output wire[`RegBus]           ram_addr_o,
-	output wire[`RegBus]           ram_data_o,
-	output wire                    ram_we_o,
-	output wire[3:0]               ram_sel_o,
-	output wire[3:0]               ram_ce_o,
+      //指令wishbone总线
+	input wire[`RegBus]           iwishbone_data_i,
+	input wire                    iwishbone_ack_i,
+	output wire[`RegBus]           iwishbone_addr_o,
+	output wire[`RegBus]           iwishbone_data_o,
+	output wire                    iwishbone_we_o,
+	output wire[3:0]               iwishbone_sel_o,
+	output wire                    iwishbone_stb_o,
+	output wire                    iwishbone_cyc_o, 
+//数据wishbone总线
+	input wire[`RegBus]           dwishbone_data_i,
+	input wire                    dwishbone_ack_i,
+	output wire[`RegBus]           dwishbone_addr_o,
+	output wire[`RegBus]           dwishbone_data_o,
+	output wire                    dwishbone_we_o,
+	output wire[3:0]               dwishbone_sel_o,
+	output wire                    dwishbone_stb_o,
+	output wire                    dwishbone_cyc_o,
+
     output wire                    timer_int_o
 );
 //connect if/id to id
 wire[`InstAddrBus] pc;
+wire[`InstBus] inst_i;	
 wire[`InstAddrBus] id_pc_i;
 wire[`InstBus] id_inst_i;
 //connect id to id/ex
@@ -143,7 +153,8 @@ wire[`RegBus] branch_target_address;
 wire[5:0] stall;
 wire stallreq_from_id;
 wire stallreq_from_ex;
-
+wire stallreq_from_if;
+wire stallreq_from_mem;
 wire LLbit_o;
 wire[`RegBus] cp0_data_o;
 wire[4:0] cp0_raddr_i;
@@ -158,6 +169,15 @@ wire[`RegBus]	cp0_epc;
 wire[`RegBus]	cp0_config;
 wire[`RegBus]	cp0_prid; 
 wire[`RegBus] latest_epc;
+
+wire rom_ce;
+
+wire[31:0] ram_addr_o;
+wire ram_we_o;
+wire[3:0] ram_sel_o;
+wire[`RegBus] ram_data_o;
+wire ram_ce_o;
+wire[`RegBus] ram_data_i;
 //pc_reg
 pc_reg pc_reg0(
     .clk(clk),
@@ -168,7 +188,7 @@ pc_reg pc_reg0(
     .branch_flag_i(id_branch_flag_o),
 	.branch_target_address_i(branch_target_address),	
     .pc(pc),
-    .ce(rom_ce_o)
+    .ce(rom_ce)
 );
 assign rom_addr_o = pc;
 //if/id
@@ -495,12 +515,13 @@ hilo_reg hilo_reg0(
 );
 ctrl ctrl0(
 		.rst(rst),
-	
+	    .stallreq_from_if(stallreq_from_if),	
 		.stallreq_from_id(stallreq_from_id),
 		.excepttype_i(mem_excepttype_o),
 	    .cp0_epc_i(latest_epc),
   	//来自执行阶段的暂停请求
 		.stallreq_from_ex(stallreq_from_ex),
+        .stallreq_from_mem(stallreq_from_mem),
         .new_pc(new_pc),
 	    .flush(flush),
 
@@ -556,5 +577,65 @@ cp0_reg cp0_reg0(
     .prid_o(cp0_prid),
 
     .timer_int_o(timer_int_o)  			
+);
+wishbone_bus_if dwishbone_bus_if(
+    .clk(clk),
+    .rst(rst),
+
+    //来自控制模块ctrl
+    .stall_i(stall),
+    .flush_i(flush),
+
+
+    //CPU侧读写操作信息
+    .cpu_ce_i(ram_ce_o),
+    .cpu_data_i(ram_data_o),
+    .cpu_addr_i(ram_addr_o),
+    .cpu_we_i(ram_we_o),
+    .cpu_sel_i(ram_sel_o),
+    .cpu_data_o(ram_data_i),
+
+    //Wishbone总线侧接口
+    .wishbone_data_i(dwishbone_data_i),
+    .wishbone_ack_i(dwishbone_ack_i),
+    .wishbone_addr_o(dwishbone_addr_o),
+    .wishbone_data_o(dwishbone_data_o),
+    .wishbone_we_o(dwishbone_we_o),
+    .wishbone_sel_o(dwishbone_sel_o),
+    .wishbone_stb_o(dwishbone_stb_o),
+    .wishbone_cyc_o(dwishbone_cyc_o),
+
+    .stallreq(stallreq_from_mem)	       
+	
+);
+
+wishbone_bus_if iwishbone_bus_if(
+    .clk(clk),
+    .rst(rst),
+
+    //来自控制模块ctrl
+    .stall_i(stall),
+    .flush_i(flush),
+
+    //CPU侧读写操作信息
+    .cpu_ce_i(rom_ce),
+    .cpu_data_i(32'h00000000),
+    .cpu_addr_i(pc),
+    .cpu_we_i(1'b0),
+    .cpu_sel_i(4'b1111),
+    .cpu_data_o(inst_i),
+
+    //Wishbone总线侧接口
+    .wishbone_data_i(iwishbone_data_i),
+    .wishbone_ack_i(iwishbone_ack_i),
+    .wishbone_addr_o(iwishbone_addr_o),
+    .wishbone_data_o(iwishbone_data_o),
+    .wishbone_we_o(iwishbone_we_o),
+    .wishbone_sel_o(iwishbone_sel_o),
+    .wishbone_stb_o(iwishbone_stb_o),
+    .wishbone_cyc_o(iwishbone_cyc_o),
+
+    .stallreq(stallreq_from_if)	       
+	
 );
 endmodule

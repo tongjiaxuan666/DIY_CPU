@@ -18,3 +18,4 @@
 ./src/data_ram.v
 ./src/LLbit_reg.v
 ./src/cp0_reg.v
+./src/wishbone_bus_if.v

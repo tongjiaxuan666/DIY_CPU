@@ -5,7 +5,9 @@ module ctrl (
     input wire[31:0]             excepttype_i,
 	input wire[`RegBus]          cp0_epc_i,
     input wire stallreq_from_id,
+    input wire stallreq_from_if,//取指令阶段暂停
     input wire stallreq_from_ex,
+    input wire stallreq_from_mem,//访存阶段请求暂停	
     output reg[`RegBus]          new_pc,
 	output reg                   flush,	
     output reg[5:0] stall
@@ -39,13 +41,19 @@ always @(*) begin
             end
             default	: begin
             end
-        endcase 				
+        endcase 		
+    end else if(stallreq_from_mem == `Stop) begin
+		stall <= 6'b011111;
+		flush <= 1'b0;		
     end else if (stallreq_from_ex == `Stop) begin
         stall <= 6'b001111;
         flush <= 1'b0;
     end else if(stallreq_from_id == `Stop) begin
         stall <= 6'b000111;
         flush <= 1'b0;
+    end else if(stallreq_from_if == `Stop) begin//取指令阶段请求暂停
+		stall <= 6'b000111;
+		flush <= 1'b0;
     end else begin
         stall <= 6'b000000;
         flush <= 1'b0;
